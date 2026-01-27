@@ -7,6 +7,19 @@
 
 ---
 
+## Google Calendar (gog CLI)
+
+**アカウント:** near0248@gmail.com
+**コマンド例:**
+```bash
+GOG_KEYRING_PASSWORD="gog" gog calendar events primary --from YYYY-MM-DD --to YYYY-MM-DD
+GOG_KEYRING_PASSWORD="gog" gog calendar list
+```
+
+**注意:** 実行時は必ず `GOG_KEYRING_PASSWORD="gog"` を付ける
+
+---
+
 ## konukiとのルール
 
 ### Git運用

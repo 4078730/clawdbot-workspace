@@ -1,8 +1,0 @@
-## Today
-
-
-## Tasks
-
-
-## Notes
-

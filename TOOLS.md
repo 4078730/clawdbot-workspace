@@ -33,7 +33,7 @@
 
 ### Git運用
 - ファイル編集 → commit → push をセットで
-- Github PullからメンションされたらすぐにPull → 完了報告
+- Github Pullからメンションされたら → 自分のpushでなければPull → 完了報告
 
 ---
 

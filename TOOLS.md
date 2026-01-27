@@ -10,10 +10,18 @@
 ## Google Calendar (gog CLI)
 
 **アカウント:** near0248@gmail.com
+
+**カレンダー:**
+- `primary` — 個人カレンダー
+- `pck7b9a6mp82g5hj4cpg1ff254@group.calendar.google.com` — **Work-Sync**（仕事とプライベートの同期）
+
 **コマンド例:**
 ```bash
-GOG_KEYRING_PASSWORD="gog" gog calendar events primary --from YYYY-MM-DD --to YYYY-MM-DD
-GOG_KEYRING_PASSWORD="gog" gog calendar list
+# Work-Syncの予定確認
+GOG_KEYRING_PASSWORD="gog" gog calendar events "pck7b9a6mp82g5hj4cpg1ff254@group.calendar.google.com" --from YYYY-MM-DD --to YYYY-MM-DD
+
+# カレンダー一覧
+GOG_KEYRING_PASSWORD="gog" gog calendar calendars
 ```
 
 **注意:** 実行時は必ず `GOG_KEYRING_PASSWORD="gog"` を付ける

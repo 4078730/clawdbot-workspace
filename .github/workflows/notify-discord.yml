@@ -7,11 +7,13 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    # Skip if the commit was made by github-actions (avoid loops)
+    if: github.actor != 'github-actions[bot]'
     steps:
       - name: Send Discord Notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           curl -H "Content-Type: application/json" \
-            -d "{\"content\": \"📦 ワークスペース更新あり！git pullしてね\"}" \
+            -d "{\"content\": \"<@1465207497148207185> 📦 ワークスペース更新！git pullして\"}" \
             $DISCORD_WEBHOOK

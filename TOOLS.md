@@ -1,36 +1,41 @@
 # TOOLS.md - Local Notes
 
-Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
+## Obsidian Vault
 
-## What Goes Here
+**Path:** `~/research/obsidian-vault` (symlink → `/mnt/g/マイドライブ/Obsidian/Obsidian`)
 
-Things like:
-- Camera names and locations
-- SSH hosts and aliases  
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+**注意:** WSL起動後、Gドライブ未マウントなら `sudo mount -t drvfs G: /mnt/g`
+→ 自動化済み（.bashrc + sudoers）
 
-## Examples
+**構造:**
+- `Tasks/active.md` → タスク管理
+- `Notes/{work,youtube,personal}.md` → メモ
+- `Docs/` → 資料
+- `Context/` → 自動更新OK
+- `Projects/` → プロジェクト別ドキュメント
+- `Agent/` → Clawdbotワークスペース（このフォルダ）
 
-```markdown
-### Cameras
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+**触らない:** TaskNotes/, .obsidian/, Archive/
 
-### SSH
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+**タスク形式:** `- [ ] 内容 \`due:YYYY-MM-DD\``
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## Environment
+
+- **OS:** WSL2 on Windows
+- **Drives:** C: → /mnt/c, G: (Google Drive) → /mnt/g (自動マウント)
+- **Clawdbot workspace:** `~/research/obsidian-vault/Agent/`
+
+---
+
+## YouTube制作
+
+**チャンネル:** AnimeLiveAction
+**フロー:** Nanobanana Pro（画像生成）→ KLING AI（動画化）→ 編集
+
+---
+
+## スキル
+
+- `nano-banana-pro` — 画像生成API（設定済み）

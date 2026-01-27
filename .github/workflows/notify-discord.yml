@@ -1,0 +1,17 @@
+name: Notify Discord on Push
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -d "{\"content\": \"📦 ワークスペース更新あり！git pullしてね\"}" \
+            $DISCORD_WEBHOOK

@@ -1,4 +1,4 @@
-# Obsidian Vault 運用ガイド (Clawdbot時代)
+# Clawdbot-Workspace
 
 ## 基本思想
 

@@ -51,7 +51,7 @@
 ## 興味・関心
 
 **仕事（中核）:**
-- Robotics / VLA / ロボット基盤モデル（RFM）
+- Robotics Foundation Agent プロジェクト
 - LLM Agentとの統合、Planning + Execution
 - 実証（SCM/物流/製造）、DataOps、運用設計
 - 研究動向（論文解説、SOTA調査、図解）
@@ -68,7 +68,6 @@
 
 **仕事:**
 - IndexVLA論文執筆
-- 村上さん研究
 - 事業計画
 
 **YouTube:**

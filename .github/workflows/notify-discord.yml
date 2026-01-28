@@ -14,7 +14,8 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           COMMIT_MSG: ${{ github.event.head_commit.message }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
         run: |
           curl -H "Content-Type: application/json" \
-            -d "{\"content\": \"<@1465207497148207185> 📦 ワークスペース更新！git pullして\n\`${COMMIT_MSG}\`\"}" \
+            -d "{\"content\": \"<@1465207497148207185> 📦 ワークスペース更新！git pullして\n\`${COMMIT_MSG}\`\n🔗 ${COMMIT_URL}\"}" \
             $DISCORD_WEBHOOK

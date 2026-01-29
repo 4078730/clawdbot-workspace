@@ -4,6 +4,11 @@
 **締切:** 2026/2/2 15:00  
 **管理:** Markdown + GitHub（正本はExcel）
 
+## 参考資料
+
+- [事業計画策定 説明会 議事録](../../meeting-notes/2026-01-26_CT-project-planning-fy26.md)
+- [説明会スライド（PDF）](../../meeting-notes/2026-01-26_CT-project-planning-fy26_slides.pdf)
+
 ---
 
 ## 基本情報

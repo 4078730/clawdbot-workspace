@@ -169,6 +169,7 @@
 ## 📎 参考リンク・資料
 
 - **[説明会スライド（PDF）](./2026-01-26_CT-project-planning-fy26_slides.pdf)**
+- **[説明会スライド（テキスト版）](./2026-01-26_CT-project-planning-fy26_slides.md)**
 - Confluence帳票テンプレート
 - プロジェクト情報申請書フォーマット
 - プロジェクト内容見本案（塩川さん作成）

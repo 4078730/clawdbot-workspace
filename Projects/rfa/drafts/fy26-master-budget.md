@@ -8,6 +8,10 @@
 
 - [事業計画策定 説明会 議事録](../../meeting-notes/2026-01-26_CT-project-planning-fy26.md)
 - [説明会スライド（PDF）](../../meeting-notes/2026-01-26_CT-project-planning-fy26_slides.pdf)
+- [説明会スライド（テキスト版）](../../meeting-notes/2026-01-26_CT-project-planning-fy26_slides.md)
+
+**提出先:** `提出20260202` フォルダ  
+**戦略主担当:** 大坪さん
 
 ---
 

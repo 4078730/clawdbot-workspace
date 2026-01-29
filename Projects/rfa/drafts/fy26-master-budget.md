@@ -11,7 +11,8 @@
 - [説明会スライド（テキスト版）](../../meeting-notes/2026-01-26_CT-project-planning-fy26_slides.md)
 
 **提出先:** `提出20260202` フォルダ  
-**戦略主担当:** 大坪さん
+**戦略主担当:** 大坪さん  
+**提出済み:** [SharePointリンク](https://jppanasonic.sharepoint.com/:x:/s/TC.TPL.RD.CT613-11_CT/IQAdfI0A7BxwTpfHRtQErvFjATTBLPM6nuJ7DE9123I7Pgk?e=qBKGwM)（2026-01-29 提出）
 
 ---
 

@@ -7,6 +7,15 @@
 
 ---
 
+## Clawdbot認証設定
+
+**ファイル:** `~/.clawdbot/agents/main/agent/auth-profiles.json`
+
+memory_searchを使うにはOpenAI APIキーがここに登録されている必要がある。
+~/.bashrcの環境変数だけでは不十分。
+
+---
+
 ## Google Calendar (gog CLI)
 
 **アカウント:** near0248@gmail.com

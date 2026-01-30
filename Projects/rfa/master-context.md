@@ -1,8 +1,15 @@
+# RFA Master Context
 
+*Last updated: 2026-01-31*
 
+このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 
+関連:
+- `Projects/rfa/README.md`
+- `Projects/rfa/fy26-business-plan.md`
+- `Projects/rfa/glossary.md`
 
-
+---
 
 1. エグゼクティブサマリー & ドキュメントの目的
 

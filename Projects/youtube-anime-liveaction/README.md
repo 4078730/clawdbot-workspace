@@ -43,6 +43,7 @@ Nanobanana Pro（画像生成）
 - `file-naming.md` — ファイル命名・保管ルール（案）
 - `reference-search.md` — 参照画像の検索・選定ルール
 - `workflow-browser.md` — セミ自動ブラウザワークフロー
+- `character-list.md` — 作品別キャラ候補リスト
 - `Tasks/active.md` — 現在タスク
 
 ---

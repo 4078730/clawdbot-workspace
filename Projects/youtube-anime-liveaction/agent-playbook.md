@@ -35,8 +35,12 @@
 - Fandom/Narutopedia（1枚）
 - SEARCH1〜3（最大3枚）
 
-保存先（例）:
+保存先（実体）:
 - `C:\Users\user\Videos\AnimeLiveAction\assets\<作品>\ref_base\`
+
+パス表記（チャット/ログでの省略ルール）:
+- 原則 **`<作品>/...` 形式**で書く（`C:\Users\user\Videos\AnimeLiveAction\assets\` は省略）
+  - 例: `NARUTO/ref_base/REF_BASE_サスケ_MAL_v01.jpg`
 
 命名（例）:
 - `REF_BASE_<キャラ>_OFFICIAL_v01.*`

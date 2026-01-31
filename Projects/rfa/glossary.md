@@ -27,6 +27,10 @@
 - **Symbol Hub**
   - 役割：言語世界と物理世界の接地、状態管理、成功/失敗判定。
 
+- **Symbol Integration**
+  - 役割：LLM Agent（計画/記号）と VLA / Robo Sync（連続値/制御）をつなぐ「橋渡し」レイヤー。
+  - 表記ゆれ：`fy26-business-plan.md` では *Symbol Integration*、`master-context.md` / `README.md` では *Symbol Hub* を主に使用（同じ機能領域を指す意図）。
+
 - **Sensorimotor Hub**
   - 役割：視覚・言語・状態量から具体的な行動（アクション）を生成して実行。
 

@@ -1,19 +1,31 @@
 # Prompt Library — AnimeLiveAction
 
-> ここは**プロンプト資産の集約**。現時点はテンプレ骨格のみ。
-> 実運用に合わせて調整・確定していく。
+> ここは**プロンプト資産の集約**。
+> 成功している実プロンプトをベースに管理する。
 
-## 共通スタイル方針（暫定）
+## 参照画像の準備（必須）
+- **実際のアニメキャラの全身**または**表情が分かる**画像
+- **生成したい衣装や見た目**の参照画像
+
+## 共通スタイル方針
 - 原作キャラに**できるだけ近い**造形
 - **リアルな実写感**を重視
-- 破綻や違和感が出やすい部位（手/歯/指/目）を注意
+- 破綻しやすい部位（手/歯/指/目）を重点チェック
 
-## テンプレ（要埋め）
+## 成功しているベースプロンプト（暫定）
 ```
-[キャラ名]、[作品名]、realistic live-action, cinematic lighting, high detail, natural skin texture,
-accurate costume, accurate hair color/style, faithful facial features,
-background: [場所/雰囲気], camera: [レンズ/画角], mood: [雰囲気],
---negative: deformed hands, extra fingers, distorted face, low quality, blurry
+｢顔の角度・体の姿勢を完全一致で実写化。目・眉・口・輪郭などの微細な表情要素まで忠実に再現。
+髪型・長さ・質感・流れは参照画像に厳密に準拠。
+
+make this a cinematic photorealistic live action and remove the text, make everything photorealistic even the background, actor of [作品名]
+Make everything ultra-detailed IMAX cinematic photorealistic live action, pristine cinematic quality
+iPhone 17 Pro candid angle, A background that blends naturally, realistic fabric textures
+Negative: worst quality, low quality, lowres, blurry, jpeg artifacts, bad anatomy, bad hands, bad fingers, extra fingers, deformed face, asymmetrical eyes, flat lighting, dull colors, logo, watermark, text
+Composition is casual and slightly tilted, framing this intimate moment with genuine spontaneity typical of authentic iPhone photography, evoking a relaxed, private atmosphere.
+
+日本人
+
+｢[キャラクター名]｣
 ```
 
 ## キャラ別テンプレ

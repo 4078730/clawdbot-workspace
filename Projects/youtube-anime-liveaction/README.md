@@ -21,7 +21,7 @@ Nanobanana Pro（画像生成）
 ## 使用ツール（概要）
 - **画像生成:** Nanobanana Pro
 - **動画生成:** Seedance Pro / Kling / VidoQ3 など（状況に応じて変動）
-- **編集:** 要確認
+- **編集:** DaVinci Resolve
 
 ## 現在の制作状況
 ### 進行中

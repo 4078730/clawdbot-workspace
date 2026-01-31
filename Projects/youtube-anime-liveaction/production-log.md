@@ -32,5 +32,13 @@
 - 問題点/気づき: MAL/AniListは小さめ（約225x350, 230x345）。Fandomは高解像度。
 - 次アクション: 参照画像を選定 → Nanobanana Pro（Pi01）でベース生成
 
+### 2026-01-31
+- 実施内容: Fandom参照画像を使って Pi01 でベース画像生成（Nanobanana Pro）
+- 出力/成果物:
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-05-14_IMG_ルフィ_Pi01_NanobananaPro.png
+- 使用モデル/設定: Nanobanana Pro / 入力=REF_BASE_ルフィ_Fandom_v01.webp / 解像度=1K
+- 問題点/気づき: なし
+- 次アクション: 生成結果の確認 → 次キャラ or Pi02
+
 ---
 更新日: 2026-01-31

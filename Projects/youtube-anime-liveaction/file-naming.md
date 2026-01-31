@@ -20,7 +20,7 @@ assets/
 - 日付は **YYYYMMDD**
 
 ### 参照画像
-- `REF_BASE_<キャラ>_v01.jpg`
+- `REF_BASE_<キャラ>_<SRC>_v01.jpg` 例: `REF_BASE_ルフィ_MAL_v01.jpg`
 - `REF_SCENE_<シーン名>_v01.jpg`
 
 ### 生成画像

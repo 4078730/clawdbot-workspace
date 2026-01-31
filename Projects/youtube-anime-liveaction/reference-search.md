@@ -3,13 +3,14 @@
 ## 方針（確定）
 - **複数ソースを併用して補完**する
 - **検索結果の採用は人が判断**（konukiが一旦選定）
+- **MyAnimeList / AniList / Fandom Wiki から1枚ずつベストを選ぶ**
 
 ## 検索ソース（併用）
 1) **公式ソース（最優先）**
    - 公式サイトのキービジュアル / 立ち絵
    - 公式PV・トレーラーの静止フレーム
-2) **公式寄りDB（補完）**
-   - MyAnimeList / AniList / Fandom Wiki など
+2) **公式寄りDB（必須で各1枚選定）**
+   - MyAnimeList / AniList / Fandom Wiki
 3) **画像検索（補完・量）**
    - Google Images / Bing Images
 

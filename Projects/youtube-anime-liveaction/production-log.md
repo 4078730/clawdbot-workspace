@@ -22,5 +22,15 @@
 - 問題点/気づき: v01はWebP（拡張子 .webp）
 - 次アクション: 参照画像を選定 → Nanobanana Pro（Pi01）でベース生成
 
+### 2026-01-31
+- 実施内容: MyAnimeList / AniList / Fandom Wiki から各1枚ベストを選定・DL
+- 出力/成果物:
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_MAL_v01.jpg
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_AniList_v01.png
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_Fandom_v01.webp
+- 使用モデル/設定: 参照画像取得（MAL/AniList/Fandom）
+- 問題点/気づき: MAL/AniListは小さめ（約225x350, 230x345）。Fandomは高解像度。
+- 次アクション: 参照画像を選定 → Nanobanana Pro（Pi01）でベース生成
+
 ---
 更新日: 2026-01-31

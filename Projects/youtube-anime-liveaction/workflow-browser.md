@@ -12,6 +12,7 @@
 - 作品名
 - キャラ名
 - 使用プロンプト（Pi01 / Pi02 / Pi03）
+- **参照画像：MAL / AniList / Fandom の各1枚**
 
 ## 出力
 - `REF_BASE`（参照画像）
@@ -26,14 +27,14 @@
 - 保存先を事前に決めておく
 
 ### 2) 参照画像を検索
-- 公式サイト / MAL / Fandom / Google/Bing を併用
+- 公式サイト / **MAL / AniList / Fandom** / Google/Bing を併用
 - クエリ例は `reference-search.md` を使用
 
 ### 3) 画像を選定（人が判断）
 - 顔/髪/衣装が明瞭で、文字や透かしのないもの
 
 ### 4) 参照画像を保存・命名
-- `REF_BASE_<キャラ>_v01.jpg`
+- `REF_BASE_<キャラ>_<SRC>_v01.jpg` 例: `REF_BASE_ルフィ_MAL_v01.jpg`
 - シーン参照が必要な場合: `REF_SCENE_<シーン名>_v01.jpg`
 
 ### 5) Nanobanana Proで生成

@@ -1,0 +1,57 @@
+# ファイル命名・保管ルール（案） — AnimeLiveAction
+
+> **目的:** 迷わず探せる・並べ替えできる・シリーズ横断で運用可能
+> ルールは「**わかりやすさ優先**」。必要なら調整する。
+
+## 1) フォルダ構成（推奨）
+```
+assets/
+  └─ <作品名>/
+      ├─ 舞台裏/
+      │   ├─ ref_base   (ベース人物参照)
+      │   ├─ ref_scene  (シーン参照)
+      │   ├─ img        (生成画像)
+      │   ├─ vid        (生成動画クリップ)
+      │   └─ final      (完成動画)
+      └─ ツアー/
+          ├─ ref_base
+          ├─ ref_scene
+          ├─ img
+          ├─ vid
+          └─ final
+```
+※ 作品名フォルダは日本語でOK（例: `呪術廻戦`）
+
+## 2) 命名テンプレ（推奨）
+- 区切りは **_（アンダースコア）**
+- 日付は **YYYYMMDD**
+
+### 参照画像
+- `REF_BASE_<キャラ>_v01.jpg`
+- `REF_SCENE_<シーン名>_v01.jpg`
+
+### 生成画像
+- `IMG_<キャラ>_<シーン名>_<PiID>_<モデル>_<YYYYMMDD>_v01.png`
+
+### 生成動画（クリップ）
+- `VID_<キャラ>_<シーン名>_<PvID>_<モデル>_<YYYYMMDD>_clip01.mp4`
+
+### 完成動画
+- `FINAL_<キャラ>_<シリーズ>_<YYYYMMDD>_v01.mp4`
+
+## 3) 例
+- `REF_BASE_五条悟_v01.jpg`
+- `REF_SCENE_渋谷事変_v01.jpg`
+- `IMG_禪院真希_戦闘_Pi02_VidoQ3_20260131_v01.png`
+- `VID_五条悟_ツアー_Pv02_Kling25Turbo_20260131_clip01.mp4`
+- `FINAL_五条悟_舞台裏_20260131_v01.mp4`
+
+## 4) モデル名の書き方（例）
+- Nanobanana Pro → `NanobananaPro`
+- Kling 2.5 Turbo → `Kling25Turbo`
+- Seedance Pro 1.5 → `Seedance15`
+- VidoQ3 → `VidoQ3`
+
+---
+**状態:** 案（確認待ち）
+更新日: 2026-01-31

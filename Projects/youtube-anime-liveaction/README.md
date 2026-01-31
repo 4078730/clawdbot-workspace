@@ -40,6 +40,7 @@ Nanobanana Pro（画像生成）
 - `series-tracker.md` — シリーズ別進捗
 - `prompt-library.md` — プロンプト資産
 - `production-log.md` — 制作ログ
+- `file-naming.md` — ファイル命名・保管ルール（案）
 - `Tasks/active.md` — 現在タスク
 
 ---

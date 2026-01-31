@@ -67,5 +67,24 @@
 - 問題点/気づき: 参照画像の縦横比が混在（コラージュ）
 - 次アクション: MULTI5版の品質比較→採用判断
 
+### 2026-01-31
+- 実施内容: NARUTO（ナルト/サクラ/サスケ）の参照画像をサブエージェントで並列収集。運用ルールをドキュメント化。
+- 出力/成果物:
+  - 参照画像（NARUTO）: `C:\Users\user\Videos\AnimeLiveAction\assets\NARUTO\ref_base\REF_BASE_<キャラ>_<SRC>_v01.*`
+    - SRC: OFFICIAL / MAL / AniList / Fandom / SEARCH1-3
+  - サクラ: V916テンプレ（1080x1920） & MULTI5 & Pi01 2K（生成済み、保持）
+    - `...\\assets\\NARUTO\\ref_base\\REF_BASE_サクラ_<SRC>_V916_v01.png`
+    - `...\\assets\\NARUTO\\ref_base\\REF_BASE_サクラ_MULTI5_v01.png`
+    - `...\\assets\\NARUTO\\img\\2026-01-31-22-31-23_IMG_サクラ_OFFICIAL_Pi01_NanobananaPro_2K_V916.png` ほか
+  - 運用ルール: `Projects/youtube-anime-liveaction/agent-playbook.md`
+- 使用モデル/設定:
+  - 参照収集: サブエージェント（参照画像の保存まで）
+  - 生成（今回のみ）: Nanobanana Pro / Pi01 / 2K
+- 問題点/気づき:
+  - Brave Search: `search_lang` は `jp`（`ja` だとエラー）。429レート制限が起きるため、web_fetch/直リンク抽出を優先。
+  - 4kwallpapers は `/images/wallpapers/...-<WxH>-<id>.*` から最大解像度を選べる。
+- 次アクション:
+  - 参照採用判断→生成は明示OK後に実行（運用ルールに従う）
+
 ---
 更新日: 2026-01-31

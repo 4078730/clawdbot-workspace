@@ -21,7 +21,9 @@ assets/
 
 ### 参照画像
 - `REF_BASE_<キャラ>_<SRC>_v01.jpg` 例: `REF_BASE_ルフィ_MAL_v01.jpg`
-  - SRC候補: `OFFICIAL` / `SEARCH` / `MAL` / `AniList` / `Fandom`
+  - SRC候補: `OFFICIAL` / `SEARCH1` / `SEARCH2` / `SEARCH3` / `MAL` / `AniList` / `Fandom`
+- `REF_BASE_<キャラ>_MULTI5_v01.png`（5枚コラージュ）
+- `REF_BASE_<キャラ>_<SRC>_V916_v01.png`（縦型9:16テンプレ化した参照）
 - `REF_SCENE_<シーン名>_v01.jpg`
 
 ### 生成画像

@@ -3,7 +3,8 @@
 ## 方針（確定）
 - **複数ソースを併用して補完**する
 - **検索結果の採用は人が判断**（konukiが一旦選定）
-- **公式ソース / 検索 / MyAnimeList / AniList / Fandom Wiki から各1枚ずつベストを選ぶ（計5枚）**
+- **OFFICIAL / MAL / AniList / Fandom 各1枚 + SEARCH1-3（最大3枚）を候補収集**
+  - 採用は人が判断（必要なら SEARCH1-3 から1枚に絞る）
 
 ## 検索ソース（併用）
 1) **公式ソース（必須で1枚選定）**
@@ -11,8 +12,9 @@
    - 公式PV・トレーラーの静止フレーム
 2) **公式寄りDB（必須で各1枚選定）**
    - MyAnimeList / AniList / Fandom Wiki
-3) **画像検索（必須で1枚選定）**
+3) **画像検索（候補を最大3枚収集 → 必要なら1枚に絞る）**
    - Google Images / Bing Images
+   - 代替: 4kwallpapers 等（高解像度壁紙サイト）
 
 ## 検索クエリの型（テンプレ）
 - **ベース画像用**
@@ -31,10 +33,12 @@
 - 透かし/文字がない
 
 ## 運用フロー（セミ自動）
-1) 検索（上記ソースを併用）
-2) **konukiが1枚選定**
+1) **候補収集**（OFFICIAL/MAL/AniList/Fandom/SEARCH1-3）
+   - 基本は Wooper（サブエージェント）で自動収集
+2) **konukiが採用判断**（必要ならSEARCH1-3から1枚に絞る）
 3) `REF_BASE` / `REF_SCENE` として保存（file-naming.md 準拠）
-4) Nanobanana Pro で **Pi01 / Pi02 / Pi03** を実行
+4) **生成は別コマンド**（明示的に「生成OK」が出た時だけ）
+   - Nanobanana Pro（Pi01/Pi02/Pi03）
 5) 生成画像を保存（命名規則で管理）
 
 ---

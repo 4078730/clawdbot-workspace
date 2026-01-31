@@ -8,11 +8,19 @@
 - 参照画像の検索ソースは **公式 / 検索 / DB** を併用（reference-search.md 参照）
 - 命名は `file-naming.md` に準拠
 
+## エージェント運用（重要）
+- **参照集めは Wooper（サブエージェント）で並列化**してOK
+  - 呼び出し例: `Wooper、<作品>の<キャラ>の参照集め`
+  - 詳細: `agent-playbook.md`
+- **サブエージェントの役割は「参照画像の保存」まで**
+- **生成（Nanobanana / V916 / 2Kなど）は明示的に「生成OK」が出た時だけ**
+
 ## 入力（最低限）
 - 作品名
 - キャラ名
 - 使用プロンプト（Pi01 / Pi02 / Pi03）
-- **参照画像：公式 / 検索 / MAL / AniList / Fandom の各1枚（計5枚）**
+- **参照画像：OFFICIAL / MAL / AniList / Fandom 各1枚 + SEARCH1-3（最大3枚）**
+  - 必要なら SEARCH1-3 から1枚に絞って採用
 
 ## 出力
 - `REF_BASE`（参照画像）
@@ -26,9 +34,10 @@
 - `assets/<作品名>/ref_base` など（file-naming.md 参照）
 - 保存先を事前に決めておく
 
-### 2) 参照画像を検索
+### 2) 参照画像を検索（候補収集）
 - 公式サイト / 画像検索（Google/Bing） / **MAL / AniList / Fandom** を併用
 - クエリ例は `reference-search.md` を使用
+- 時短する場合: **Wooperに「参照集め」を依頼して候補を自動収集**（SEARCHは最大3枚）
 
 ### 3) 画像を選定（人が判断）
 - 顔/髪/衣装が明瞭で、文字や透かしのないもの
@@ -37,7 +46,7 @@
 - `REF_BASE_<キャラ>_<SRC>_v01.jpg` 例: `REF_BASE_ルフィ_MAL_v01.jpg`
 - シーン参照が必要な場合: `REF_SCENE_<シーン名>_v01.jpg`
 
-### 5) Nanobanana Proで生成
+### 5) Nanobanana Proで生成（※「生成OK」の明示がある時だけ）
 - 参照画像をアップロード
 - Pi01 / Pi02 / Pi03 を貼り付け
 - 必要に応じて **「日本人」** を挿入

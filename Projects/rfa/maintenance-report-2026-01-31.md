@@ -31,3 +31,16 @@
 - (C) 用語の正（例：DataOps / データフライホイール / データライフサイクル）を決めて置換する
 - (D) master-context 内の表を追加でMarkdown化（必要なものだけ）
 - (E) 「技術アーキテクチャ」の章立て（4章/6章の重複っぽさ）をどう扱うか決めて整理
+
+---
+
+## ナイトリー追記（2026-01-31 23:00）
+
+- **用語の揺れ（Symbol Hub / Symbol Integration）**
+  - `glossary.md` に *Symbol Integration* を追加し、表記ゆれの意図を明記
+  - `README.md` の図を *Symbol Hub / Symbol Integration* に更新
+  - `fy26-business-plan.md` の定義箇所に、Symbol Hub表記との関係を注記
+- **用語の揺れ（データホイール）**
+  - `fy26-business-plan.md` の「データホイール」を「データフライホイール」注記で吸収
+- **締切/時刻の揺れ**
+  - `Projects/rfa/TODO-fy26-business-plan.md` の提出時刻を `TODO.md` 準拠（13:00）に更新（要確認注記つき）

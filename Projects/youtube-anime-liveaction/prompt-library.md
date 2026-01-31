@@ -35,6 +35,26 @@ Composition is casual and slightly tilted, framing this intimate moment with gen
 ｢[キャラクター名]｣
 ```
 
+### 2) BehindTheScenes-SceneRecreate-v1（暫定名）
+> **用途:** 「〇〇の撮影現場の舞台裏」シリーズ（人気シーンの実写再現）
+> **参照:** 1枚目=ベースキャラ実写 / 2枚目=シーン画像
+```
+｢顔の角度・体の姿勢を完全一致で実写化。目・眉・口・輪郭などの微細な表情要素まで忠実に再現。
+髪型・長さ・質感・流れは参照画像に厳密に準拠。
+
+make this a cinematic photorealistic live action and remove the text, make everything photorealistic even the background, actor of [作品名]
+Make everything ultra-detailed IMAX cinematic photorealistic live action, pristine cinematic quality
+iPhone 17 Pro candid angle, A background that blends naturally, realistic fabric textures
+Negative: worst quality, low quality, lowres, blurry, jpeg artifacts, bad anatomy, bad hands, bad fingers, extra fingers, deformed face, asymmetrical eyes, flat lighting, dull colors, logo, watermark, text
+Composition is casual and slightly tilted, framing this intimate moment with genuine spontaneity typical of authentic iPhone photography, evoking a relaxed, private atmosphere.
+
+2枚目のシーン画像を, 1枚目の人物で再現
+
+日本人
+
+｢[キャラクター名]の戦闘シーン｣
+```
+
 ## キャラ別テンプレ
 （未作成）
 

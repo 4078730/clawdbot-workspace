@@ -41,6 +41,7 @@ Nanobanana Pro（画像生成）
 - `prompt-library.md` — プロンプト資産
 - `production-log.md` — 制作ログ
 - `file-naming.md` — ファイル命名・保管ルール（案）
+- `reference-search.md` — 参照画像の検索・選定ルール
 - `Tasks/active.md` — 現在タスク
 
 ---

@@ -40,5 +40,32 @@
 - 問題点/気づき: なし
 - 次アクション: 生成結果の確認 → 次キャラ or Pi02
 
+### 2026-01-31
+- 実施内容: 公式/検索/MAL/AniList/Fandom から各1枚ベストを揃え、Pi01を2Kで5パターン生成
+- 出力/成果物（参照画像5枚）:
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_OFFICIAL_v01.webp（ONE PIECE.com / 1200x998）
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_SEARCH_v01.jpg（画像検索由来: AnimeCornerのog:image / 1895x1080）
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_MAL_v01.jpg（MyAnimeList / 225x350）
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_AniList_v01.png（AniList / 230x345）
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_Fandom_v01.webp（Fandom / 686x1435）
+- 出力/成果物（生成画像2K・5パターン）:
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-16-41_IMG_ルフィ_OFFICIAL_Pi01_NanobananaPro_2K.png
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-17-08_IMG_ルフィ_SEARCH_Pi01_NanobananaPro_2K.png
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-17-42_IMG_ルフィ_MAL_Pi01_NanobananaPro_2K.png
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-18-08_IMG_ルフィ_AniList_Pi01_NanobananaPro_2K.png
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-18-40_IMG_ルフィ_Fandom_Pi01_NanobananaPro_2K.png
+- 使用モデル/設定: Nanobanana Pro / 解像度=2K / Pi01
+- 問題点/気づき: プロンプト内の「日本人」はルフィには不要の可能性（品質悪化するなら削除候補）
+- 次アクション: 5パターン比較→採用→必要ならPi01プロンプト調整（日本人行のON/OFF等）
+
+### 2026-01-31
+- 実施内容: 5枚参照（MULTI5）画像を作成し、その参照でPi01を2K生成
+- 出力/成果物:
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\ref_base\REF_BASE_ルフィ_MULTI5_v01.png（5枚コラージュ）
+  - C:\Users\user\Videos\AnimeLiveAction\assets\ワンピース\img\2026-01-31-21-20-22_IMG_ルフィ_MULTI5_Pi01_NanobananaPro_2K.png
+- 使用モデル/設定: Nanobanana Pro / 解像度=2K / 入力=REF_BASE_ルフィ_MULTI5_v01.png
+- 問題点/気づき: 参照画像の縦横比が混在（コラージュ）
+- 次アクション: MULTI5版の品質比較→採用判断
+
 ---
 更新日: 2026-01-31

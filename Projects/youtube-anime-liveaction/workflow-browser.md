@@ -5,14 +5,14 @@
 
 ## 前提
 - **Chrome（Browser Relay）接続**で実行
-- 参照画像の検索ソースは **公式 / DB / 画像検索** を併用（reference-search.md 参照）
+- 参照画像の検索ソースは **公式 / 検索 / DB** を併用（reference-search.md 参照）
 - 命名は `file-naming.md` に準拠
 
 ## 入力（最低限）
 - 作品名
 - キャラ名
 - 使用プロンプト（Pi01 / Pi02 / Pi03）
-- **参照画像：MAL / AniList / Fandom の各1枚**
+- **参照画像：公式 / 検索 / MAL / AniList / Fandom の各1枚（計5枚）**
 
 ## 出力
 - `REF_BASE`（参照画像）
@@ -27,7 +27,7 @@
 - 保存先を事前に決めておく
 
 ### 2) 参照画像を検索
-- 公式サイト / **MAL / AniList / Fandom** / Google/Bing を併用
+- 公式サイト / 画像検索（Google/Bing） / **MAL / AniList / Fandom** を併用
 - クエリ例は `reference-search.md` を使用
 
 ### 3) 画像を選定（人が判断）

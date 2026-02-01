@@ -12,7 +12,8 @@
 
 **提出先:** `提出20260202` フォルダ  
 **戦略主担当:** 大坪さん  
-**提出済み:** [SharePointリンク](https://jppanasonic.sharepoint.com/:x:/s/TC.TPL.RD.CT613-11_CT/IQAdfI0A7BxwTpfHRtQErvFjATTBLPM6nuJ7DE9123I7Pgk?e=qBKGwM)（2026-01-29 提出）
+**帳票Excel提出済み:** [SharePointリンク](https://jppanasonic.sharepoint.com/:x:/s/TC.TPL.RD.CT613-11_CT/IQAdfI0A7BxwTpfHRtQErvFjATTBLPM6nuJ7DE9123I7Pgk?e=qBKGwM)（2026-01-29 提出）  
+**Confluenceフォーマット:** 未提出
 
 ---
 
@@ -226,7 +227,7 @@ PRDCAでは1テーマあたり約$425K（UCB連携1テーマ$125K + 人件費・
 - [ ] W&B前払い確認（小栗さん交渉中）
 - [ ] PRDCA費用確定
 - [x] 帳票ExcelへのデータInput（konuki） ✅ 2026-01-29
-- [x] Confluenceへの根拠コピペ（konuki） ✅ 2026-01-30
-- [x] 2/2 15:00 提出 → **2026-01-30 提出完了** 🎉
+- [ ] Confluenceフォーマット提出（未）
+- [ ] 2/2 15:00 提出（最終締切）
 - [ ] 戦略主担当（大坪さん）との打ち合わせ（〜2/10）
 - [ ] プロジェクトディスカッション（2/17-20 カテゴリB）

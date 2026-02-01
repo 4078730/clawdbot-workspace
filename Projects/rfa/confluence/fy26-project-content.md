@@ -1,34 +1,24 @@
 # FY26 RFA Confluence提出用（下書き）
 
-> **方針:** 事業計画の骨子（`fy26-business-plan.md`）を本文としてそのまま引き継ぎ、
-> Confluence要件は冒頭の「要件対応サマリ」と「計画表/課題表」で最小限満たす。
+> **構成:** 「プロジェクト概要 / 目標・マイルストーン・成果物 / 課題管理 / 事業計画（全文）」
+> **方針:** 事業計画の本文は `fy26-business-plan.md` をそのまま引き継ぐ。
 
 ---
 
-## 0. 要件対応サマリ（最小適合）
-
-- **プロジェクト種別:** 継続（FY25 → FY26）
-- **継続元プロジェクト名:** Robotics Foundation Agent (RFA)
-- **計画年数 / FY26時点:** FY24-27の段階計画 / FY26はPhase 2（現場PoC・事業検証）
-- **技術戦略の提供機能に対する位置づけ:** Industrial Embodied AI / RoboSync AI Suit Product (RFA Seed)
-- **過年度リソース（FY25実績）:** 67人月 / 7,102万円（経費 約2,554万円、総額 約9,656万円）
-- **過年度資料リンク:**
-  - `Projects/rfa/master-context.md`
-  - `Projects/rfa/fy26-business-plan.md`
-  - `Projects/rfa/fy26-master-budget.md`
-  - `meeting-notes/2026-01-26_CT-project-planning-fy26.md`
-
----
-
-## 1. 概要（事業貢献が見える1文）
+## 1. プロジェクト概要
 
 **LLM Agent + VLA + Robo Sync を統合し、物流・製造現場の属人的タスクを自律化して、PoC→事業判断に必要な技術・運用エビデンスを確立する。**
+
+**要件補足（簡潔に記載）**
+- 種別：継続（FY25 → FY26）
+- フェーズ：Phase 2（現場PoC/事業検証）
+- 技術戦略の位置づけ：Industrial Embodied AI / RoboSync AI Suit Product (RFA Seed)
+- 過年度リソース（FY25実績）：67人月 / 7,102万円（経費 約2,554万円、総額 約9,656万円）
+- 参考資料：`master-context.md` / `fy26-business-plan.md` / `fy26-master-budget.md`
 
 ---
 
 ## 2. 目標 / マイルストーン / 成果物（FY26 Q別）
-
-> 目標・マイルストーン・成果物が連動するように、Q単位で記載。
 
 | Q | 目標（Goal） | マイルストーン | 成果物 |
 |---|---|---|---|
@@ -49,9 +39,9 @@
 
 ---
 
-## 4. 本文（事業計画mdの原文）
+## 4. 事業計画（本文）
 
-> 以下は `Projects/rfa/fy26-business-plan.md` をそのまま転記。
+> 以下は `Projects/rfa/fy26-business-plan.md` の全文を転記。
 
 2026/01/20 第一次 事業計画向け整理
 

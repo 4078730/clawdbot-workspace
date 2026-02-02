@@ -23,3 +23,11 @@
 - (A) `fy26-business-plan.md` / `README.md` の「段階的自律化」の Phase 名称だけリネーム
   - 例: `Autonomy Phase 1/2/3` など
 - (B) 進行フェーズ（FY25〜FY27）と自律化フェーズの関係図を、どこか1ファイルに短く追記
+
+---
+
+## Nightly追記（23:40）
+
+- `master-context.md` に FY26ロードマップ/αβ定義の参照を追記、更新日を 2026-02-02 に更新
+- `README.md` の関連ドキュメントに `fy26-roadmap.md` と本メンテログを追加
+- `TODO.md` の 2/2 13:00 〆 を「期限超過・要確認」と明記

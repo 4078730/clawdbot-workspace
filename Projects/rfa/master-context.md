@@ -1,12 +1,13 @@
 # RFA Master Context
 
-*Last updated: 2026-01-31*
+*Last updated: 2026-02-02*
 
 このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 
 関連:
 - `Projects/rfa/README.md`
 - `Projects/rfa/fy26-business-plan.md`
+- `Projects/rfa/fy26-roadmap.md`
 - `Projects/rfa/glossary.md`
 
 ---
@@ -54,6 +55,10 @@ Agent + VLA + Robo Sync統合完了：3層構造の一気通貫動作
 VLAスキルブロック化：Robo Syncから利用可能な形で提供
 
 継続学習サイクルの実装：Microsoftとの協業によるMLOps基盤構築
+
+FY26ロードマップ（Q1〜Q4）と α/β 定義は `Projects/rfa/fy26-roadmap.md` に集約。
+- α版（9月 / Q2末）：社内実証投入、成功率70%目安
+- β版（3月 / Q4末）：運用安定・継続学習稼働、成功率90%目安
 
 中長期的には、FY27 までに SCM 領域での社会実装（パートナー現場での本番運用）を視野に入れ、ロボティクスAIにおけるパナソニック コネクトの技術的プレゼンスと事業機会の創出を目指す。
 

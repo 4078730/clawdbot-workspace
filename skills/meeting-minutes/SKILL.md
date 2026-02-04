@@ -8,6 +8,17 @@ description: Create full meeting transcripts and detailed meeting minutes/summar
 ## Overview
 Produce (1) a complete transcript and (2) a detailed structured summary from meeting audio/transcripts, after performing project-context reach.
 
+## 重要原則：不確実な情報を埋めない
+
+**背景情報や詳細を勝手に推測・補完しない。**
+
+- 不明確な点は「要確認」「未記載」として明示する
+- 不足情報があれば、ユーザーにヒアリングして確認する
+- 確認事項リストを作成し、誰に何を確認すべきかを整理する
+- ユーザーから追加情報を得たら、ドキュメントに反映する
+
+この原則により、議事録の信頼性と正確性を担保する。
+
 ## Workflow
 1) Gather inputs
 2) Context reach (mandatory)
@@ -61,3 +72,17 @@ Provide exactly two main sections, in this order:
 
 - Embed the 5-line summary and action items inside the 詳細サマリー section.
 - If something is missing (participants, date), state "未記載" instead of guessing.
+- Include "未確認事項（要フォローアップ）" section listing items that need verification.
+
+### 6) 不明点の処理フロー
+
+1. **素材を受け取ったら**：まず内容を確認し、不明確な点をリストアップ
+2. **確認事項を提示**：ユーザーに質問形式で確認（「Q1: 〇〇は何ですか？」）
+3. **回答を待つ or 「要確認」で進める**：ユーザー判断に委ねる
+4. **追加情報を反映**：回答があれば議事録を更新
+5. **確認先を記録**：「誰に」「何を」確認すべきかを議事録内に明記
+
+**禁止事項:**
+- 文脈から推測して詳細を補完する
+- 一般的な知識で不明点を埋める
+- 「おそらく〜だと思われる」という曖昧な記述で済ませる

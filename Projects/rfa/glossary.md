@@ -1,6 +1,6 @@
 # RFA 用語集（Glossary）
 
-*Last updated: 2026-01-31*
+*Last updated: 2026-02-04*
 
 この用語集は、RFA関連ドキュメント（master-context / FY26事業計画 / CXCデモ等）で使う言葉を「同じ意味で同じ名前で」使うためのメモ。
 
@@ -52,6 +52,18 @@
 
 - **Re-Plan（再計画）**
   - 失敗や状況変化に応じて、手順・スキル・パラメータを切り替える。
+
+- **GMR（Grasp-Manipulation-Release）**
+  - 池内先生の操作タスク分類フレームワーク。把持→操作→解放の3段階でタスクを構造化する。
+
+- **ICF（Intrinsic Contact Formation）**
+  - 物体の幾何形状から一意に決まる接触状態。例：平面同士の接触、エッジとの接触など。物理的に安定した状態を定義する。
+
+- **PTG（Perceptual Transition Graph）**
+  - ICF間の遷移をグラフ化したもの。知覚可能な状態遷移を表現し、タスクの進行を追跡する。
+
+- **STG（State Transition Graph）**
+  - 状態遷移グラフ。ICF/PTGを含む、タスク全体の状態空間と遷移関係を表現する。
 
 ---
 

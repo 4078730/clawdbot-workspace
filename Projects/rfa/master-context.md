@@ -1,6 +1,6 @@
 # RFA Master Context
 
-*Last updated: 2026-02-02*
+*Last updated: 2026-02-07*
 
 このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 
@@ -9,6 +9,8 @@
 - `Projects/rfa/fy26-business-plan.md`
 - `Projects/rfa/fy26-roadmap.md`
 - `Projects/rfa/glossary.md`
+- `Projects/rfa/ikeuchi-discussion-summary.md` — 池内先生ディスカッション（2026-02-03）詳細サマリー
+- `meeting-notes/2026-02-06-nakata-saito-hearing.md` — 彩都パーツセンター 中田さんヒアリング
 
 ---
 

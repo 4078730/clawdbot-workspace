@@ -7,11 +7,13 @@
 
 ---
 
-## Clawdbot認証設定
+## OpenClaw設定
 
-**ファイル:** `~/.clawdbot/agents/main/agent/auth-profiles.json`
+**メイン設定:** `~/.openclaw/openclaw.json`
+**エージェント設定:** `~/.openclaw/agents/main/agent/`
+**認証情報:** `~/.openclaw/agents/main/agent/auth-profiles.json`
 
-memory_searchを使うにはOpenAI APIキーがここに登録されている必要がある。
+memory_searchを使うにはOpenAI APIキーがauth-profiles.jsonに登録されている必要がある。
 ~/.bashrcの環境変数だけでは不十分。
 
 ---

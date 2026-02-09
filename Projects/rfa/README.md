@@ -56,6 +56,7 @@
 - [fy26-roadmap.md](fy26-roadmap.md) — FY26ロードマップ（α/β定義）
 - [data-flywheel-diagram-plan.md](data-flywheel-diagram-plan.md) — データフライホイール図の構成案
 - [cxc-demo-context.md](cxc-demo-context.md) — CXCデモの整理メモ
+- [fy26-task-selection-strategy.md](fy26-task-selection-strategy.md) — FY26ターゲットタスク選定戦略
 - [glossary.md](glossary.md) — 用語集（用語揺れ防止）
 - [maintenance-report-2026-02-02.md](maintenance-report-2026-02-02.md) — ドキュメント整備ログ
 

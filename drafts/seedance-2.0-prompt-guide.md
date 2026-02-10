@@ -533,5 +533,69 @@ Blade Runner風。退廃、鮮烈、孤独。
 
 ---
 
-*Source: Dreamina公式プロンプトガイド + WaveSpeed実践レポート + 中国語実践ガイド(1小时上手 Seedance 2.0) + konuki用カスタム*
+## Kling 3.0 × Freepik ワークフロー
+
+> Source: [@CharaspowerAI](https://twitter.com/CharaspowerAI)
+
+**1枚の画像 + 1つのプロンプト**だけで、最大15秒のシネマティックシーケンスを生成できる。カット編集なし。
+
+### ワークフロー
+
+**Step 1: ベース画像を作る**
+
+まずシネマティックで印象的な画像を生成。この1枚が映像全体のビジュアル基盤になる。
+
+```
+Full-body shot of a damaged android with torn synthetic skin
+revealing chrome beneath, wearing a long black coat,
+holding a glowing spear, standing among destroyed buildings
+in a dystopian city. Silver sparks and reflections create
+a cinematic, action movie poster-style scene with motion blur,
+high-resolution photography, hyper-detailed, dynamic pose,
+and hyper-realistic details.
+```
+
+**Step 2: Freepik Storyboard機能でアクション画像を生成（チートコード）**
+
+Freepikの**Storyboard機能**を使って、ハイライトしたいアクションが**既に含まれた画像**を生成する。
+
+- アクションを具体的に記述する
+- インスピレーションがなければAIに任せてもOK
+
+→ 結果：シネマティックな映像化のために**最初から設計された**ショットが得られる。
+
+**Step 3: Kling 3.0に画像 + プロンプト1つで投入**
+
+Storyboard画像をKling 3.0にドロップし、**シンプルなプロンプト1つ**を追加するだけ。
+
+```
+Make a montage of fast cut shots of an android fighting
+against a swarm of insect drones, epic action scene from a movie,
+include each shots from the story grid,
+include some dramatic dialogue in English,
+cinematic, epic, dramatic
+```
+
+→ Klingがスムーズで一貫性のある最大15秒のシネマティックシーケンスを生成。
+
+### Pro Tips
+
+- **同じ画像 + 同じプロンプトで2〜3回生成する。** Kling 3.0は自然にバリエーションを生成する（カメラモーション、ペーシング、微細なアクションの違い）。ベストテイクを選ぶだけ。
+- **プロンプトに「montage」「fast cut shots」を入れる**とマルチショット風の映像になる。
+- **「dramatic dialogue in English」**でキャラクターに台詞を喋らせる演出が可能。
+
+### Seedance 2.0との使い分け
+
+| | Seedance 2.0 | Kling 3.0 (Freepik) |
+|---|---|---|
+| **強み** | @構文によるマルチモーダル制御、キャラ一貫性 | 1画像→シネマティックシーケンスのシンプルさ |
+| **最大尺** | 15秒 | 15秒 |
+| **キャラ固定** | @Imageで強力にロック | ベース画像依存（Storyboardで補強） |
+| **動作制御** | @Videoで精密コピー | プロンプト記述ベース |
+| **ワークフロー** | 素材準備が重要 | 画像1枚+プロンプト1つで完結 |
+| **おすすめ用途** | 複数カット一貫性、ダンス複製 | 一発撮りのアクションシーン、プリビズ |
+
+---
+
+*Source: Dreamina公式プロンプトガイド + WaveSpeed実践レポート + 中国語実践ガイド(1小时上手 Seedance 2.0) + @CharaspowerAI Kling 3.0ワークフロー + konuki用カスタム*
 *ByteDance Larkガイド取得次第、追加予定*

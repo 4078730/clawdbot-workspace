@@ -7,16 +7,12 @@
 
 ## 基本ルール
 
-**語数は30〜100語。** 短すぎると曖昧、長すぎると焦点がぼやける。
-
-**メインの被写体から書き始める。** AIが最初に読んだ要素に集中する。
-
-**マルチモーダル入力時は `@AssetName` で参照。**
-例: `@Image1` `@Video1` `@Audio1`
-
-**イテレーションは1変数ずつ。** 照明だけ変える、動きだけ変える、スタイルだけ変える。一度に複数変えると何が効いたかわからなくなる。
-
-**ネガティブプロンプトは控えめに。** 不要なものを除外する指示は有効だが、複雑にしすぎない。
+- **語数は30〜100語。** 短すぎると曖昧、長すぎると焦点がぼやける。
+- **メインの被写体から書き始める。** AIが最初に読んだ要素に集中する。
+- **マルチモーダル入力時は `@AssetName` で参照。** 例: `@Image1` `@Video1` `@Audio1`
+- **イテレーションは1変数ずつ。** 照明だけ、動きだけ、スタイルだけ。
+- **ネガティブプロンプトは控えめに。** 不要なものを除外する指示は有効だが、複雑にしすぎない。
+- **日本語プロンプト対応。** Seedance 2.0は多言語対応。日本語でも動作するが、英語の方が安定する場合もある。
 
 ---
 
@@ -28,10 +24,10 @@
 
 例:
 ```
-A samurai warrior (被写体) draws his katana in one fluid motion (動作),
-standing in a rain-soaked alley lit by neon signs (環境),
-slow-motion close-up tracking the blade (カメラワーク),
-cinematic, dark, high contrast (スタイル)
+侍の戦士が一振りで刀を抜く。
+ネオンサインに照らされた雨の路地裏に立っている。
+刀身を追うスローモーションのクローズアップ。
+シネマティック、暗い、ハイコントラスト。
 ```
 
 ---
@@ -40,220 +36,271 @@ cinematic, dark, high contrast (スタイル)
 
 ### 1. バイラル動画・SNSコンテンツ
 
-Instagram Reels、TikTok、YouTube Shorts向け。テンポ、カット、テキストオーバーレイがポイント。
+Instagram Reels、TikTok、YouTube Shorts向け。
 
 ```
-Create a fast-paced video of a cat knocking over objects with
-exaggerated reactions, meme-style captions, and quick zooms
-for comedic effect.
-```
-
-```
-Show a morning routine of a college student with upbeat
-background music, jump cuts between scenes, and text overlays
-highlighting key moments.
+猫がテーブルの上のものを次々と落とす早いテンポの動画。
+大げさなリアクション、ミームスタイルのテロップ、
+コメディ効果のクイックズーム。
 ```
 
 ```
-Film a short recipe tutorial with close-up shots of ingredients,
-step-by-step instructions, and vibrant visual transitions.
+大学生のモーニングルーティン。アップテンポなBGM、
+シーン間のジャンプカット、
+キーモーメントをハイライトするテロップ付き。
+```
+
+```
+ショートレシピチュートリアル。
+材料のクローズアップ、ステップバイステップの手順、
+鮮やかなビジュアルトランジション。
 ```
 
 ---
 
 ### 2. キャラクター・IP一貫性
 
-複数シーンでキャラの見た目を維持したい場合。アニメシリーズやブランドキャラに有用。
+複数シーンでキャラの見た目を維持したい場合。
 
 ```
-Animate a superhero performing a signature move across different
-city rooftops while keeping costume, hairstyle, and facial
-features consistent.
-```
-
-```
-Show a brand mascot interacting with multiple environments,
-such as a park, office, and home, without changing its color
-palette or expressions.
+スーパーヒーローが異なる都市の屋上で必殺技を繰り出す。
+コスチューム、髪型、顔の特徴は全シーンで一貫させる。
 ```
 
 ```
-Bring a comic book hero into a new storyline, fighting villains
-while maintaining outfit, posture, and animation style.
+ブランドマスコットが公園、オフィス、自宅など
+複数の環境で交流する。カラーパレットと表情は変えない。
+```
+
+```
+コミックのヒーローが新しいストーリーで悪役と戦う。
+服装、姿勢、アニメーションスタイルを維持する。
 ```
 
 ---
 
 ### 3. スタイル・VFXトランスファー
 
-参照動画のスタイルを再現。ミュージックビデオ、広告、ショートフィルム向け。
+参照動画のスタイルを再現。
 
 ```
-Transform a daytime city street into a neon-illuminated cyberpunk
-environment with rain reflections, animated signs, and moving
-vehicles.
-```
-
-```
-Apply a dramatic cinematic style to a football highlight clip
-with slow-motion kicks, dynamic camera angles, and vivid color
-grading.
+昼間の都市の通りをネオンに照らされたサイバーパンク環境に変換。
+雨の反射、光るネオン看板、走り抜ける車両。
 ```
 
 ```
-Convert a forest animation into a magical fantasy scene with
-glowing plants, floating lights, and mystical fog effects.
+サッカーのハイライトクリップにドラマチックな
+シネマティックスタイルを適用。スローモーションのシュート、
+ダイナミックなカメラアングル、鮮やかなカラーグレーディング。
+```
+
+```
+森のアニメーションを魔法のファンタジーシーンに変換。
+光る植物、浮遊する光の粒子、神秘的な霧のエフェクト。
 ```
 
 ---
 
-### 4. ブランドマーケティング・キャンペーン
+### 4. ブランドマーケティング
 
 プロモーション動画、製品紹介、広告素材。
 
 ```
-Show a product unboxing with close-up shots, animated text
-highlighting features, and smooth panning to focus on brand logos.
+製品の開封動画。クローズアップ、
+機能をハイライトするアニメーションテキスト、
+ブランドロゴにフォーカスするスムーズなパン。
 ```
 
 ```
-Create a lifestyle ad showing people using the product in
-different daily scenarios, keeping brand colors and logo visible.
+日常のさまざまなシーンで製品を使う人々のライフスタイル広告。
+ブランドカラーとロゴを常に見せる。
 ```
 
 ```
-Film a promotional offer with animated countdowns, text overlays
-showing discounts, and bright brand-themed visuals.
+プロモーションオファー動画。
+アニメーションカウントダウン、割引表示のテロップ、
+明るいブランドカラーのビジュアル。
 ```
 
 ---
 
 ### 5. 映画・ゲーム・プリビズ
 
-撮影前のシーン視覚化、ストーリーボード、アクションシーケンス。
+撮影前のシーン視覚化。
 
 ```
-Storyboard a chase scene in a busy city with multiple camera
-angles, dynamic character movements, and realistic environmental
-interactions.
-```
-
-```
-Visualize a fantasy battle between heroes and monsters in a
-forest with magic effects, detailed terrain, and animated
-camera sweeps.
+忙しい都市でのチェイスシーンのストーリーボード。
+複数のカメラアングル、ダイナミックなキャラクターの動き、
+リアルな環境とのインタラクション。
 ```
 
 ```
-Create a cinematic intro for a short film with a character
-entering a dimly lit room, dramatic camera pans, and
-suspenseful music.
+森でのヒーローとモンスターのファンタジーバトル。
+魔法エフェクト、詳細な地形、
+カメラが戦場を旋回するスイープショット。
+```
+
+```
+短編映画のシネマティックイントロ。
+薄暗い部屋に入るキャラクター、
+ドラマチックなカメラパン、サスペンスフルな音楽。
 ```
 
 ---
 
 ### 6. インタラクティブ・クリエイティブ
 
-AR/VR体験、教育コンテンツ、視聴者参加型。
+AR/VR体験、教育コンテンツ。
 
 ```
-Animate a virtual classroom where students interact with 3D
-objects while the AI teacher reacts in real-time to their actions.
-```
-
-```
-Design an AR shopping experience where users click on products,
-view details, and see animated previews with realistic shadows.
+仮想教室のアニメーション。
+生徒が3Dオブジェクトとインタラクトし、
+AI教師がリアルタイムで反応する。
 ```
 
 ```
-Create an interactive storytelling video where viewers make
-choices, and characters respond differently depending on the
-path selected.
+ARショッピング体験の設計。
+ユーザーが製品をクリックし、詳細を表示し、
+リアルな影付きのアニメーションプレビューを見る。
+```
+
+```
+インタラクティブストーリーテリング動画。
+視聴者が選択を行い、
+選んだパスに応じてキャラクターが異なる反応を見せる。
 ```
 
 ---
 
 ## マルチモーダル入力プロンプト例
 
-参照素材を使って精度を上げるパターン。
-
 ### 画像 + テキスト
 ```
-Using @Image1 as the main character reference, create a smooth
-video of the character walking through a neon-lit futuristic
-street. Maintain facial features and outfit from the reference.
-Cinematic lighting, slow camera dolly forward.
+@Image1のキャラクターをメインリファレンスとして使用。
+ネオンに照らされた未来的な街を歩くスムーズな動画を作成。
+リファレンスの顔の特徴と服装を維持する。
+シネマティックな照明、ゆっくりとしたドリーイン。
 ```
 
 ### 画像 + 音声
 ```
-Create a smooth video using @Image1 as the main reference.
-Add natural head, eye, and ear movements, and sync the cat's
-expressions with @Audio1. Keep the scene cute, stable, and
-visually consistent with soft motion and lighting.
+@Image1をメインリファレンスとしてスムーズな動画を作成。
+自然な頭、目の動きを追加し、
+猫の表情を@Audio1の遊び心のある声に同期させる。
+シーンはかわいく安定させ、柔らかい動きと照明で一貫させる。
 ```
 
 ### 動画参照 + テキスト
 ```
-Referencing the camera movement and scene transitions in @Video1,
-recreate the sequence with the character from @Image1. Match the
-pacing, shot composition, and dynamic energy of the original clip.
+@Video1のカメラワークとシーントランジションを参照し、
+@Image1のキャラクターでシーケンスを再現する。
+元のクリップのペース、ショット構成、
+ダイナミックなエネルギーを合わせる。
 ```
 
-### フレーム指定（Single-frame モード）
+### フレーム指定（Single-frameモード）
 ```
-A smooth, natural video transition between the first and last
-frame showing young girl kids. The girls gently move, blink,
-and smile with soft, realistic facial expressions. Subtle head
-and hand movements add life, with natural body motion and
-calm energy.
+最初と最後のフレーム間のスムーズで自然なトランジション。
+少女たちが柔らかく動き、瞬きし、
+リアルな表情で微笑む。
+頭や手の微細な動きが生命感を加え、
+自然な体の動きと穏やかな雰囲気。
 ```
 
 ---
 
-## アニメ実写化向けプロンプト（konuki用）
-
-YouTube AnimeLiveActionチャンネル向けのカスタムパターン。
+## アニメ実写化向けプロンプト（YouTube AnimeLiveAction用）
 
 ### バトルシーン
 ```
-A live-action battle scene inspired by anime. Two warriors face
-off in a destroyed urban environment. Dynamic camera movements
-with speed lines effect. One character charges forward with
-glowing energy around their fist. Cinematic, high contrast,
-dramatic lighting, debris particles in the air.
+アニメ風の実写バトルシーン。
+崩壊した都市環境で二人の戦士が対峙する。
+スピードライン効果付きのダイナミックなカメラワーク。
+一人のキャラクターが拳に光るエネルギーを纏って突進する。
+シネマティック、ハイコントラスト、ドラマチックな照明、
+空中に舞うデブリ。
 ```
 
 ### キャラクター登場
 ```
-A dramatic character reveal in live-action anime style.
-A lone figure stands on a rooftop at sunset, coat billowing
-in the wind. Camera slowly orbits around them. The character
-turns to face the camera with intense expression.
-Cinematic color grading, lens flare, shallow depth of field.
+実写アニメ風のドラマチックなキャラクター登場シーン。
+夕暮れの屋上に一人の人物が立ち、コートが風にたなびく。
+カメラがゆっくりとキャラクターの周りを回る。
+キャラクターが鋭い表情でカメラに振り向く。
+シネマティックなカラーグレーディング、レンズフレア、
+浅い被写界深度。
 ```
 
 ### 必殺技シーン
 ```
-A powerful special attack sequence in live-action. The character
-gathers energy with both hands, glowing blue particles swirling
-around them. Camera pulls back to wide shot as they release
-a massive energy blast forward. Shockwave ripples through the
-environment. Epic, dramatic, VFX-heavy, slow-motion impact.
+実写の必殺技シーン。
+キャラクターが両手でエネルギーを集め、
+青い光の粒子が周りに渦巻く。
+カメラが引いてワイドショットになり、
+前方に巨大なエネルギーブラストを放つ。
+衝撃波が環境に波紋を広げる。
+壮大、ドラマチック、VFX重視、スローモーションのインパクト。
+```
+
+### 領域展開（呪術廻戦風）
+```
+実写の領域展開シーン。
+キャラクターが手印を結び、周囲の空間が歪み始める。
+暗い球体が急速に拡大し、周囲の風景を飲み込む。
+内部には異質な空間が広がり、幾何学模様が浮かぶ。
+カメラが球体内部に入り、広大な異空間を見せる。
+ダーク、荘厳、超自然的な雰囲気、重低音のサウンド。
+```
+
+### 術式発動
+```
+実写の術式発動シーン。
+キャラクターの目が光り、呪力のオーラが体から立ち昇る。
+地面にひびが入り、周囲の小石が浮遊する。
+手のひらから呪力が可視化され、赤黒いエネルギーが収束する。
+クローズアップからミディアムショットへ、
+力の解放を示すカメラプル。緊迫感のある照明。
+```
+
+### 高速バトル（連続攻防）
+```
+実写の高速格闘シーン。
+二人のキャラクターが超高速で拳と蹴りを交換する。
+攻撃がぶつかるたびに衝撃波が発生。
+スローモーション→通常速度→スローモーションの緩急をつける。
+カメラは二人の間を縫うように動く。
+汗、砂埃、衣服の揺れなど物理的ディテールを重視。
 ```
 
 ---
 
-## Tips リマインダー
+## WaveSpeed API用プロンプトテンプレート
 
-- プロンプトは **英語推奨**（多言語対応だが英語が最も安定）
-- **動きの記述を具体的に**（"moves" ではなく "slowly walks forward while looking left"）
-- **カメラワークを明示**（dolly, pan, orbit, tracking shot, close-up, wide shot）
-- **雰囲気は形容詞を2-3個**（cinematic, dark, high contrast / soft, warm, dreamy）
-- **物理的な描写を入れる**（wind blowing hair, rain drops, dust particles）
+WavespeedでSeedance 2.0を使う場合の構造化テンプレート。
+
+```
+シーン: [フレーム内の一文の説明]
+動き: [カメラ動作を一つだけ: ゆっくりドリーイン | 固定+被写体の微細な動き | 緩やかなパン | 静止]
+ルック: [柔らかい自然光 | ニュートラルスタジオ | 夜の都市 | ハイキー商業]
+被写体忠実度: [リファレンス: 画像またはクリップ]、アイデンティティと色を正確に再現
+尺: [6〜12秒]
+アスペクト: [16:9 | 9:16]
+ペーシング: [途切れのない連続ショット | 均一テンポ | 急な変化なし]
+NG: [手の歪みなし | レンズブリージングなし | ズームポップなし]
+```
 
 ---
 
-*Source: Dreamina公式プロンプトガイド + konuki用カスタム*
+## Tips
+
+- **動きの記述は具体的に**（「動く」ではなく「左を見ながらゆっくり前に歩く」）
+- **カメラワークを明示**（ドリー、パン、オービット、トラッキングショット、クローズアップ、ワイドショット）
+- **雰囲気は形容詞2-3個**（シネマティック・暗い・ハイコントラスト / 柔らかい・温かい・夢のような）
+- **物理描写を入れる**（風に揺れる髪、雨粒、砂埃の粒子）
+- **1つのカメラ動作に絞る**（ドリーイン+オービット+ラックフォーカスは欲張りすぎ）
+- **スタイルは1つに決める**（スタジオ+水彩+グリッチ+フィルムは混乱する）
+
+---
+
+*Source: Dreamina公式プロンプトガイド + WaveSpeed実践レポート + konuki用カスタム*
 *ByteDance Larkガイド取得次第、追加予定*

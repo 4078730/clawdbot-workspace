@@ -5,32 +5,39 @@
 
 ## 📊 総合比較表
 
-| 名前 | メーカー | DOF | リーチ | ペイロード | 価格帯（単腕） | オープンソース | LeRobot対応 | 量産適性 | VLA実績 |
-|------|---------|-----|--------|-----------|---------------|--------------|-------------|---------|---------|
-| **SO-101** | HuggingFace / TheRobotStudio | 5+1 | ~300mm | ~200g | **~$100** (部品) | ✅ 完全OS | ✅ 公式 | 3Dプリント | ⭐⭐⭐ 最多 |
-| **Koch v1.1** | Alexander Koch | 5+1 | ~300mm | ~200g | ~$200 | ✅ 完全OS | ✅ 公式 | 3Dプリント | ⭐⭐ |
-| **XLeRobot** | vectorwang (コミュニティ) | 双腕+移動 | SO-100x2 | ~200g | **~$660** (双腕+台車) | ✅ 完全OS | ✅ | 3Dプリント+IKEA | ⭐⭐ |
-| **AhaRobot** | 学術 (arXiv) | 双腕+移動 | - | - | **~$1,000** (双腕+移動) | ✅ 完全OS | ✅ | 3Dプリント | ⭐ |
-| **StarAI (Viola+Violin)** | FashionStar | 7 | ~280mm | ~500g | **~$839** (dual kit) | 部分OS | ✅ | 金属+組立済 | ⭐⭐ |
-| **StarAI (Cello+Violin)** | FashionStar | 7 | ~400mm | ~750g | **~$1,799** (dual kit) | 部分OS | ✅ | 金属+組立済 | ⭐ |
-| **RoArm-M3** | Waveshare | 5+1 | ~300mm | ~500g | **~$200-300** | 部分OS | ✅ (コミュニティ) | 金属 | ⭐ |
-| **reBot B601** | Seeed Studio | 6+1 | **650mm** | **1.5kg** | **<$1,000** | ✅ 完全OS | ✅ (計画中) | ブラシレス金属 | 新製品 |
-| **Forte** | 学術 (arXiv/MIT系) | 6 | 467mm | 630g | **~$215** | ✅ 完全OS | 未対応 | 3Dプリント | 論文のみ |
-| **AgileX PiPER** | AgileX Robotics | 6 | ~500mm | **1.5kg** | **~$2,499** | 部分OS | ✅ (phosphobot) | 金属量産 | ⭐⭐ |
-| **AgileX NERO** | AgileX Robotics | **7** | **580mm** | **3kg** | **~$2,500** | 部分OS | 対応予定 | 金属量産 | 新製品 |
-| **AgileX COBOT Magic** | AgileX Robotics | 双腕6x2+移動 | - | - | ~$10,000+ | 部分OS | ✅ | 金属量産 | ⭐⭐ |
-| **OpenArm 01** | Enactic | **7** | ~600mm | **4.1kg** | **~$2,500** (BOM) / ~$6,500 (双腕キット) | ✅ 完全OS | ROS2/MuJoCo | 金属(DAMIAO) | ⭐ |
-| **Agility A1** | Foxtech (OpenArmベース) | 7 | ~600mm | 4.1kg | 要問合せ | ✅ (OpenArmベース) | ROS2 | 金属量産品 | ⭐ |
-| **Trossen WidowX AI** | Trossen Robotics | 6 | ~500mm | ~750g | **~$4,500** (Solo: $8,999) | 部分OS | ✅ 公式 | 金属量産 | ⭐⭐⭐ |
-| **TRLC-DK1** | Trossen Robotics (旧) | - | - | - | $3,999/$6,999 | 部分OS | ✅ | 金属 | ⭐⭐ |
-| **myCobot 280** | Elephant Robotics | 6 | 280mm | 250g | ~$500-700 | 部分OS | コミュニティ | 金属量産 | ⭐ |
-| **myCobot 320** | Elephant Robotics | 6 | 350mm | **1kg** | ~$1,500-2,000 | 部分OS | コミュニティ | 金属量産 | ⭐ |
-| **Galaxea R1 / R1 Pro** | Galaxea Dynamics | 双腕7x2+移動 | - | - | 未公開（研究向け） | 部分OS | 独自SDK | 金属量産 | ⭐⭐⭐ |
-| **UFACTORY Lite6** | UFACTORY | 6 | 440mm | 600g | **~$2,999** | SDKのみ | ROS2 | 金属量産 | ⭐⭐ |
-| **UFACTORY xArm 6** | UFACTORY | 6 | 700mm | **5kg** | **~$5,299** | SDKのみ | ROS2 | 金属量産 | ⭐⭐ |
-| **RealMan ECO65** | RealMan | 6 | 650mm | 5kg | ~$3,000-5,000 | 部分OS | RealBOT | 金属量産 | ⭐⭐ |
-| **Dobot Magician E6** | Dobot | 6 | - | ~500g | ~€5,980 | SDKのみ | ROS2 | 金属量産 | ⭐ |
-| **U-ARM** | MINT-SJTU (学術) | テレオペIF | - | - | **超低コスト** | ✅ | ✅ LeRobot-Anything | N/A | ⭐ 論文 |
+| 名前 | メーカー | DOF | リーチ | ペイロード | 価格帯（単腕） | OS | LeRobot | VLA実績 | リンク |
+|------|---------|-----|--------|-----------|---------------|---|---------|---------|--------|
+| **SO-101** | HuggingFace / TheRobotStudio | 5+1 | ~300mm | ~200g | **~$100** (部品) | ✅ | ✅ 公式 | ⭐⭐⭐ | [GitHub](https://github.com/TheRobotStudio/SO-ARM100) / [購入(Seeed)](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit.html) / [秋月電子](https://akizukidenshi.com/) |
+| **Koch v1.1** | Alexander Koch | 5+1 | ~300mm | ~200g | ~$200 | ✅ | ✅ 公式 | ⭐⭐ | [GitHub](https://github.com/jess-moss/koch-v1-1) |
+| **XLeRobot** | vectorwang | 双腕+移動 | SO-100x2 | ~200g | **~$660** (双腕+台車) | ✅ | ✅ | ⭐⭐ | [GitHub](https://github.com/Vector-Wangel/XLeRobot) / [Docs](https://xlerobot.readthedocs.io/) |
+| **AhaRobot** | 学術 | 双腕+移動 | - | - | **~$1,000** | ✅ | ✅ | ⭐ | [arXiv](https://arxiv.org/abs/2503.10070) |
+| **StarAI (Viola+Violin)** | FashionStar | 7 | ~280mm | ~500g | **~$839** (dual) | 部分 | ✅ | ⭐⭐ | [購入(Seeed)](https://www.seeedstudio.com/Fashionstar-Star-Arm-Viola-Violin-p-6497.html) / [購入(Seeed JP)](https://jp.seeedstudio.com/StarAi-Arm-Violin-p-6571.html) |
+| **StarAI (Cello+Violin)** | FashionStar | 7 | ~400mm | ~750g | **~$1,799** (dual) | 部分 | ✅ | ⭐ | [Seeed Studio](https://www.seeedstudio.com/) |
+| **RoArm-M3** | Waveshare | 5+1 | ~300mm | ~500g | **~$200-300** | 部分 | ✅ | ⭐ | [Waveshare](https://www.waveshare.com/roarm-m3.htm) / [Amazon.co.jp](https://www.amazon.co.jp/) |
+| **reBot B601** | Seeed Studio | 6+1 | **650mm** | **1.5kg** | **<$1,000** | ✅ | ✅ (予定) | 🆕 | [GitHub](https://github.com/Seeed-Projects/reBot-DevArm) / [Seeed](https://www.seeedstudio.com/) |
+| **Forte** | 学術 | 6 | 467mm | 630g | **~$215** | ✅ | 未対応 | 📄 | [arXiv](https://arxiv.org/abs/2507.15693) |
+| **AgileX PiPER** | AgileX | 6 | ~500mm | **1.5kg** | **~$2,499** | 部分 | ✅ | ⭐⭐ | [購入](https://global.agilex.ai/products/piper) |
+| **AgileX NERO** | AgileX | **7** | **580mm** | **3kg** | **~$2,500** | 部分 | 予定 | 🆕 | [AgileX](https://global.agilex.ai/) |
+| **AgileX COBOT Magic** | AgileX | 双腕6x2+移動 | - | - | ~$10,000+ | 部分 | ✅ | ⭐⭐ | [購入](https://global.agilex.ai/products/cobot-magic) |
+| **OpenArm 01** | Enactic | **7** | ~600mm | **4.1kg** | **~$2,500** (BOM) | ✅ | ROS2 | ⭐ | [公式](https://open-arm.org/) / [GitHub](https://github.com/enactic/openarm) |
+| **Agility A1** | Foxtech | 7 | ~600mm | 4.1kg | 要問合せ | ✅ | ROS2 | ⭐ | [Foxtech](https://www.foxtechrobotics.com/) |
+| **Trossen WidowX AI** | Trossen Robotics | 6 | ~500mm | ~750g | **~$4,500** | 部分 | ✅ 公式 | ⭐⭐⭐ | [購入](https://www.trossenrobotics.com/widowx-ai) / [日本(UNIPOS)](https://www.unipos.net/products/widowx-ai/) |
+| **TRLC-DK1** | Trossen (旧) | - | - | - | $3,999/$6,999 | 部分 | ✅ | ⭐⭐ | [Trossen](https://www.trossenrobotics.com/) |
+| **myCobot 280** | Elephant Robotics | 6 | 280mm | 250g | ~$500-700 | 部分 | コミュ | ⭐ | [公式](https://www.elephantrobotics.com/en/mycobot-en/) / [スイッチサイエンス](https://www.switch-science.com/) |
+| **myCobot 320** | Elephant Robotics | 6 | 350mm | **1kg** | ~$1,500-2,000 | 部分 | コミュ | ⭐ | [公式](https://www.elephantrobotics.com/) |
+| **Galaxea R1** | Galaxea Dynamics | 双腕7x2+移動 | - | - | 未公開 | 部分 | 独自 | ⭐⭐⭐ | [公式](https://www.galaxea.ai/) |
+| **UFACTORY Lite6** | UFACTORY | 6 | 440mm | 600g | **~$2,999** | SDK | ROS2 | ⭐⭐ | [購入](https://www.ufactory.cc/lite-6-collaborative-robot/) / [日本(UNIPOS)](https://www.unipos.net/) |
+| **UFACTORY xArm 6** | UFACTORY | 6 | 700mm | **5kg** | **~$5,299** | SDK | ROS2 | ⭐⭐ | [購入](https://www.ufactory.cc/xarm-collaborative-robot/) / [日本(UNIPOS)](https://www.unipos.net/) |
+| **RealMan ECO65** | RealMan | 6 | 650mm | 5kg | ~$3,000-5,000 | 部分 | RealBOT | ⭐⭐ | [公式](https://www.realman-robotics.com/) |
+| **Dobot Magician E6** | Dobot | 6 | - | ~500g | ~€5,980 | SDK | ROS2 | ⭐ | [公式](https://www.dobot-robots.com/) |
+| **U-ARM** | MINT-SJTU | テレオペIF | - | - | **超低コスト** | ✅ | ✅ | ⭐ | [arXiv](https://arxiv.org/abs/2509.02437) |
+
+### 🔗 主要エコシステムリンク
+- **LeRobot**: [GitHub](https://github.com/huggingface/lerobot) / [Docs](https://huggingface.co/docs/lerobot)
+- **OpenPI (π0/π0.5)**: [GitHub](https://github.com/Physical-Intelligence/openpi)
+- **phosphobot**: [GitHub](https://github.com/phospho-app/phosphobot) / [公式](https://phospho.ai/)
+- **GR00T N1**: [NVIDIA Isaac](https://developer.nvidia.com/isaac)
+- **ロボットカタログ**: [Robots That Exist](https://robotsthatexist.com/robots)
 
 ---
 

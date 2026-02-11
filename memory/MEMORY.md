@@ -1,6 +1,6 @@
 # MEMORY.md - 長期記憶（昇格済み情報）
 
-最後更新: 2026-02-10 (Night Maintenance)
+最後更新: 2026-02-11 (Night Maintenance)
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## 📍 ターゲット現場
 
-### 1. 彩都パーツセンター（愛知県春日井市）
+### 1. 彩都パーツセンター（大阪府茨木市）
 
 **基本情報:**
 - 取扱品番: 12万品番
@@ -102,12 +102,12 @@
 
 ## 🧠 理論的基盤
 
-### 池内先生（大阪大学）の ICF/PTG/STG フレームワーク
+### 池内先生（Microsoft / 東大名誉教授）の ICF/PTG/STG フレームワーク
 
 **用語:**
-- **GMR（General Manipulation Robots）:** 多目的操作ロボット
-- **PTG（Prehensile Task Graphs）:** 把持タスク図 — タスク構造を有向グラフで表現
-- **ICF（Instantaneous Composition Function）:** 瞬間合成関数
+- **GMR（Grasp-Manipulation-Release）:** 把持→操作→解放の3フェーズで操作を分解するフレームワーク
+- **PTG（Physical Task Group）:** 物理制約に基づくタスク分類（Detach/Picking, LinearClose等）
+- **ICF（Interaction / Contact Form）:** 物体と環境の接触状態の分類
 - **STG（Symbolic Task Graph）:** 記号的タスク図
 
 **RFA への適用:**
@@ -198,7 +198,7 @@
 
 | 日付 | イベント | 予定内容 |
 |------|---------|---------|
-| 2026-02-12 | アドバイザリーボード資料期限 | 大坪さり作業中 |
+| 2026-02-12 | アドバイザリーボード資料期限 | 大坪さん作業中 |
 | 2026-02-15 | キミチカ説明書 期限 | Illustrator レイアウト最終化 |
 | 2026-02-17-20 | FY26 プロジェクトディスカッション | カテゴリ B、合意形成 |
 | 2026-09（FY26 Q2末） | **α版リリース** | 成功率 70%、RoboSync×VLA 統合動作確認 |

@@ -1,6 +1,6 @@
 # RFA 用語集（Glossary）
 
-*Last updated: 2026-02-04*
+*Last updated: 2026-02-11*
 
 この用語集は、RFA関連ドキュメント（master-context / FY26事業計画 / CXCデモ等）で使う言葉を「同じ意味で同じ名前で」使うためのメモ。
 
@@ -56,14 +56,14 @@
 - **GMR（Grasp-Manipulation-Release）**
   - 池内先生の操作タスク分類フレームワーク。把持→操作→解放の3段階でタスクを構造化する。
 
-- **ICF（Intrinsic Contact Formation）**
-  - 物体の幾何形状から一意に決まる接触状態。例：平面同士の接触、エッジとの接触など。物理的に安定した状態を定義する。
+- **ICF（Interaction / Contact Form）**
+  - 物体と環境の接触状態を定義する概念。NC(非接触)、PC(面接触)、TR(点接触)等の分類。「接触状態の遷移」がスキル発生単位として扱われる。
 
-- **PTG（Perceptual Transition Graph）**
-  - ICF間の遷移をグラフ化したもの。知覚可能な状態遷移を表現し、タスクの進行を追跡する。
+- **PTG（Physical Task Group）**
+  - 純粋な物理制約に従うタスク分類。PTG11(Detach/Picking)、PTG33(LinearClose)等。工業組立で有効。
 
-- **STG（State Transition Graph）**
-  - 状態遷移グラフ。ICF/PTGを含む、タスク全体の状態空間と遷移関係を表現する。
+- **STG（Semantic Task Group）**
+  - 人間の意図・常識に基づく仮想的制約を含んだタスク分類。CarefullyDetach, PlanarTranslate, Rotate等。梱包・家庭作業・柔軟物操作で支配的。
 
 ---
 

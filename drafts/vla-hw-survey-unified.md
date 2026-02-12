@@ -415,6 +415,20 @@ WidowX AI / TrossenArm（新世代、2025年Q1発売）について、arXiv、IC
 - NeurIPS/ICML/CoRL等での使用: **0件**
 - Google I/O 2025でのGemini Roboticsデモ: 旧ALOHA 2（ViperX 300）を使用、**WidowX AIではない**
 
+### 別名での登場も調査済み（全て旧型と確認）
+
+以下の名称バリエーションで網羅的に検索したが、新型の使用例は見つからなかった:
+- `WidowX AI`, `TrossenArm`, `Trossen AI`, `Trossen arm`, `iNerve`, `QDD servo`
+- `Stationary AI`, `Mobile AI`, `Solo AI`, `Aloha Solo`
+
+| 論文/デモ | 記載 | 実態 |
+|-----------|------|------|
+| **FAST** (PI, 2025/1) | "Trossen Biarm", "Trossen Viper-X" | 旧型ViperX 300 |
+| **Gemini Robotics** (DeepMind) | "ALOHA 2 system" | 旧型ViperX 300 |
+| **Gemini Robotics SDK** (GitHub) | `embodiments/Aloha robot` | 旧型ALOHA 2 |
+
+Trossen社が **ALOHA → Trossen AI** にリブランドしたため紛らわしいが、論文中の「Trossen」は全て旧型。
+
 ### なぜ論文実績がゼロなのか（分析）
 
 | 理由 | 説明 |

@@ -384,4 +384,127 @@ ICLR 2026による累計更新:
 
 ---
 
+---
+
+## 第11部: WidowX AI 特化調査（2026-02-12追加）
+
+### 調査結果: 査読付き論文での採用は確認されず
+
+WidowX AI / TrossenArm（新世代、2025年Q1発売）について、arXiv、ICLR 2026、Google Scholar、GitHub等を網羅的に調査した結果:
+
+**✅ 確認できたもの（ソフトウェア統合・デモ）:**
+
+1. **OpenPI統合** (2025年12月)
+   - Trossen公式がOpenPIフォークを作成・公開
+   - Pi0/Pi0.5のデータ収集・fine-tune・推論をWidowX AIで実行可能
+   - ドキュメント: https://docs.trossenrobotics.com/trossen_arm/main/tutorials/openpi.html
+   - 設定クラス `BiWidowXAIFollowerConfig` が存在
+
+2. **LeRobot統合PR** (2025年10月, GitHub Issue #2228)
+   - WidowX AIモデル + 深度カメラのサポートPRがHuggingFace/LeRobotに提出
+   - 「実装はかなりテスト済み」とのコメント
+
+3. **Trossen公式のzero-shotデモ**
+   - 旧ALOHAキットでPi0のzero-shot推論に成功したブログ記事公開
+   - これを基にWidowX AIへの移行を進めた
+
+**❌ 確認できなかったもの（論文での使用）:**
+
+- arXivでの「WidowX AI」「TrossenArm」「iNerve」を含む論文: **0件**
+- ICLR 2025/2026での使用: **0件**
+- NeurIPS/ICML/CoRL等での使用: **0件**
+- Google I/O 2025でのGemini Roboticsデモ: 旧ALOHA 2（ViperX 300）を使用、**WidowX AIではない**
+
+### なぜ論文実績がゼロなのか（分析）
+
+| 理由 | 説明 |
+|------|------|
+| **発売時期** | 2025年Q1出荷開始 → 論文執筆・査読に最低6-12ヶ月 |
+| **データセット不在** | BridgeData V2 (WidowX 250) やDROID (Franka) のような大規模データセットがない |
+| **旧世代との非互換** | モーター・制御系が完全に異なるため、旧WidowX用のpre-trainedモデルがそのまま使えない |
+| **コスト** | 単腕$4,500〜は低コスト勢(SO-101, PiPER)と比べて割高 |
+| **OpenPI統合が最近** | 2025年12月にようやく公開 → 研究利用はこれから |
+
+### 今後の見通し
+
+- **2026年後半〜2027年**: OpenPIベースのfine-tuning結果が論文として出始める可能性
+- **Trossen自身がデータセット公開を計画**: 「A complete walkthrough is coming soon」との記載あり
+- **LeRobot統合が進めば**: コミュニティでの採用が加速する可能性
+
+### 結論
+
+WidowX AIは**ハードウェアとしては出荷済み・ソフトウェア統合も進行中**だが、**査読付き論文での使用実績はゼロ**。研究論文に載るには2026年後半〜2027年以降になる見込み。現時点で「論文実績」を重視するなら、WidowX AIよりもAgileX COBOT Magic/PiPERの方が圧倒的に有利。
+
+---
+
+## 第12部: 低コスト〜中コストアーム総合カタログ
+
+> ソース: konuki調査レポート (2026-02-10) を統合
+
+### Tier 1: 超低コスト（~$500以下）— データ収集の量を稼ぐ
+
+| 製品 | 価格 | DoF | リーチ | ペイロード | LeRobot | VLA実績 |
+|------|------|-----|--------|-----------|---------|---------|
+| **SO-101** | ~$100(部品)/$240(dual) | 5+1 | ~300mm | ~200g | ✅公式 | ⭐⭐⭐ SmolVLA公式 |
+| Koch v1.1 | ~$200(dual) | 5+1 | ~300mm | ~200g | ✅公式 | ⭐⭐ |
+| RoArm-M3 | ~$200-300 | 5+1 | ~300mm | ~500g | ✅ | ⭐ |
+| Forte | ~$215 | 6 | 467mm | 630g | 未対応 | 論文段階 |
+
+### Tier 2: 中コスト（$500-$2,000）— 品質と価格のバランス
+
+| 製品 | 価格 | DoF | リーチ | ペイロード | LeRobot | 特記 |
+|------|------|-----|--------|-----------|---------|------|
+| **StarAI Viola+Violin** | $839(dual) | 7 | ~280mm | ~500g | ✅ | 組立済み・7DoF・日本入手容易(Seeed) |
+| **reBot B601** ★NEW | <$1,000 | 6+G | 650mm | 1.5kg | ✅予定 | ブラシレス・OS完全公開・2026/3リリース |
+| XLeRobot | ~$660(双腕モバイル) | (5+1)×2 | SO-100×2 | ~200g | ✅ | Mobile ALOHAの超格安版 |
+| StarAI Cello+Violin | $1,799(dual) | 7 | ~400mm | ~750g | ✅ | Violaの上位版 |
+
+### Tier 3: プロ研究（$2,000-$5,000）
+
+| 製品 | 価格 | DoF | リーチ | ペイロード | LeRobot | VLA実績 |
+|------|------|-----|--------|-----------|---------|---------|
+| **AgileX PiPER** | ~$2,499 | 6 | ~500mm | 1.5kg | ✅ | ⭐⭐ 3論文 |
+| **AgileX NERO** ★NEW | ~$2,500 | 7 | 580mm | 3kg | 予定 | 🆕 未採用 |
+| **OpenArm 01** | ~$2,500(BOM) | 7 | ~600mm | 4.1kg | ROS2 | ⭐ バックドライブ可 |
+| UFACTORY Lite6 | ~$2,999 | 6 | 440mm | 600g | ROS2 | ⭐⭐ |
+| myCobot 280 | ~$500-700 | 6 | 280mm | 250g | コミュ | ⭐ |
+
+### Tier 4: 研究室レベル（$5,000+）
+
+| 製品 | 価格 | DoF | リーチ | ペイロード | VLA実績 |
+|------|------|-----|--------|-----------|---------|
+| **Trossen WidowX AI** | ~$4,500 | 6 | 700mm | 1.5kg | ⚠️ 0論文(OpenPI統合済) |
+| Trossen Aloha Solo | $8,999 | dual 6×2 | — | — | ⚠️ 0論文 |
+| Trossen Stationary AI | ~$16,000 | quad 6×4 | — | — | ⚠️ 0論文 |
+| **UFACTORY xArm 6** | ~$5,299 | 6 | 700mm | 5kg | ⭐⭐ 2+論文 |
+| UFACTORY xArm 7 | ~$8,849 | 7 | — | 5kg | ⭐⭐ |
+| RealMan ECO65 | ~$3,000-5,000 | 6 | 650mm | 5kg | ⭐⭐ RealSourceデータ |
+| **AgileX COBOT Magic** | ~$10,000+ | dual 6×2+移動 | — | — | ⭐⭐⭐ 4論文 |
+
+### 日本からの入手性
+
+| 入手性 | 製品 | 経路 |
+|--------|------|------|
+| ★★★★★ | SO-101 | Seeed日本倉庫、Amazon.co.jp |
+| ★★★★★ | RoArm-M3 | Amazon.co.jp、Waveshare |
+| ★★★★ | StarAI | Seeed Studio |
+| ★★★★ | Trossen WidowX AI | UNIPOS（テガラ）正規代理店 |
+| ★★★★ | myCobot | スイッチサイエンス |
+| ★★★★ | UFACTORY xArm | UNIPOS |
+| ★★★ | AgileX PiPER/NERO | TechShare / AgileX Japan |
+| ★★★ | reBot B601 | Seeed Studio（2026/3予定）|
+| ★★ | OpenArm | Foxtech/CEREBOTO（国際配送）|
+
+### 主要エコシステムリンク
+
+| エコシステム | URL |
+|-------------|-----|
+| LeRobot | https://github.com/huggingface/lerobot |
+| OpenPI (π0/π0.5) | https://github.com/Physical-Intelligence/openpi |
+| phosphobot | https://github.com/phospho-app/phosphobot |
+| GR00T N1 | NVIDIA Isaac |
+| ロボットカタログ | https://robotsthatexist.com/robots |
+
+---
+
 *Last updated: 2026-02-12*

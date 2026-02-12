@@ -1,6 +1,6 @@
 # RFA Master Context
 
-*Last updated: 2026-02-09 (night)*
+*Last updated: 2026-02-12 (nightly maintenance)*
 
 このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 
@@ -12,6 +12,8 @@
 - `Projects/rfa/ikeuchi-discussion-summary.md` — 池内先生ディスカッション（2026-02-03）詳細サマリー
 - `Projects/rfa/fy26-task-selection-strategy.md` — FY26ターゲットタスク選定戦略（2026-02-09 DRAFT）
 - `meeting-notes/2026-02-06-nakata-saito-hearing.md` — 彩都パーツセンター 中田さんヒアリング
+- `meeting-notes/2026-02-12-wisdom-rfa-tf.md` — 拡大Wisdom RFA TF（2026-02-12）データ戦略・現場ビデオ活用
+- `Projects/rfa/microsoft-meeting-qa-20260212.md` — Microsoft会議 想定Q&A（2026-02-12）
 
 ---
 

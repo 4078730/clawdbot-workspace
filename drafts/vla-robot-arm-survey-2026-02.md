@@ -45,7 +45,7 @@
 
 | # | 論文/プロジェクト | 年 | 使用ロボット（実機） | リンク |
 |---|---|---|---|---|
-| 25 | **GR-2** (ByteDance) | 2024 | 自社ロボット（GR-1系ヒューマノイド） | [arXiv:2410.06158](https://arxiv.org/abs/2410.06158) |
+| 25 | **GR-2** (ByteDance) | 2024 | Kinova Gen3 7DoF + Robotiq 2F-85 グリッパー（実機）, GR-1系（sim） | [arXiv:2410.06158](https://arxiv.org/abs/2410.06158) |
 | 26 | **ALOHA Unleashed** (Google DeepMind) | 2024 | ALOHA 2 (Trossen ViperX) | [arXiv:2410.13126](https://arxiv.org/abs/2410.13126) |
 | 27 | **Gemini Robotics 1.5** (Google DeepMind) | 2025 | ALOHA, Bi-arm Franka, Apollo (Apptronik) | [arXiv:2510.03342](https://arxiv.org/abs/2510.03342) |
 | 28 | **GR-Dexter** (ByteDance) | 2025 | ByteDexter V2 手 + カスタムアーム | [arXiv:2512.24210](https://arxiv.org/abs/2512.24210) |
@@ -62,7 +62,7 @@
 | **3** | **WidowX 250** | **8+** | BridgeData V2, OpenVLA, Octo, RT-X/OXE, X-VLA (sim), ALOHA (leader arm)等 |
 | **4** | **UR5 / UR5e** | **7+** | Diffusion Policy, Octo, Pi0, DexVLA, RoboMIND, ET-VLA, RT-X/OXE等 |
 | **5** | **Google Robot (Everyday Robots)** | **4** | RT-1, RT-2, RT-X/OXE, OpenVLA |
-| **6** | **AgileX COBOT Magic** | **3** | UniVLA, RoboMIND, ET-VLA |
+| **6** | **AgileX COBOT Magic** | **4** | UniVLA, RoboMIND, ET-VLA, X-VLA(Soft-Fold) |
 | **7** | **ヒューマノイド各種** | — | （以下個別） |
 | 7a | Fourier GR-1 | 2 | GR00T N1, GR00T N1.5 |
 | 7b | Figure 02 | 1 | Helix |
@@ -70,7 +70,7 @@
 | 7d | 1X Neo | 1 | GR00T N1 |
 | 7e | Tien Kung | 1 | RoboMIND |
 | 7f | AgiBot G1 | 1 | AgiBot World |
-| **8** | **AgileX PiPER** | **1+** | UniVLA（case study） |
+| **8** | **AgileX PiPER** | **3** | UniVLA（実機メイン）, AFI, X-VLA（言及） |
 | **9** | **AIRBOT Play** | **1** | X-VLA |
 | **10** | **SO-100 / SO-101** | **1** | SmolVLA |
 | **11** | **ARX アーム** | **1+** | Pi0（Bimanual ARX, Mobile ARX） |
@@ -155,7 +155,7 @@
 | モデル | 使用論文数 | 採用開始年 | 主な用途 |
 |--------|-----------|-----------|---------|
 | COBOT Magic V2.0 | 3 | 2024 | 双腕VLA学習・データ収集 |
-| PiPER | 1+ | 2025 | 低コスト単腕VLA検証 |
+| PiPER | 3 | 2025 | 低コスト単腕VLA検証 |
 | NERO | 0 | — | 未採用（新製品） |
 
 AgileX系は特にOpenDriveLab（AgiBot World, UniVLA）を中心とした中国系研究エコシステムで急速に採用が拡大している。Mobile ALOHA互換のCOBOT Magic V2.0が最も実績があり、2024-2025年の中国系VLA論文での標準的な双腕プラットフォームとなりつつある。
@@ -173,10 +173,10 @@ Trossen ViperX      ██████████████   10+
 WidowX 250          ████████████     8+
 UR5/UR5e            ██████████       7+
 Google Robot (EDR)  ████████         4
-AgileX COBOT Magic  ██████           3
+AgileX COBOT Magic  ████████         4
 Fourier GR-1        ████             2
 Apptronik Apollo    ████             2
-AgileX PiPER        ██               1+
+AgileX PiPER        ██████           3
 SO-100/SO-101       ██               1
 AIRBOT Play         ██               1
 Figure 02           ██               1
@@ -224,7 +224,7 @@ AgiBot G1           ██               1
 | ALOHA系（ViperX） | +2（UniVLA, VLA-IN-THE-LOOP） | **12+** |
 | WidowX 250（旧） | +1（OmniAction） | **9+** |
 | AgileX COBOT Magic | +1（UniVLA） | **4** |
-| AgileX PiPER | +1（UniVLA） | **2+** |
+| AgileX PiPER | +1（UniVLA） | **3** |
 | UFACTORY xArm | +1（UniCoD） | **2+** |
 | WidowX AI（新） | 0 | **0** |
 

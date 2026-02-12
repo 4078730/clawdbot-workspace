@@ -52,11 +52,16 @@
 
 | 品目 | 概算 | 確度 | 用途・理由 |
 |------|------|------|-----------|
-| **Trossen MobileAI** | ¥200〜300万？ | △ | CXC向けAGV移動タスク対応。Aloha後継、ML研究特化モバイル+デュアルアーム。来年度CXCデモに直結 |
-| **AgileX COBOT** | ¥200〜300万？ | △ | TechShare経由で国内サポート。移動系タスク対応 |
+| **Trossen Mobile AI** | **¥510〜570万** | △ | WidowX AI（TrossenArm）ベース4腕+移動台。**自社モーター+iNerve+力覚FB+イーサネット通信**。LeRobot/Pi0公式第一級。UNIPOS代理店あり |
+| **AgileX COBOT Magic** | **¥150万〜** | △ | PiPER（自社遊星歯車モーター）4腕+Tracer AGV。Mobile ALOHA互換。**X-VLAチェックポイントあり**。TechShare国内サポート |
 | UR5レンタル | 月額制（要見積） | ▽ | 産業用実証（彩都PoC接続）。レンタルなので年度跨ぎ可 |
 
-**小計: ¥200〜300万（1台選定の場合）**
+**小計: ¥150〜570万（1台選定の場合）**
+
+> **⚠️ WidowX 250 ≠ WidowX AI（TrossenArm）:**
+> - 旧WidowX 250: Dynamixelサーボ、USB通信、~$500-800、**生産終了/旧世代**
+> - 新WidowX AI: Trossen自社モーター、iNerve、イーサネット、力覚FB、~$4,500-5,000
+> - X-VLA-WidowXチェックポイントは旧WidowX 250（BridgeData V2）ベース
 
 > **判断ポイント:** MobileAI vs AgileX は、CXCデモ要件（AGV移動タスク）との適合度で決める。両方の見積を取って比較推奨。
 

@@ -21,7 +21,8 @@
 | **AgileX COBOT Magic** | AgileX | 双腕6x2+移動 | - | - | ~$10,000+ | 部分 | ✅ | ⭐⭐ | [購入](https://global.agilex.ai/products/cobot-magic) |
 | **OpenArm 01** | Enactic | **7** | ~600mm | **4.1kg** | **~$2,500** (BOM) | ✅ | ROS2 | ⭐ | [公式](https://open-arm.org/) / [GitHub](https://github.com/enactic/openarm) |
 | **Agility A1** | Foxtech | 7 | ~600mm | 4.1kg | 要問合せ | ✅ | ROS2 | ⭐ | [Foxtech](https://www.foxtechrobotics.com/) |
-| **Trossen WidowX AI** | Trossen Robotics | 6 | ~500mm | ~750g | **~$4,500** | 部分 | ✅ 公式 | ⭐⭐⭐ | [購入](https://www.trossenrobotics.com/widowx-ai) / [日本(UNIPOS)](https://www.unipos.net/products/widowx-ai/) |
+| **WidowX 250** ⚠️旧世代 | Trossen (Interbotix) | 6 | ~500mm | ~250g | **~$500-800** | 部分 | レガシー | ⭐⭐⭐ (BridgeV2) | [購入](https://www.trossenrobotics.com/widowx-250-robot-arm-6dof.aspx) |
+| **WidowX AI (TrossenArm)** ✨新世代 | Trossen Robotics | 6 | ~500mm | ~750g | **~$4,500-5,000** | 部分 | ✅ **公式第一級** | ⭐⭐⭐⭐⭐ | [購入](https://www.trossenrobotics.com/widowx-ai) / [日本(UNIPOS)](https://www.unipos.net/products/widowx-ai/) |
 | **TRLC-DK1** | Trossen (旧) | - | - | - | $3,999/$6,999 | 部分 | ✅ | ⭐⭐ | [Trossen](https://www.trossenrobotics.com/) |
 | **myCobot 280** | Elephant Robotics | 6 | 280mm | 250g | ~$500-700 | 部分 | コミュ | ⭐ | [公式](https://www.elephantrobotics.com/en/mycobot-en/) / [スイッチサイエンス](https://www.switch-science.com/) |
 | **myCobot 320** | Elephant Robotics | 6 | 350mm | **1kg** | ~$1,500-2,000 | 部分 | コミュ | ⭐ | [公式](https://www.elephantrobotics.com/) |
@@ -172,14 +173,38 @@
 
 ### Tier 4: 研究室レベル（$5,000+）— フル機能
 
-#### 13. Trossen WidowX AI / Aloha Solo / Stationary AI
-- **価格**: WidowX AI 単腕 ~$4,500 / Aloha Solo ~$8,999 / Stationary AI ~$16,000
-- **DOF**: 6
-- **構造**: 金属量産、Dynamixelサーボ
+#### 13a. WidowX 250（旧世代 — Interbotix/Dynamixel）⚠️ レガシー
+- **価格**: ~$500-800
+- **DOF**: 6 (5DOF版もあり) / **ペイロード**: ~250g
+- **構造**: Dynamixelサーボ（Robotis製XL430/XM430等）
+- **通信**: USB/シリアル（Dynamixelバス）
+- **VLA実績**: ⭐⭐⭐ **BridgeData V2の収集に使用**。多数の初期VLA論文で使用
+- **現状**: **生産終了/旧世代**。WidowX AIに置き換え
+- **注意**: X-VLA-WidowXチェックポイントはBridgeData V2（= 旧WidowX 250で収集）ベース
+- **評価**: **歴史的に重要だが、新規購入は推奨しない。WidowX AIへ移行すべき。**
+
+#### 13b. WidowX AI / TrossenArm（新世代 — 2025Q1〜）✨
+- **価格**: Base $4,546 / Leader $4,686 / Follower $4,996（RealSense D405付き）
+- **DOF**: 6 / **ペイロード**: ~750g
+- **構造**: **Trossen自社開発モーター + iNerveコントローラ（Dynamixelではない）**
+- **通信**: **IP/イーサネット（IPアドレスベース）** — USBシリアルではない
+- **力覚**: **6軸力覚フィードバック対応**（Leader側に外力を伝達可能、gain設定可）
+- **SDK**: **TrossenArmDriver**（LeRobot統合済み、`trossen_arm.TrossenArmDriver()`）
 - **LeRobot**: ✅ **公式第一級** — Google I/O 2025でGemini Roboticsデモに使用
-- **VLA実績**: ⭐⭐⭐⭐⭐ 最多クラス。ACT, π0, Geminiすべてこの上で開発
+- **対応ソフト**: LeRobot, ROS2, MuJoCo, Gazebo, NVIDIA Isaac, Pi0/Pi0.5
+- **構成**:
+  - **Solo AI** (~$8,999): Leader+Followerペア（単腕テレオペ）
+  - **Stationary AI** (~$16,000): 4腕（双腕テレオペ、ALOHA構成）
+  - **Mobile AI** (~$33,700-$37,850): 4腕+移動台（Mobile ALOHA構成）
 - **日本入手性**: **UNIPOS（テガラ）が正規代理店** — 日本語サポートあり
-- **評価**: **VLA研究の金字塔。予算があれば間違いない選択。日本の代理店があるのも大きい。**
+- **VLA実績**: ⭐⭐⭐⭐⭐ 最多クラス。ACT, π0, Pi0.5, Geminiすべてこの上で開発
+- **旧WidowX 250との違い**:
+  - モーター: Dynamixel → **Trossen自社開発**
+  - 通信: USBシリアル → **イーサネット/IP**
+  - 力覚: なし → **6軸力覚フィードバック**
+  - テレオペ: 別売リーダー → **Leader/Follower前提設計**
+  - 価格: ~$500-800 → **$4,546-$4,996**
+- **評価**: **VLA研究の最前線。完全新設計のハードウェア。予算があれば最善の選択。日本の代理店があるのも大きい。**
 
 #### 14. UFACTORY xArm 6/7
 - **価格**: xArm 6: ~$5,299 / xArm 7: ~$8,849
@@ -231,14 +256,14 @@
 | **7DOF+高品質が必要** | StarAI Viola+Violin ($839) or OpenArm 01 ($2,500 BOM) | 冗長DOFがVLAに有利 |
 | **双腕モバイル** | XLeRobot ($660) | Mobile ALOHAの超格安版 |
 | **$2,500予算で最大性能** | AgileX NERO (7DOF/3kg) | 新製品、コスパ最高 |
-| **信頼性・論文実績重視** | Trossen WidowX AI ($4,500+) | Google/Stanford御用達 |
+| **信頼性・論文実績重視** | WidowX AI / TrossenArm ($4,500+) | Google/Stanford御用達。**旧WidowX 250とは別物**（自社モーター+イーサネット+力覚FB） |
 
 ### 🇯🇵 日本からの入手性ランキング
 
 1. **SO-101** — Seeed Studio日本倉庫、Amazon.co.jp ✅
 2. **RoArm-M3** — Amazon.co.jp、Waveshare直販 ✅
 3. **StarAI** — Seeed Studio経由 ✅
-4. **Trossen WidowX AI** — UNIPOS（テガラ）正規代理店 ✅
+4. **WidowX AI / TrossenArm** — UNIPOS（テガラ）正規代理店 ✅ ※旧WidowX 250は非推奨
 5. **myCobot 280** — スイッチサイエンス ✅
 6. **UFACTORY xArm** — UNIPOS ✅
 7. **AgileX PiPER/NERO** — AgileX Japan or 代理店経由

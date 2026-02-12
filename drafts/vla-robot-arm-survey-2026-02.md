@@ -197,4 +197,37 @@ AgiBot G1           ██               1
 
 ---
 
+## 8. ICLR 2026 VLA論文における使用ロボット（追加調査）
+
+> 出典: [ICLRに投稿されているVLA論文まとめ（川村, 東京科学大学 横田研）](https://zenn.dev/masakichi210/articles/623c147e335792)
+> 約80本のICLR 2026投稿論文から、実機評価で使われたロボットを抽出。
+
+| 論文 | 使用ロボット（実機） | 備考 |
+|------|---------------------|------|
+| **UniVLA** | AgileX COBOT Magic V2.0, AgileX PiPER, ALOHA | World Model+Policy統合。AgileX系で実機評価 |
+| **OmniAction / RoboOmni** | **WidowX 250S**（旧型） | 音声+視覚のマルチモーダル。旧WidowX使用 |
+| **UniCoD** | Franka, UFACTORY xArm | 理解→予測→行動の統合 |
+| **VLA-IN-THE-LOOP** | Xiaomi Robot, ALOHA | World Modelによる介入 |
+| **RobotArena∞** | BridgeSim, DROIDSim, RH20TSim（シミュレーション） | 実機なし |
+| **DSVLABench** | CALVIN（シミュレーション） | 実機なし |
+| **AutoBio** | シミュレーション（π0, π0.5, RDT評価） | 生物実験ラボ環境 |
+| **WorldGym** | Bridge robot / Google Robot（シミュレーション） | World Modelベース評価 |
+| **MV-RoboBench** | AgiWorld, BridgeV2データ使用 | マルチビューVQA |
+| **RoboInter-VLA** | DROID/OXE由来（Franka等） | 中間表現アノテーション |
+| **UniHand** | 実機（Pick-Place-Toy等）※ロボット不明 | 人手動画→ロボット転移 |
+
+### ICLR 2026追加データによるランキング更新
+
+| ロボット | 追加論文数 | 累計 |
+|----------|-----------|------|
+| Franka Panda/FR3 | +2（UniCoD, RoboInter） | **16+** |
+| ALOHA系（ViperX） | +2（UniVLA, VLA-IN-THE-LOOP） | **12+** |
+| WidowX 250（旧） | +1（OmniAction） | **9+** |
+| AgileX COBOT Magic | +1（UniVLA） | **4** |
+| AgileX PiPER | +1（UniVLA） | **2+** |
+| UFACTORY xArm | +1（UniCoD） | **2+** |
+| WidowX AI（新） | 0 | **0** |
+
+---
+
 *Last updated: 2026-02-12*

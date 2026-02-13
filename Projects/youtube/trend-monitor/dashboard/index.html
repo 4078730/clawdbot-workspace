@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📡 Trend Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ==================== Reset & Base ==================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2129;
+  --border: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent-blue: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-purple: #bc8cff;
+  --accent-orange: #d29922;
+  --accent-red: #f85149;
+  --accent-pink: #f778ba;
+  --youtube-red: #ff0000;
+  --reddit-orange: #ff4500;
+  --twitter-blue: #1da1f2;
+  --tiktok-pink: #fe2c55;
+  --instagram-grad: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --transition: 0.2s ease;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--accent-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ==================== Layout ==================== */
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* ==================== Header ==================== */
+.header {
+  grid-column: 1 / -1;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sidebar-toggle {
+  display: none;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+/* ==================== Sidebar ==================== */
+.sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.filter-section {
+  margin-bottom: 24px;
+}
+
+.filter-section h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  font-size: 0.875rem;
+}
+
+.filter-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.filter-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.filter-item input[type="checkbox"]:checked {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.filter-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.source-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.source-icon.youtube { color: var(--youtube-red); }
+.source-icon.reddit { color: var(--reddit-orange); }
+.source-icon.twitter { color: var(--twitter-blue); }
+.source-icon.tiktok { color: var(--tiktok-pink); }
+.source-icon.instagram { color: var(--accent-pink); }
+
+/* Sort */
+.sort-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sort-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+  transition: all var(--transition);
+  text-align: left;
+}
+
+.sort-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+.sort-btn.active {
+  background: rgba(88, 166, 255, 0.1);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* ==================== Main Content ==================== */
+.main {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+/* ==================== Card ==================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.card-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--bg-tertiary);
+  display: block;
+}
+
+.card-thumbnail.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 2rem;
+}
+
+.card-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.card-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.card-source-badge.youtube {
+  background: rgba(255, 0, 0, 0.15);
+  color: var(--youtube-red);
+}
+
+.card-source-badge.reddit {
+  background: rgba(255, 69, 0, 0.15);
+  color: var(--reddit-orange);
+}
+
+.card-source-badge.twitter {
+  background: rgba(29, 161, 242, 0.15);
+  color: var(--twitter-blue);
+}
+
+.card-source-badge.tiktok {
+  background: rgba(254, 44, 85, 0.15);
+  color: var(--tiktok-pink);
+}
+
+.card-source-badge.instagram {
+  background: rgba(247, 120, 186, 0.15);
+  color: var(--accent-pink);
+}
+
+.card-author {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-title a {
+  color: var(--text-primary);
+}
+
+.card-title a:hover {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.card-summary {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-metrics {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metric-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.tag.ai-video { background: rgba(188, 140, 255, 0.15); color: var(--accent-purple); border-color: rgba(188, 140, 255, 0.3); }
+.tag.anime { background: rgba(63, 185, 80, 0.15); color: var(--accent-green); border-color: rgba(63, 185, 80, 0.3); }
+.tag.tool { background: rgba(210, 153, 34, 0.15); color: var(--accent-orange); border-color: rgba(210, 153, 34, 0.3); }
+.tag.live-action { background: rgba(248, 81, 73, 0.15); color: var(--accent-red); border-color: rgba(248, 81, 73, 0.3); }
+.tag.title-tag { background: rgba(88, 166, 255, 0.15); color: var(--accent-blue); border-color: rgba(88, 166, 255, 0.3); }
+
+.card-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-blue);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(88, 166, 255, 0.1);
+  transition: all var(--transition);
+}
+
+.card-link:hover {
+  background: rgba(88, 166, 255, 0.2);
+  text-decoration: none;
+}
+
+.card-time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ==================== Empty State ==================== */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.empty-state h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+/* ==================== Loading ==================== */
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar.open {
+    display: block;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .header {
+    padding: 12px 16px;
+  }
+
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .feed {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-right {
+    font-size: 0.75rem;
+    gap: 12px;
+  }
+}
+
+/* ==================== Scrollbar ==================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--bg-tertiary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border); }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle filters">
+        <i class="fas fa-sliders-h"></i> Filters
+      </button>
+      <h1>📡 Trend Radar</h1>
+    </div>
+    <div class="header-right">
+      <div class="stat">
+        <i class="far fa-clock"></i>
+        <span id="lastUpdated">—</span>
+      </div>
+      <div class="stat">
+        <i class="fas fa-database"></i>
+        <span id="totalCount" class="stat-value">0</span> items
+      </div>
+      <div class="stat">
+        <i class="fas fa-eye"></i>
+        <span id="displayCount" class="stat-value">0</span> shown
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="filter-section">
+      <h3><i class="fas fa-globe"></i> Source</h3>
+      <div class="filter-group" id="sourceFilters">
+        <label class="filter-item">
+          <input type="checkbox" checked data-source="youtube">
+          <span class="source-icon youtube"><i class="fab fa-youtube"></i></span>
+          YouTube
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-source="reddit">
+          <span class="source-icon reddit"><i class="fab fa-reddit-alien"></i></span>
+          Reddit
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-source="x">
+          <span class="source-icon twitter"><i class="fab fa-x-twitter"></i></span>
+          X (Twitter)
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-source="tiktok">
+          <span class="source-icon tiktok"><i class="fab fa-tiktok"></i></span>
+          TikTok
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-source="instagram">
+          <span class="source-icon instagram"><i class="fab fa-instagram"></i></span>
+          Instagram
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h3><i class="fas fa-tags"></i> Genre</h3>
+      <div class="filter-group" id="genreFilters">
+        <label class="filter-item">
+          <input type="checkbox" checked data-genre="AI動画">
+          <span style="color: var(--accent-purple)">🎬</span>
+          AI動画
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-genre="アニメ話題">
+          <span style="color: var(--accent-green)">📺</span>
+          アニメ話題
+        </label>
+        <label class="filter-item">
+          <input type="checkbox" checked data-genre="ツール情報">
+          <span style="color: var(--accent-orange)">🛠️</span>
+          ツール情報
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h3><i class="fas fa-sort"></i> Sort</h3>
+      <div class="sort-group">
+        <button class="sort-btn active" data-sort="impression" onclick="setSort('impression')">
+          <i class="fas fa-fire"></i> インプレッション順
+        </button>
+        <button class="sort-btn" data-sort="newest" onclick="setSort('newest')">
+          <i class="far fa-clock"></i> 新着順
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Feed -->
+  <main class="main">
+    <div class="feed" id="feed">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading trend data...</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+// ==================== State ====================
+let allData = [];
+let currentSort = 'impression';
+let activeSourceFilters = new Set(['youtube', 'reddit', 'x', 'tiktok', 'instagram']);
+let activeGenreFilters = new Set(['AI動画', 'アニメ話題', 'ツール情報']);
+
+// ==================== Data Loading ====================
+async function loadData() {
+  const paths = [
+    '../data/trend-latest.json',
+    './data/trend-latest.json',
+    'data/trend-latest.json',
+  ];
+
+  for (const path of paths) {
+    try {
+      const resp = await fetch(path);
+      if (resp.ok) {
+        allData = await resp.json();
+        console.log(`Loaded ${allData.length} items from ${path}`);
+        updateUI();
+        return;
+      }
+    } catch (e) {
+      console.log(`Failed to load from ${path}:`, e.message);
+    }
+  }
+
+  // No data found
+  showEmpty('データが見つかりません', 'collect.py を実行してデータを生成してください');
+}
+
+// ==================== Rendering ====================
+function updateUI() {
+  const filtered = filterData(allData);
+  const sorted = sortData(filtered);
+
+  // Update stats
+  document.getElementById('totalCount').textContent = allData.length;
+  document.getElementById('displayCount').textContent = sorted.length;
+
+  // Update last updated
+  if (allData.length > 0) {
+    const latest = allData[0].collected_at;
+    if (latest) {
+      const d = new Date(latest);
+      document.getElementById('lastUpdated').textContent =
+        d.toLocaleDateString('ja-JP') + ' ' + d.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
+    }
+  }
+
+  // Render cards
+  const feed = document.getElementById('feed');
+  if (sorted.length === 0) {
+    feed.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-filter"></i>
+        <h2>フィルタに一致するデータがありません</h2>
+        <p>フィルタ条件を変更してみてください</p>
+      </div>
+    `;
+    return;
+  }
+
+  feed.innerHTML = sorted.map(item => renderCard(item)).join('');
+}
+
+function renderCard(item) {
+  const source = item.source || 'unknown';
+  const sourceIcon = getSourceIcon(source);
+  const sourceLabel = getSourceLabel(source);
+
+  // Metrics
+  let metricHtml = '';
+  if (item.views) {
+    metricHtml += `<span class="metric"><i class="fas fa-eye"></i> <span class="metric-value">${formatNumber(item.views)}</span></span>`;
+  }
+  if (item.score) {
+    metricHtml += `<span class="metric"><i class="fas fa-arrow-up"></i> <span class="metric-value">${formatNumber(item.score)}</span></span>`;
+  }
+
+  // Thumbnail
+  let thumbHtml = '';
+  if (item.thumbnail) {
+    thumbHtml = `<img class="card-thumbnail" src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=\\'card-thumbnail placeholder\\'><i class=\\'fas fa-image\\'></i></div>'">`;
+  }
+
+  // Tags
+  const tagsHtml = (item.tags || []).map(tag => {
+    const cls = getTagClass(tag);
+    return `<span class="tag ${cls}">${escapeHtml(tag)}</span>`;
+  }).join('');
+
+  // Time
+  const timeStr = item.collected_at ? new Date(item.collected_at).toLocaleDateString('ja-JP') : '';
+
+  return `
+    <article class="card">
+      ${thumbHtml}
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-source-badge ${source}">${sourceIcon} ${sourceLabel}</span>
+          <span class="card-author">${escapeHtml(item.author || '')}</span>
+        </div>
+        <h3 class="card-title">
+          <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>
+        </h3>
+        ${item.summary ? `<p class="card-summary">${escapeHtml(item.summary)}</p>` : ''}
+        ${metricHtml ? `<div class="card-metrics">${metricHtml}</div>` : ''}
+        <div class="card-tags">${tagsHtml}</div>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
+          <i class="fas fa-external-link-alt"></i> Open
+        </a>
+        <span class="card-time">${timeStr}</span>
+      </div>
+    </article>
+  `;
+}
+
+// ==================== Filtering & Sorting ====================
+function filterData(data) {
+  return data.filter(item => {
+    // Source filter
+    if (!activeSourceFilters.has(item.source)) return false;
+
+    // Genre filter
+    const tags = item.tags || [];
+    const genreMatch = tags.some(tag => activeGenreFilters.has(tag));
+    // Also include items whose tags contain anime-specific tags (they map to genre)
+    const hasGenreTag = tags.some(tag => ['AI動画', 'アニメ話題', 'ツール情報'].includes(tag));
+    if (hasGenreTag && !genreMatch) return false;
+    // Items without genre tags pass through (don't filter them out)
+
+    return true;
+  });
+}
+
+function sortData(data) {
+  const sorted = [...data];
+  if (currentSort === 'impression') {
+    sorted.sort((a, b) => {
+      const va = (a.views || 0) + (a.score || 0) * 1000;
+      const vb = (b.views || 0) + (b.score || 0) * 1000;
+      return vb - va;
+    });
+  } else {
+    sorted.sort((a, b) => {
+      const da = new Date(a.collected_at || 0);
+      const db = new Date(b.collected_at || 0);
+      return db - da;
+    });
+  }
+  return sorted;
+}
+
+function setSort(sort) {
+  currentSort = sort;
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.sort === sort);
+  });
+  updateUI();
+}
+
+// ==================== Event Listeners ====================
+document.getElementById('sourceFilters').addEventListener('change', (e) => {
+  const cb = e.target;
+  if (cb.dataset.source) {
+    if (cb.checked) {
+      activeSourceFilters.add(cb.dataset.source);
+    } else {
+      activeSourceFilters.delete(cb.dataset.source);
+    }
+    updateUI();
+  }
+});
+
+document.getElementById('genreFilters').addEventListener('change', (e) => {
+  const cb = e.target;
+  if (cb.dataset.genre) {
+    if (cb.checked) {
+      activeGenreFilters.add(cb.dataset.genre);
+    } else {
+      activeGenreFilters.delete(cb.dataset.genre);
+    }
+    updateUI();
+  }
+});
+
+// ==================== Helpers ====================
+function getSourceIcon(source) {
+  const icons = {
+    youtube: '<i class="fab fa-youtube"></i>',
+    reddit: '<i class="fab fa-reddit-alien"></i>',
+    x: '<i class="fab fa-x-twitter"></i>',
+    tiktok: '<i class="fab fa-tiktok"></i>',
+    instagram: '<i class="fab fa-instagram"></i>',
+  };
+  return icons[source] || '<i class="fas fa-globe"></i>';
+}
+
+function getSourceLabel(source) {
+  const labels = {
+    youtube: 'YouTube',
+    reddit: 'Reddit',
+    x: 'X',
+    tiktok: 'TikTok',
+    instagram: 'Instagram',
+  };
+  return labels[source] || source;
+}
+
+function getTagClass(tag) {
+  if (tag === 'AI動画') return 'ai-video';
+  if (tag === 'アニメ話題') return 'anime';
+  if (tag === 'ツール情報') return 'tool';
+  if (tag === '実写化') return 'live-action';
+  return 'title-tag';
+}
+
+function formatNumber(n) {
+  if (n == null) return '—';
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+  return n.toString();
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function showEmpty(title, message) {
+  document.getElementById('feed').innerHTML = `
+    <div class="empty-state">
+      <i class="fas fa-satellite-dish"></i>
+      <h2>${title}</h2>
+      <p>${message}</p>
+    </div>
+  `;
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// ==================== Init ====================
+loadData();
+</script>
+
+</body>
+</html>

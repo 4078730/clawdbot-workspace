@@ -24,6 +24,20 @@
 
 ## 1. 製品概要
 
+### ⚡ Key Fact: ARXファミリー互換
+
+TRLC-DK1は **ARX R5 / Trossen WidowX AI と同一の運動学ファミリー** に属する。
+
+- リーダーアームは「ARX R5 and Trossen WidowX AI at 60% of their scale」と運動学的に等価な設計（[leader-arm repo](https://github.com/robot-learning-co/leader-arm)）
+- TRLC開発者Jannikの発言: **"all arms on the market that are using this joint layout (incl. AgileX Piper etc.) are derived from arx-x.com R5 / X5"**
+- つまり以下のアームは全てARX R5/X5由来の同一運動学ファミリー:
+  - **ARX R5 / X5**（原型、中国・北京）
+  - **AgileX PiPER**（ARX派生、中国）
+  - **TRLC-DK1**（ARX派生、ドイツ）
+  - **Trossen WidowX AI**（独自設計だが運動学的に等価）
+  - **I2RT YAM**（同じアクチュエータ使用）
+- このファミリー内ではジョイント空間が共通のため、**ポリシーの転移が期待できる**
+
 ### 会社情報
 
 **The Robot Learning Company** (TRLC) — ドイツのUG法人（haftungsbeschränkt = ミニGmbH）

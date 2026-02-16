@@ -70,6 +70,7 @@
 
 ## 💤 ペンディング / 待ち
 
+- [ ] **TRLC-DK1-X Proforma Invoice待ち** — Jannik返答済み（銀行振込OK・3月末出荷）、Invoice受領後に決裁回付
 - [ ] **データ戦略／Robo Sync向け役割分担MTG調整**（桑田さん・小倉さん・小栗さん）
 
 ---

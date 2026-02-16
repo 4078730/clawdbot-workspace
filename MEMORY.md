@@ -31,7 +31,7 @@
 - 彩都パーツセンターPoC検討（オートストア出庫作業）
 - **Microsoft協業** — Design Thinking WS Review / Weekly Sync、QA資料準備済み
 - **神戸工場キッティング工程** — VLA適用候補、動画データ解析中
-- **TRLC-DK1-X × 2セット購入** — $13,998（~¥216万）、Jannik返答待ち（銀行振込・リードタイム確認）、決裁願ドラフト作成済み
+- **TRLC-DK1-X × 2セット購入** — $13,998（~¥216万）、Jannik返答済み✅（銀行振込OK・3月末出荷可能）、Proforma Invoice依頼済み → 受領後に決裁回付
 
 ### YouTube
 - チャンネル: AnimeLiveAction
@@ -59,6 +59,13 @@
 - **購入決裁プロセス**: 銀行振込可否確認 → 経理事前確認(伊藤志麻さん) → 決裁願起案 → 部門長承認(大坪紹二さん) → 合議(鈴木慶太さん) → 経理受理
 - 20万超は簿外資産管理が必須、決裁願テンプレート: 第2025IG00421号（Unitree G1参考）
 - TRLC-DK1リサーチ完了 — ARXファミリー互換、Apache 2.0、自作コスト~¥24-39万（キット$3,999の半額以下）
+
+### 2026-02-16（TRLC-DK1進捗・RFAデモ・Microsoft Workshop）
+- TRLC-DK1: Jannikから返信あり — **銀行振込OK、3月末までに出荷可能**
+- Proforma Invoice発行依頼済み（会社名義: Panasonic Connect Co., Ltd., S9棟5F, 横浜市都筑区佐江戸町600番地, 〒224-8539）
+- 次ステップ: Proforma Invoice受領 → 経理に添付して決裁回付 → 承認後に銀行振込
+- RFAデモ アップデート（第8回）完了 ✅
+- Robotics Responsible AI Workshop（Microsoft）完了 ✅
 
 ### 2026-02-12（Wisdom RFA TF・データ戦略）
 - **Deploy-Time Scaling vs Training-Time Scaling** — パナソニックの差別化軸として定着

@@ -1,6 +1,6 @@
 # RFA 用語集（Glossary）
 
-*Last updated: 2026-02-12*
+*Last updated: 2026-02-16*
 
 この用語集は、RFA関連ドキュメント（master-context / FY26事業計画 / CXCデモ等）で使う言葉を「同じ意味で同じ名前で」使うためのメモ。
 
@@ -83,3 +83,24 @@
 
 - **RLDS (Robot Learning Data Standard)**
   - 学習データ形式の候補（Robo Syncログ→RLDS変換など）。
+
+---
+
+## QMS / リリース段階
+
+- **CA (Controlled Availability) = α版**
+  - 社内実証に投入した段階。対象を限定した状態で動作確認。`saito-poc-plan.md` で導入。
+  - ※ `fy26-roadmap.md` のα版成功率（70%）はシステム全体レベル、`saito-poc-plan.md` のα版成功率（90%/95%）はスコープを絞ったタスク単位の指標。
+
+- **GA (General Availability)**
+  - 正式製品版。QMS整備・監査対応完了。汎用顧客向けに提供可能な状態。FY27〜を想定。
+
+---
+
+## ハードウェア
+
+- **D405 (Intel RealSense D405)**
+  - チーム共通のカメラ。短距離・高精度のDepthカメラ。VLAの入力画像取得に使用。
+
+- **TRLC-DK1-X**
+  - The Robot Learning Company のロボットアームキット。ARXファミリー互換。Apache 2.0ライセンス。

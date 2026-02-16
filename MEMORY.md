@@ -60,12 +60,15 @@
 - 20万超は簿外資産管理が必須、決裁願テンプレート: 第2025IG00421号（Unitree G1参考）
 - TRLC-DK1リサーチ完了 — ARXファミリー互換、Apache 2.0、自作コスト~¥24-39万（キット$3,999の半額以下）
 
-### 2026-02-16（TRLC-DK1進捗・RFAデモ・Microsoft Workshop）
+### 2026-02-16（TRLC-DK1進捗・RFAデモ・Microsoft Workshop・彩都実証計画）
 - TRLC-DK1: Jannikから返信あり — **銀行振込OK、3月末までに出荷可能**
 - Proforma Invoice発行依頼済み（会社名義: Panasonic Connect Co., Ltd., S9棟5F, 横浜市都筑区佐江戸町600番地, 〒224-8539）
 - 次ステップ: Proforma Invoice受領 → 経理に添付して決裁回付 → 承認後に銀行振込
 - RFAデモ アップデート（第8回）完了 ✅
 - Robotics Responsible AI Workshop（Microsoft）完了 ✅
+- **彩都パーツセンター実証計画 DRAFT作成** → `Projects/rfa/saito-poc-plan.md`
+  - α/β/GA要件定義、動画分析反映、大坪さんFB反映
+  - 複数回レビュー・改訂済み（v1→v4）、2/17内部レビュー用
 
 ### 2026-02-12（Wisdom RFA TF・データ戦略）
 - **Deploy-Time Scaling vs Training-Time Scaling** — パナソニックの差別化軸として定着

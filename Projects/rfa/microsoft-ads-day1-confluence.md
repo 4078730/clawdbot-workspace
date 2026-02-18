@@ -51,8 +51,8 @@
 
 | レイヤー | 役割 | 要素技術 |
 |---------|------|---------|
-| **Task Planning Hub**（LLM Agent） | 抽象指示→作業手順に自動分解 / スキル組み合わせ | DRIP（EMNLP 2025）、MTP / ViReSkill（ICRA 2026） |
-| **Symbol Hub** | 言語→画像上の操作点（どこを掴む/置く）に変換 | KeypointVLA（RSJ 2025）、IndexVLA（ICRA 2026）、Gemini-ER |
+| **Task Planning Hub**（LLM Agent） | 抽象指示→作業手順に自動分解 / スキル組み合わせ | DRIP（EMNLP 2025）、MTP / ViReSkill（Submitted） |
+| **Symbol Hub** | 言語→画像上の操作点（どこを掴む/置く）に変換 | KeypointVLA（RSJ 2025）、IndexVLA（Submitted）、Gemini-ER |
 | **Sensorimotor Hub**（VLA） | 視覚+言語+物理動作の統合制御 | π0 Fine-Tuning、~200 episodes/skill |
 | **RoboSync + Data** | 安全な実行・データ収集・継続学習 | **VLA Skill Block（FY26最優先）**、MCP Agent |
 
@@ -70,7 +70,7 @@
 
 - ロボット制御PF経由のデータ収集→VLA学習→実動作の**完全サイクルを初めて実現**
 - iREX2025で**Gemini-ER × π0による4スキル連続梱包デモ**を実現
-- KeypointVLA/IndexVLA/DRIP/MTP/ViReSkillの要素技術確立 → EMNLP/RSJ/ICRA投稿
+- KeypointVLA/IndexVLA/DRIP/MTP/ViReSkillの要素技術確立 → 国際会議投稿
 - MCPベースのLLM Agent × VLA × RoboSync統合アーキテクチャ整理
 - Microsoft Responsible AI Workshop完了
 
@@ -81,10 +81,10 @@
 
 #### FY26 目標：Robo Sync AI Suite
 
-| マイルストーン | スコープ | 成功率目標 |
-|--------------|---------|-----------|
-| **α版（9月）** | VLAピックスキルがRoboSync上で動作。ビン内パーツのピック→作業台配置 | 90%（リトライ込95%） |
-| **β版（3月）** | 出庫サイクル全体をAgentic制御で動作 | TBD |
+| マイルストーン | スコープ |
+|--------------|---------|
+| **α版（9月）** | VLAピックスキルがRoboSync上で動作。ビン内パーツのピック→作業台配置 |
+| **β版（3月）** | 出庫サイクル全体をAgentic制御で動作 |
 
 **4つの柱：** ①RoboSync×VLA統合 ②DataOps ③Agent Operation ④Field PoC
 
@@ -110,8 +110,8 @@
 
 #### Sensorimotor Hub
 
-- **VLA Policy：** π0ベース、200エピソード/90分で1スキル学習
-- **KeypointVLA：** 高精度タスク向けKeypoint中間表現（成功率+40%）
+- **VLA Policy：** π0ベース、約200エピソードで1スキル学習可能
+- **KeypointVLA：** 高精度タスク向けKeypoint中間表現
 - **HIL Interface：** 人間教示→継続学習データに利用
 
 #### RoboSync統合 — 2つのルート
@@ -129,13 +129,13 @@ MCPを共通プロトコルとして、RoboSync / WMS / MES / Gemini-ERと疎結
 
 ### S2-2. 保有技術の詳細と成果（20分）
 
-#### ① ロボット制御PF統合パイプライン（FUK拠点）
+#### ① ロボット制御PF統合パイプライン
 
-- π0学習→実動作サイクルを実現。計3500エピソードの混合データセットで10種類の物体
-- 未学習物体への汎化性を実証（スキンクリーム学習→コーンフレーク把持成功）
+- ロボット制御PF経由のデータ収集→π0学習→実動作サイクルを実現
+- 未学習物体への汎化性を実証
 - **リトライ動作を教えていないのに自律的に獲得**
 
-📷 ※動画素材があれば差替え（FUK拠点の実機映像）
+📷 ※konuki選定の動画素材を埋め込み
 
 #### ② VLA-Robot環境（Idea Forge）
 
@@ -146,18 +146,22 @@ MCPを共通プロトコルとして、RoboSync / WMS / MES / Gemini-ERと疎結
 #### ③ KeypointVLA → IndexVLA
 
 - KeypointVLA：画像上の(x,y)座標で操作点指定。既存VLAの構造変更不要
-- ACTモデルで**最大40%の成功率向上**（電池梱包 30%→70%）
-- IndexVLA：**Point型**（ピック&プレース）/ **Trajectory型**（なぞり）/ **Vector型**（押し込み）
+- IndexVLA：3種の指示モードを体系化
+  - **Point型** — ピック＆プレース
+  - **Trajectory型** — なぞり・拭き取り
+  - **Vector型** — 押し込み・コネクタ挿入
 
 #### ④ MTP / ViReSkill
 
 - **MTP：** 成功経験参照→新環境でのプランニング。Sim→Real転移
 - **ViReSkill：** 失敗映像分析→自律計画修正。Lifelong Learning
+- ※国際会議Submitted
 
 #### ⑤ DRIP（Planning）
 
 - Backward Reasoning — ゴール逆算でサブゴール分解
-- Minecraft 3D仮想環境で複雑構造タスクの達成を実証。EMNLP 2025投稿済
+- Minecraft 3D仮想環境で複雑構造タスクの達成を実証
+- EMNLP 2025投稿済
 
 #### ⑥ iREX2025統合デモ
 
@@ -165,7 +169,7 @@ MCPを共通プロトコルとして、RoboSync / WMS / MES / Gemini-ERと疎結
 - VLM判定→次ポリシー遷移 or リトライ/人間介入の分岐
 - 現場PoCの**標準パターン**
 
-📷 ※動画素材があれば差替え（iREXデモ映像）
+📷 ※konuki選定の動画素材を埋め込み
 
 ---
 
@@ -190,6 +194,11 @@ Model Deploy → Logging → Data Export（RLDS形式） → Train/Fine-tune →
 
 - 現場導入と同時にデータ蓄積が始まる（追加コストほぼゼロ）
 - 現場の失敗・リカバリーデータは固有の学習資産
+
+#### 計算環境
+
+- **GPU：** A100
+- **スケール参考値：** 50,000エピソード規模の学習で約50時間
 
 #### BigTechとの差別化
 
@@ -231,7 +240,7 @@ Model Deploy → Logging → Data Export（RLDS形式） → Train/Fine-tune →
 
 ### S2-5. FY26実証ターゲットとマイルストーン（15分）
 
-#### ターゲット：彩都パーツセンター出庫作業
+#### ターゲット①：彩都パーツセンター出庫作業（物流）
 
 📷 `04-warehouse-flow.png`
 > 倉庫オペレーション全体像。Inbound→Receiving→Storage→Picking→Sorting/Dispatch→Packaging→Shipping。自動化対象領域をStorage/PickingからInbound/Outboundへ拡大。
@@ -246,13 +255,20 @@ Model Deploy → Logging → Data Export（RLDS形式） → Train/Fine-tune →
 - ビン内は段ボール＋プチプチ＋多種多様なパーツが混在
 - 「箱物だけ」のシンプルケースはほぼ存在しない → **VLAが初手から不可欠**
 
-#### リリース計画
+#### ターゲット②：神戸工場 Let's Note組立（製造）
+
+📷 `03-internal-cases.png`（再掲 — 神戸工場ラベル貼付工程）
+
+- Let's Note組立ラインの一部工程（ラベル貼付、キッティング等）
+- RoboSync既存導入済み → VLAスキル追加による高度化が狙い
+- 製造ラインでのVLA適用事例として位置付け
+
+#### リリース計画（彩都メイン）
 
 | | α版（9月） | β版（3月） |
 |---|---|---|
 | **スコープ** | ピック→作業台配置（単腕） | 出庫サイクル全体 |
 | **制御** | VLA単体 | Agentic VLA / 双腕 |
-| **成功率** | 90%（リトライ込95%） | TBD |
 | **DataOps** | ログ収集パイプライン稼働 | FT→再デプロイサイクル確認 |
 
 #### Microsoft協業で加速したい領域
@@ -269,7 +285,7 @@ Model Deploy → Logging → Data Export（RLDS形式） → Train/Fine-tune →
 |-----------|--------|------|
 | `01-robosync-launch.png` | S1-1 冒頭 | 新製品記者発表、RoboSync/SIサービス概要 |
 | `02-robosync-features.png` | S1-1 / S2-1（再掲） | Robo Sync 3特長（マルチロボ/VP/テンプレ） |
-| `03-internal-cases.png` | S1-1 | 社内6拠点導入事例 |
+| `03-internal-cases.png` | S1-1 / S2-5（再掲） | 社内6拠点導入事例 |
 | `04-warehouse-flow.png` | S2-5 | 倉庫オペレーション全体像 |
 | `05-scm-challenges.png` | S1-1 | SCM現場の課題 × Embodied AI |
 | `06-embodied-ai-trend.png` | S1-2 | ChatGPT→VLA進化、差別化は現場データ |

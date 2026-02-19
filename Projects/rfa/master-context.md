@@ -1,6 +1,6 @@
 # RFA Master Context
 
-*Last updated: 2026-02-16 (nightly maintenance)*
+*Last updated: 2026-02-19 (nightly maintenance)*
 
 このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 
@@ -14,7 +14,7 @@
 - `meeting-notes/2026-02-06-nakata-saito-hearing.md` — 彩都パーツセンター 中田さんヒアリング
 - `meeting-notes/2026-02-12-wisdom-rfa-tf.md` — 拡大Wisdom RFA TF（2026-02-12）データ戦略・現場ビデオ活用
 - `Projects/rfa/microsoft-meeting-qa-20260212.md` — Microsoft会議 想定Q&A（2026-02-12）
-- `Projects/rfa/saito-poc-plan.md` — 彩都パーツセンター出庫作業 実証計画（2026-02-16 DRAFT）
+- `Projects/rfa/saito-poc-plan.md` — 彩都パーツセンター出庫作業 実証計画（2026-02-19 DRAFT）
 
 ---
 

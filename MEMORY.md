@@ -89,16 +89,6 @@
 - **チーム体制**: PM=島本, Tech Lead(PCI)=桑田/黄瀬, Tech Lead(MS)=Mike Lanzetta/Sean Ma, DataOps=Muruganandam/Oshani, Simulation=Patrick/Paige
 - **アーキテクチャ**: Task Planning / Symbol / Sensorimotor / Robo Sync + Data Platform
 
-### 2026-02-20（Microsoft ADS Day 1/2・協業スコープ確定）
-- **ADS Day 1/2** 品川で開催（2/19-20）、資料作成・発表完了
-- **データフォーマット**: Rosbag → **LeRobot（Hugging Face）** に正式移行
-- **Azure remote policy inference** を必須要件に追加（現場GPU制約のため）
-- **Success Criteria/DoD**: Azure arch deployed, Min viable data pipeline (LeRobot), GPU training demo, Hybrid inference validation, Container deployment to edge + Azure remote inference operational
-- **Out of Scope**: 新LLM/GenAI推論システム開発、本番グレードSLOs/HA、工場IT本番ネットワーク統合、大規模メタデータガバナンス
-- **Well-Architected Mapping**: Reliability(Data conversion time-sync), Performance(Hybrid inference), OpEx(DataOps/MLOps), Security(Identity/Secret/Audit)
-- **チーム体制**: PM=島本, Tech Lead(PCI)=桑田/黄瀬, Tech Lead(MS)=Mike Lanzetta/Sean Ma, DataOps=Muruganandam/Oshani, Simulation=Patrick/Paige
-- **アーキテクチャ**: Task Planning / Symbol / Sensorimotor / Robo Sync + Data Platform
-
 ### 2026-02-12（Wisdom RFA TF・データ戦略）
 - **Deploy-Time Scaling vs Training-Time Scaling** — パナソニックの差別化軸として定着
 - 神戸工場キッティング工程: カメラ設置済み、2025年10月〜の動画データあり

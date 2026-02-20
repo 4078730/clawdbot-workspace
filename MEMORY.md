@@ -38,7 +38,7 @@
 - **FY26ターゲットタスク選定** — 戦略ドキュメント作成済み(`Projects/rfa/fy26-task-selection-strategy.md`)、2/17-20チーム議論予定
 - IndexVLA論文執筆
 - 彩都パーツセンターPoC検討（オートストア出庫作業）
-- **Microsoft協業** — Design Thinking WS Review / Weekly Sync、QA資料準備済み
+- **Microsoft協業** — ADS Day 1/2完了(2/19-20)、協業スコープ・DoD・チーム体制確定、LeRobot+Azure推論
 - **神戸工場キッティング工程** — VLA適用候補、動画データ解析中
 - **TRLC-DK1-X × 2セット購入** — $13,998（~¥216万）、Jannik返答済み✅（銀行振込OK・3月末出荷可能）、Proforma Invoice依頼済み → 受領後に決裁回付
 
@@ -78,6 +78,26 @@
 - **彩都パーツセンター実証計画 DRAFT作成** → `Projects/rfa/saito-poc-plan.md`
   - α/β/GA要件定義、動画分析反映、大坪さんFB反映
   - 複数回レビュー・改訂済み（v1→v4）、2/17内部レビュー用
+
+### 2026-02-20（Microsoft ADS Day 1/2・協業スコープ確定）
+- **ADS Day 1/2** 品川で開催（2/19-20）、資料作成・発表完了
+- **データフォーマット**: Rosbag → **LeRobot（Hugging Face）** に正式移行
+- **Azure remote policy inference** を必須要件に追加（現場GPU制約のため）
+- **Success Criteria/DoD**: Azure arch deployed, Min viable data pipeline (LeRobot), GPU training demo, Hybrid inference validation, Container deployment to edge + Azure remote inference operational
+- **Out of Scope**: 新LLM/GenAI推論システム開発、本番グレードSLOs/HA、工場IT本番ネットワーク統合、大規模メタデータガバナンス
+- **Well-Architected Mapping**: Reliability(Data conversion time-sync), Performance(Hybrid inference), OpEx(DataOps/MLOps), Security(Identity/Secret/Audit)
+- **チーム体制**: PM=島本, Tech Lead(PCI)=桑田/黄瀬, Tech Lead(MS)=Mike Lanzetta/Sean Ma, DataOps=Muruganandam/Oshani, Simulation=Patrick/Paige
+- **アーキテクチャ**: Task Planning / Symbol / Sensorimotor / Robo Sync + Data Platform
+
+### 2026-02-20（Microsoft ADS Day 1/2・協業スコープ確定）
+- **ADS Day 1/2** 品川で開催（2/19-20）、資料作成・発表完了
+- **データフォーマット**: Rosbag → **LeRobot（Hugging Face）** に正式移行
+- **Azure remote policy inference** を必須要件に追加（現場GPU制約のため）
+- **Success Criteria/DoD**: Azure arch deployed, Min viable data pipeline (LeRobot), GPU training demo, Hybrid inference validation, Container deployment to edge + Azure remote inference operational
+- **Out of Scope**: 新LLM/GenAI推論システム開発、本番グレードSLOs/HA、工場IT本番ネットワーク統合、大規模メタデータガバナンス
+- **Well-Architected Mapping**: Reliability(Data conversion time-sync), Performance(Hybrid inference), OpEx(DataOps/MLOps), Security(Identity/Secret/Audit)
+- **チーム体制**: PM=島本, Tech Lead(PCI)=桑田/黄瀬, Tech Lead(MS)=Mike Lanzetta/Sean Ma, DataOps=Muruganandam/Oshani, Simulation=Patrick/Paige
+- **アーキテクチャ**: Task Planning / Symbol / Sensorimotor / Robo Sync + Data Platform
 
 ### 2026-02-12（Wisdom RFA TF・データ戦略）
 - **Deploy-Time Scaling vs Training-Time Scaling** — パナソニックの差別化軸として定着

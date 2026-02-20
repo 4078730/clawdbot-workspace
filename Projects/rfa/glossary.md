@@ -1,6 +1,6 @@
 # RFA 用語集（Glossary）
 
-*Last updated: 2026-02-16*
+*Last updated: 2026-02-20*
 
 この用語集は、RFA関連ドキュメント（master-context / FY26事業計画 / CXCデモ等）で使う言葉を「同じ意味で同じ名前で」使うためのメモ。
 
@@ -83,6 +83,9 @@
 
 - **RLDS (Robot Learning Data Standard)**
   - 学習データ形式の候補（Robo Syncログ→RLDS変換など）。
+
+- **LeRobot**
+  - Hugging Face提供のロボット学習データフォーマット/フレームワーク。FY26 Microsoft協業ではRosbagからLeRobot形式への移行が確定（2026-02-20 ADS Day 1資料）。
 
 ---
 

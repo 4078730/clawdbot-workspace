@@ -1,6 +1,6 @@
 # MEMORY.md - 長期記憶（昇格済み情報）
 
-最後更新: 2026-02-16 (Night Maintenance)
+最後更新: 2026-02-21 (Night Maintenance)
 
 ---
 
@@ -200,16 +200,50 @@
 | 2026-02-16 | RFAデモ アップデート（第8回） | 完了 |
 | 2026-02-16 | Microsoft RAI Workshop | Robotics Responsible AI Workshop 完了 |
 | 2026-02-16 | 彩都実証計画 DRAFT作成 | saito-poc-plan.md（α/β/GA定義、動画分析反映） |
+| 2026-02-17 | FY26事業計画 内部レビュー | 実施完了（結果未記録・konuki確認要） |
+| 2026-02-17-20 | FY26 プロジェクトディスカッション（カテゴリB） | 期間終了・完了（結果記録待ち → konuki確認要） |
+| 2026-02-19-20 | **Microsoft ADS Day 1/2** | 下記「MS協業確定事項」参照 |
 
 ### 今後（2月下旬～）
 
 | 日付 | イベント | 予定内容 |
 |------|---------|---------|
-| 2026-02-17 | FY26事業計画 内部レビュー | 大坪さんとのすり合わせ |
-| 2026-02-17-20 | FY26 プロジェクトディスカッション | カテゴリ B、合意形成 |
-| 2026-02末 | メンバー評価 | 今年度メンバー評価 |
+| 2026-02末 | メンバー評価 | 今年度メンバー評価（残7日） |
 | 2026-09（FY26 Q2末） | **α版リリース** | 成功率 70%、RoboSync×VLA 統合動作確認 |
 | 2027-03（FY26 Q4末） | **β版リリース** | 成功率 90%、継続学習稼働、社内 PoC 完了 |
+
+---
+
+## 🤝 Microsoft協業 確定事項（ADS Day 1/2: 2026-02-19-20）
+
+### 技術的決定
+| 項目 | 決定内容 |
+|------|---------|
+| **データフォーマット** | `LeRobot` (Hugging Face) — Rosbagから変更 |
+| **推論アーキテクチャ** | **Azure-hosted remote policy inference** を必須採用（現場GPU制約のため） |
+| **デプロイ** | Container deployment to edge + Azure remote inference operational |
+| **パイプライン** | Min viable data pipeline (LeRobot) → GPU training demo → Hybrid inference |
+
+### DoD / スコープ
+- **Mandatory**: Azure arch deployed, Min viable data pipeline, GPU training demo, Hybrid inference validation
+- **Out of Scope**: New LLM/GenAI reasoning, Production SLOs/HA, Plant IT production network, Operator-level metadata governance
+- **Well-Architected mapping**: Reliability(data sync)、Performance(hybrid inference)、OpEx(DataOps/MLOps automation)、Security(Identity/Secret/Audit)
+
+### チーム体制（確定）
+| 役割 | 担当 |
+|------|------|
+| **PM (PanConnect)** | 島本 |
+| **Tech Lead (PanConnect)** | 桑田 / 木之瀬 |
+| **Tech Lead (Microsoft)** | Mike Lanzetta / Sean Ma |
+| **DataOps (Microsoft)** | Muruganandam / Oshani |
+| **Simulation (Microsoft)** | Patrick / Paige |
+
+### 後続タスク（要対応）
+- [ ] GitHubリポジトリへのMicrosoftメンバー招待
+- [ ] Atlassian（Jira/Confluence）アカウント付与
+- [ ] GCPアカウント作成
+- [ ] 上位層（大坪さん・島本さん）への正式報告
+- [ ] 録画・資料を奥村さんに共有
 
 ---
 
@@ -217,7 +251,7 @@
 
 | ドキュメント | 用途 | 最終更新 |
 |-------------|------|---------|
-| `Projects/rfa/master-context.md` | RFA の技術アーキテクチャ、ビジョン | 2026-02-16 |
+| `Projects/rfa/master-context.md` | RFA の技術アーキテクチャ、ビジョン | 2026-02-20 |
 | `Projects/rfa/fy26-business-plan.md` | FY26 事業計画、投資規模、戦略 | 2026-01-20 |
 | `Projects/rfa/fy26-roadmap.md` | Q1-Q4 マイルストーン、リリース定義 | 2026-02-02 |
 | `Projects/rfa/fy26-task-selection-strategy.md` | タスク候補評価、2軸戦略 | 2026-02-09 |

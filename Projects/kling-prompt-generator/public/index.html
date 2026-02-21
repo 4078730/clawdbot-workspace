@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kling Prompt Generator</title>
+  <link rel="stylesheet" href="style.css?v=20260208b" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">🎬 Kling Prompt Generator</h1>
+      <span class="subtitle">Video → Gemini Analysis → Kling AI Prompt</span>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <main class="main">
+    <!-- Left: Upload & Preview -->
+    <section class="panel panel-left">
+      <h2 class="panel-title">Video Input</h2>
+
+      <!-- Input Source Tabs -->
+      <div class="input-tabs">
+        <button class="input-tab active" data-tab="upload">📁 File Upload</button>
+        <button class="input-tab" data-tab="youtube">🔗 YouTube URL</button>
+      </div>
+
+      <!-- Tab: File Upload -->
+      <div id="tabUpload" class="tab-content active">
+        <div id="dropZone" class="drop-zone">
+          <div class="drop-zone-inner">
+            <span class="drop-icon">📁</span>
+            <p>Drag &amp; drop a video here</p>
+            <p class="drop-sub">or click to select</p>
+            <p class="drop-formats">MP4 · WebM · MOV (max 100 MB)</p>
+          </div>
+          <input type="file" id="fileInput" accept=".mp4,.webm,.mov" hidden />
+        </div>
+        <div class="trim-row" id="uploadTrimRow">
+          <span class="trim-icon">✂️</span>
+          <div class="trim-field">
+            <label class="trim-label">Start</label>
+            <input type="text" id="trimStart" class="input-field input-sm" placeholder="0:00" />
+          </div>
+          <div class="trim-field">
+            <label class="trim-label">End</label>
+            <input type="text" id="trimEnd" class="input-field input-sm" placeholder="0:15" />
+          </div>
+          <span class="trim-hint">optional · MM:SS</span>
+        </div>
+      </div>
+
+      <!-- Tab: YouTube URL -->
+      <div id="tabYoutube" class="tab-content">
+        <div class="youtube-form">
+          <div class="yt-url-row">
+            <input type="text" id="ytUrl" class="input-field" placeholder="https://www.youtube.com/watch?v=..." />
+          </div>
+          <div class="yt-quality-row">
+            <label class="trim-label">Quality:</label>
+            <select id="ytQuality" class="input-field input-sm">
+              <option value="480">480p</option>
+              <option value="720" selected>720p</option>
+              <option value="1080">1080p</option>
+              <option value="best">Best</option>
+            </select>
+          </div>
+          <div class="trim-row">
+            <span class="trim-icon">✂️</span>
+            <div class="trim-field">
+              <label class="trim-label">Start</label>
+              <input type="text" id="ytTrimStart" class="input-field input-sm" placeholder="0:00" />
+            </div>
+            <div class="trim-field">
+              <label class="trim-label">End</label>
+              <input type="text" id="ytTrimEnd" class="input-field input-sm" placeholder="0:15" />
+            </div>
+            <span class="trim-hint">optional · MM:SS</span>
+          </div>
+          <button id="ytDownloadBtn" class="btn btn-primary btn-block">
+            <span class="btn-icon">⬇️</span> Download
+          </button>
+        </div>
+        <div id="ytProgress" class="progress hidden">
+          <div class="spinner"></div>
+          <span id="ytProgressText">Downloading from YouTube…</span>
+        </div>
+      </div>
+
+      <div id="previewContainer" class="preview-container hidden">
+        <video id="videoPreview" class="video-preview" controls></video>
+        <div class="file-info">
+          <span id="fileName"></span>
+          <button id="clearBtn" class="btn btn-sm btn-ghost">✕ Clear</button>
+        </div>
+      </div>
+
+      <div class="mode-toggle">
+        <label class="mode-label">
+          <input type="radio" name="mode" value="single" />
+          Single Prompt
+        </label>
+        <label class="mode-label">
+          <input type="radio" name="mode" value="multishot" checked />
+          🎬 Multi-Shot (max 6 cuts)
+        </label>
+      </div>
+
+      <button id="analyzeBtn" class="btn btn-primary btn-block" disabled>
+        <span class="btn-icon">🔍</span> Analyze with Gemini
+      </button>
+
+      <div id="progress" class="progress hidden">
+        <div class="spinner"></div>
+        <span id="progressText">Uploading &amp; analyzing…</span>
+      </div>
+    </section>
+
+    <!-- Right: Prompt Editor -->
+    <section class="panel panel-right">
+      <h2 class="panel-title">Generated Prompt</h2>
+
+      <!-- Single mode output -->
+      <div id="singleOutput">
+        <textarea
+          id="promptArea"
+          class="prompt-area"
+          placeholder="Your Kling AI prompt will appear here after analysis…"
+          spellcheck="false"
+        ></textarea>
+      </div>
+
+      <!-- Multi-shot mode output -->
+      <div id="multishotOutput" class="hidden">
+        <div id="shotCards" class="shot-cards"></div>
+      </div>
+
+      <div class="prompt-actions">
+        <button id="optimizeBtn" class="btn btn-secondary" disabled>
+          ⚡ Optimize for Kling
+        </button>
+        <button id="copyBtn" class="btn btn-ghost" disabled>
+          📋 Copy
+        </button>
+        <button id="copyAllBtn" class="btn btn-ghost hidden" disabled>
+          📋 Copy All Shots
+        </button>
+      </div>
+
+      <div id="costInfo" class="cost-info hidden"></div>
+
+      <div id="optimizeProgress" class="progress hidden">
+        <div class="spinner"></div>
+        <span>Optimizing prompt…</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Frames Gallery -->
+  <section id="framesSection" class="frames-section hidden">
+    <div class="frames-header">
+      <h2 class="panel-title">🎞️ Video Frames</h2>
+      <div class="frames-controls">
+        <label class="frames-interval-label">
+          Interval:
+          <select id="frameInterval" class="input-field input-sm">
+            <option value="all">Every Frame</option>
+            <option value="0.1" selected>0.1s</option>
+            <option value="0.25">0.25s</option>
+            <option value="0.5">0.5s</option>
+            <option value="1">1s</option>
+            <option value="2">2s</option>
+            <option value="3">3s</option>
+          </select>
+        </label>
+        <button id="extractFramesBtn" class="btn btn-secondary btn-sm">🎞️ Extract Frames</button>
+        <button id="downloadAllFramesBtn" class="btn btn-ghost btn-sm hidden">⬇️ Download All</button>
+      </div>
+    </div>
+    <div id="framesProgress" class="progress hidden">
+      <div class="spinner"></div>
+      <span id="framesProgressText">Extracting frames…</span>
+    </div>
+    <div id="framesGallery" class="frames-gallery"></div>
+  </section>
+
+  <!-- History -->
+  <section class="history-section">
+    <h2 class="panel-title">📝 Session History</h2>
+    <div id="historyList" class="history-list">
+      <p class="history-empty">No prompts generated yet.</p>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js?v=20260208b"></script>
+</body>
+</html>

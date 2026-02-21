@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>RFA FY26-28 ロードマップ</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Meiryo', 'Noto Sans CJK JP', sans-serif; background: #fff; padding: 24px; }
+  
+  .title { font-size: 16px; font-weight: bold; color: #1a3c5e; margin-bottom: 16px; text-align: center; }
+  
+  .legend { display: flex; gap: 24px; justify-content: center; margin-bottom: 12px; font-size: 11px; color: #333; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-bar { width: 36px; height: 6px; border-radius: 3px; }
+  .legend-bar.internal { background: #1a5276; }
+  .legend-bar.external { background: #e67e22; }
+  .legend-bar.critical { background: #5dade2; border: 1px dashed #5dade2; background: repeating-linear-gradient(90deg, #5dade2 0px, #5dade2 4px, transparent 4px, transparent 8px); height: 3px; }
+  .legend-milestone { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #e67e22; }
+
+  .gantt { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  
+  /* Header */
+  .gantt th { font-size: 10px; font-weight: 600; text-align: center; padding: 4px 0; }
+  .fy-header { background: #1a3c5e; color: white; border: 1px solid #1a3c5e; }
+  .period-header { background: #e8ecef; color: #2c3e50; border: 1px solid #d0d5d9; font-size: 9px; }
+  
+  /* Lane label */
+  .lane-label { 
+    background: #f8f9fa; border: 1px solid #e0e0e0; font-size: 10px; font-weight: bold; 
+    color: #1a3c5e; padding: 4px 8px; text-align: left; vertical-align: middle;
+    width: 100px; min-width: 100px; white-space: nowrap;
+  }
+  
+  /* Cells */
+  .gantt td { border: 1px solid #eee; height: 48px; padding: 0; position: relative; vertical-align: middle; }
+  .gantt tr:nth-child(odd) td { background: #fafbfc; }
+  .gantt tr:nth-child(even) td { background: #fff; }
+  
+  /* Task bars */
+  .bar {
+    position: absolute; height: 20px; border-radius: 10px; display: flex; align-items: center;
+    justify-content: center; font-size: 8px; font-weight: 600; color: white; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; padding: 0 8px; z-index: 2;
+  }
+  .bar.internal { background: #1a5276; }
+  .bar.external { background: #e67e22; }
+  .bar.critical { background: transparent; border: 2px dashed #5dade2; color: #5dade2; }
+  
+  .bar.top { top: 4px; }
+  .bar.bottom { bottom: 4px; }
+  .bar.mid { top: 14px; }
+  
+  /* Milestone */
+  .milestone {
+    position: absolute; z-index: 3; display: flex; flex-direction: column; align-items: center;
+  }
+  .milestone .tri { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid #e67e22; }
+  .milestone .label { font-size: 8px; font-weight: bold; color: #e67e22; margin-top: 2px; white-space: nowrap; }
+  .milestone.cyan .tri { border-bottom-color: #5dade2; }
+  .milestone.cyan .label { color: #5dade2; }
+
+  /* Column widths: label=100px, FY26 months=12cols, FY27 quarters=4cols, FY28 quarters=4cols = 20 data cols */
+  .gantt col.label-col { width: 100px; }
+  .gantt col.month-col { width: 48px; }
+  .gantt col.quarter-col { width: 72px; }
+</style>
+</head>
+<body>
+
+<div class="title">RFA FY26-28 ロードマップ</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-bar internal"></div>内部開発</div>
+  <div class="legend-item"><div class="legend-bar external"></div>外部開発 / 事業部連携</div>
+  <div class="legend-item"><div class="legend-bar critical"></div>クリティカルパス</div>
+  <div class="legend-item"><div class="legend-milestone"></div>マイルストーン</div>
+</div>
+
+<table class="gantt">
+<colgroup>
+  <col class="label-col">
+  <col class="month-col"><col class="month-col"><col class="month-col">
+  <col class="month-col"><col class="month-col"><col class="month-col">
+  <col class="month-col"><col class="month-col"><col class="month-col">
+  <col class="month-col"><col class="month-col"><col class="month-col">
+  <col class="quarter-col"><col class="quarter-col"><col class="quarter-col"><col class="quarter-col">
+  <col class="quarter-col"><col class="quarter-col"><col class="quarter-col"><col class="quarter-col">
+</colgroup>
+
+<!-- FY Header -->
+<tr>
+  <th class="fy-header"></th>
+  <th class="fy-header" colspan="12">FY26</th>
+  <th class="fy-header" colspan="4">FY27</th>
+  <th class="fy-header" colspan="4">FY28</th>
+</tr>
+
+<!-- Period Header -->
+<tr>
+  <th class="period-header"></th>
+  <th class="period-header">4</th><th class="period-header">5</th><th class="period-header">6</th>
+  <th class="period-header">7</th><th class="period-header">8</th><th class="period-header">9</th>
+  <th class="period-header">10</th><th class="period-header">11</th><th class="period-header">12</th>
+  <th class="period-header">1</th><th class="period-header">2</th><th class="period-header">3</th>
+  <th class="period-header">1Q</th><th class="period-header">2Q</th><th class="period-header">3Q</th><th class="period-header">4Q</th>
+  <th class="period-header">1Q</th><th class="period-header">2Q</th><th class="period-header">3Q</th><th class="period-header">4Q</th>
+</tr>
+
+<!-- Row 1: Milestones -->
+<tr>
+  <td class="lane-label">マイルストーン</td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td style="position:relative;">
+    <div class="milestone" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">α版(CA)</div>
+    </div>
+  </td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td style="position:relative;">
+    <div class="milestone" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">β版</div>
+    </div>
+  </td>
+  <td style="position:relative;">
+    <div class="milestone" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">顧客確定</div>
+    </div>
+  </td>
+  <td style="position:relative;">
+    <div class="milestone" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">CA</div>
+    </div>
+  </td>
+  <td></td>
+  <td style="position:relative;">
+    <div class="milestone" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">GA</div>
+    </div>
+  </td>
+  <td></td>
+  <td style="position:relative;">
+    <div class="milestone cyan" style="left:50%;transform:translateX(-50%);top:2px;">
+      <div class="tri"></div><div class="label">V2.0</div>
+    </div>
+  </td>
+  <td></td><td></td>
+</tr>
+
+<!-- Row 2: RoboSync × VLA -->
+<tr>
+  <td class="lane-label">RoboSync<br>× VLA</td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">IF定義・合意</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">VLAスキル実装</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">現場VLA・双腕</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">β版統合テスト</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">安定化・多品種</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar external bottom" style="left:4px;right:4px;">商用品質化・QMS</div>
+  </td>
+  <td colspan="4" style="position:relative;">
+    <div class="bar critical mid" style="left:4px;right:4px;">V2.0 機能拡張</div>
+  </td>
+</tr>
+
+<!-- Row 3: DataOps -->
+<tr>
+  <td class="lane-label">DataOps</td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">スキーマ定義</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">ログ変換・蓄積</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">FT→再デプロイ</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">改善サイクル検証</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">学習基盤構築</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar external bottom" style="left:4px;right:4px;">商用データPL</div>
+  </td>
+  <td colspan="4"></td>
+</tr>
+
+<!-- Row 4: Agent Operation -->
+<tr>
+  <td class="lane-label">Agent<br>Operation</td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">基本設計</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">詳細設計</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">Agentic制御開発</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">サイクル検証</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">リカバリー高度化</div>
+  </td>
+  <td colspan="2" style="position:relative;">
+    <div class="bar critical bottom" style="left:4px;right:4px;">学習ベース最適化</div>
+  </td>
+  <td colspan="4"></td>
+</tr>
+
+<!-- Row 5: Field PoC -->
+<tr>
+  <td class="lane-label">Field PoC</td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">タスク特定・合意</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal top" style="left:4px;right:4px;">計画書・機材準備</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">社内PoC実施</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar internal bottom" style="left:4px;right:4px;">結果レポート</div>
+  </td>
+  <td colspan="3" style="position:relative;">
+    <div class="bar external top" style="left:4px;right:4px;">顧客PoC・FB反映</div>
+  </td>
+  <td style="position:relative;">
+    <div class="bar external bottom" style="left:4px;right:4px;">GA判定</div>
+  </td>
+  <td colspan="4"></td>
+</tr>
+
+<!-- Row 6: Responsible AI -->
+<tr>
+  <td class="lane-label">Responsible<br>AI</td>
+  <td colspan="6" style="position:relative;">
+    <div class="bar internal mid" style="left:4px;right:4px;">Microsoft WS・AI倫理方針策定</div>
+  </td>
+  <td colspan="6" style="position:relative;">
+    <div class="bar internal mid" style="left:4px;right:4px;">OSSライセンス・リスク整理</div>
+  </td>
+  <td colspan="4" style="position:relative;">
+    <div class="bar external mid" style="left:4px;right:4px;">安全要件文書化・監査対応</div>
+  </td>
+  <td colspan="4"></td>
+</tr>
+
+</table>
+
+</body>
+</html>

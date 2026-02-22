@@ -1,74 +1,68 @@
-# Clawdbot-Workspace
+# clawdbot-workspace
 
-## 基本思想
-
-- **キャプチャはClawdbot経由** — スマホからもDiscordで話しかければOK
-- **整理はClawdbotがやる** — 手間ゼロ
-- **Obsidianは閲覧用** — 人間が見たいときに見る
-
-## フォルダ構造
-
-```
-Vault/
-├── Inbox/           # キャプチャ用（Daily Note）
-│   └── YYYY-MM-DD.md
-├── Projects/        # アクティブなプロジェクト
-│   └── {project}/
-│       ├── README.md
-│       ├── notes.md
-│       └── assets/
-├── Context/         # LLM用コンテキスト（自動更新）
-│   ├── me.md
-│   └── projects.md
-├── Tasks/           # タスク管理
-│   ├── active.md
-│   └── archive/
-├── Docs/            # 完成した資料
-├── Notes/           # テーマ別メモ（必要なら）
-├── Templates/       # テンプレート
-└── Archive/         # 終わったもの
-```
-
-## Clawdbotとの対話
-
-### クイックキャプチャ
-| 言い方 | 動作 |
-|-------|-----|
-| 「メモ: xxx」 | Inbox/今日.md に追記 |
-| 「タスク: xxx」 | Tasks/active.md に追加 |
-| 「xxx終わった」 | 完了マーク + archive |
-| 「今週のタスク」 | タスク一覧表示 |
-
-### プロジェクト操作
-| 言い方 | 動作 |
-|-------|-----|
-| 「〇〇プロジェクト作って」 | Projects/に新規作成 |
-| 「〇〇の進捗」 | 該当プロジェクトの状況表示 |
-| 「〇〇終わり」 | Archive/に移動 |
-
-### 基本的には自然に話せばOK
-キーワードなしでも文脈から判断する。
-
-## アクセス方法
-
-| 環境 | 方法 |
-|-----|-----|
-| PC (WSL) | `~/research/obsidian-vault/` |
-| PC (Windows) | `G:\マイドライブ\Obsidian\Obsidian` |
-| スマホ | **Discord経由でClawdbotに話しかける** |
-| Obsidianアプリ | 閲覧・編集用（Google Drive同期） |
-
-## ルール
-
-### Clawdbotがやっていいこと
-- Inbox/, Projects/, Tasks/, Context/, Docs/ の読み書き
-- 会話からContext/の自動更新
-
-### 触らない
-- `.obsidian/` — Obsidian設定
-- `Archive/` — 編集しない（参照のみ）
-- `Templates/` — 基本変更しない
+**milo claw** — konukiの専属AIアシスタント（Claude + OpenClaw）の作業拠点。
 
 ---
 
-*このVaultはClawdbotと一緒に運用します*
+## エージェント名
+
+**milo claw**（旧称: Wooper / Clawdbot）
+
+---
+
+## 使う場面
+
+- 作業の合間・移動中
+- タスクが増えたとき
+- メモしたいとき
+- 資料を作りたいとき
+- 思考を整理したいとき
+
+---
+
+## milo clawに期待すること
+
+| 期待 | 説明 |
+|------|------|
+| 情報の整理 | いろんな情報が散らかることなく適切に整理される |
+| 適切なタイミングでの呼び出し | 必要な情報が必要なときに出てくる |
+| 記憶の保持 | セッションをまたいでも文脈が維持される |
+| 自律的な課題発見 | konukiが気づかなかった課題や改善点を発見して仕組みに取り込む |
+| TODOの整理 | タスクが常に最新・整理された状態 |
+
+---
+
+## 既知の課題
+
+- **記憶・コンテキストリセット時のUX** — セッションリセット/コンパクション後の文脈回復体験が悪い（改善中）
+
+---
+
+## ファイル構成
+
+| ファイル | 役割 |
+|---------|------|
+| `SOUL.md` | milo clawの魂・価値観 |
+| `IDENTITY.md` | 人格・口調・スタイル |
+| `AGENTS.md` | 運用ルール |
+| `USER.md` | konukiについて |
+| `TOOLS.md` | 環境・ツール情報 |
+| `HEARTBEAT.md` | 定期タスク定義 |
+| `MEMORY.md` | 長期記憶（整理済み） |
+| `TODO.md` | タスク管理 |
+| `memory/NOW.md` | 現在の作業状態（lifeboat） |
+| `memory/YYYY-MM-DD.md` | 日次ログ |
+| `Projects/` | プロジェクト別資料 |
+
+---
+
+## 運用ルール
+
+- **変更したらpushする**（原則。レビュー待ちで止めない）
+- **外部送信・公開・破壊的操作は事前確認**
+- Discord（または Telegram）が主窓口
+- Obsidianは使用していない
+
+---
+
+*このワークスペースは milo claw と一緒に運用・進化させる*

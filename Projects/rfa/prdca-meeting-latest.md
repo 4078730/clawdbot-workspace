@@ -49,15 +49,45 @@
 - **利点**: ワンショットドメイン転移の可能性
 - **制限**: 環境が大きく変わると汎化しない可能性。環境固有のFTが必要かもしれない
 
+### 技術計画（3ステップ）
+1. **Train Base Policy**: ロボットテレオペデータのみで訓練。エンコーダf_φがタスク特徴空間を学習。以後凍結。アーキテクチャ変更不要
+2. **Compute Δz**: 5-10のペア（ソース, ロボット）観測を収集。Δz = mean(f_φ(O_robot)) - mean(f_φ(O_source))。1回のフォワードパスのみ、勾配不要
+3. **Steered Inference**: z_steered = f_φ(O_source) + α·Δz（αは推論時に調整可能）。ポリシーπ_θ(z_steered)がソースドメイン観測から直接ロボットアクションを生成
+
+### 検証する転移方向
+| 方向 | 内容 |
+|------|------|
+| sim → real robot | シミュレーション訓練ポリシーをxArm 7にデプロイ |
+| human egocentric → robot | Aria映像 → ロボット実行 |
+| new scene / lighting | 同タスク・異なる視覚コンテキスト → 同ポリシー |
+| robot A → robot B | Δzによるエンボディメントシフト |
+
+### 拡張: Pure Videoからのステアリング
+- ΔzをTAPIR/CoTrackerによるポイントトラッキングで推定 → 疑似アクションラベル生成
+- **Ariaグラス不要** → 既存の工場映像がデータソースとして使用可能に
+
 ---
 
-## 提案2: CMT Diffusion（低リスク・把持特化）
+## 提案2: Human Hand Grasp Transfer to Robot Gripper（低リスク・把持特化）
 
-- **出典**: CMT Diffusion — Contact Map Transfer with Conditional Diffusion Model
-- **手法**: 既知物体のコンタクトマップ（把持点情報）を、Cascaded Diffusion Modelで新物体に転移
-- **利点**: 類似物体（箱のバリエーション等）でCADスキャン/点群があれば高精度
-- **制限**: **把持のみ**。複雑なマニピュレーション（組立等）には不十分
-- **適用場面**: 工場で類似形状の物体を大量に扱う場合（例: 箱のPick & Place）
+### コンセプト
+- 人間の手の把持を「テンプレート」として使用 → ロボットグリッパー・新オブジェクトへ転移
+- **ロボット把持データ不要** / ゼロショットで新オブジェクトに対応 / 低リスク・インクリメンタル
+
+### CMT Diffusion の手法と成果
+- **核心**: Object-Centric表現 — Contact map (c ∈ R^{m×1}), Part map (p ∈ R^{m×16}), Direction map (d ∈ R^{m×3}) すべて物体表面上に定義。手/グリッパー形状に非依存
+- **Dual-Branch Conditional Diffusion**:
+  - Template branch: 既知把持をPointNet++でエンコード → h_e
+  - Target branch: 物体点群 + h_e + BERT言語条件でデノイズ
+  - Bidirectional adaptation moduleで幾何的類似性を学習
+  - Cascaded生成: contact → part → direction
+- **成果**: Seen SR 79% / Unseen SR 74%（RealDex 42%/30%, DexGYS 42%/39%を大幅上回る）
+
+### 技術計画
+- **データ収集**: 人間がAriaグラス着用→対象物を把持。3Dハンドキーポイント → MANOで物体点群に投影。ロボット知覚と同じハードウェア
+- **スコープ**: 2-3のPCO物体カテゴリ。カテゴリあたり5-10の人間把持を収集。人間テンプレートで訓練 → Seen/Unseen物体で評価
+- **拡張 — Pure Video転移**: 3Dオブジェクトモデル（CAD/スキャン/VGGT再構築）があれば、通常のRGB映像からハンドポーズ推定で接触マップを抽出可能。工場にはCADモデルが多い
+- **拡張 — Error Recovery**: Ariaで連続記録 → (失敗→修正)ペアが自動で得られる。リカバリデータでの共訓練で明示的な失敗回復行動を獲得
 
 ---
 
@@ -90,6 +120,45 @@
 ### 5. 環境固有FTのコスト（奥村の質問）
 - **奥村**: 環境固有FTのコストが十分小さければ非常に価値ある技術
 - **Konstantinos**: 訓練コストは問題ないと考える。GPUアクセスあり。前回ICLR投稿時と同程度
+
+---
+
+## PRDCAラボ環境
+
+### ハードウェア: xArm 7 × 2 Bimanual Setup
+- **ロボット**: xArm 7 × 2台（各7-DOF）。Leader-Follower テレオペ対応
+- **センサ**: Meta Project Aria をロボット頭部に搭載（エゴセントリックRGB + SLAM）。人間デモ用に2台目Aria。ZED2i × 2台を手首マウント
+- **キャリブレーション**: T^{aria}_R — xArmベース → Ariaフレームへの変換。エンドエフェクタ姿勢をエゴセントリック座標に投影
+
+### カメラ配置
+- Left Camera + Right Camera（サイド2台）+ Wrist Camera（手首1台）+ Manipulation Region
+
+---
+
+## PRDCAからPCOへのスコーピング質問
+
+### Tasks
+- 最優先のマニピュレーションタスク2-3は？
+- シングルアーム or バイマニュアル？
+- デプロイ時の許容失敗率は？
+- 現在のエラーリカバリ方法は？
+
+### Objects
+- スコープ内の物体カテゴリ数は？
+- カテゴリ内のバリエーション（サイズ、色、表面）は？
+- 新製品の出現頻度は？
+- 固定配置 or ランダム配置？
+
+### Existing Data
+- 対象タスクを実行する作業者の映像は既存？
+- 現場でAriaグラスを着用可能な作業者はいるか？
+- 既存のロボットデモンストレーションデータは？
+
+### Constraints
+- 照明・シーンは可変 or 制御済み？
+- 安全認証要件は？
+- 推論レイテンシ要件は？
+- **Proposal 1（Steering Vectors）とProposal 2（Grasp Transfer）どちらから開始を希望？**
 
 ---
 

@@ -321,4 +321,180 @@
 
 ---
 
-*作成: 2026年2月24日 — ADS Day 1サマリー・RAI資料・最終TODO一覧をもとに整理*
+## 10. Day 1/2 タイムテーブル
+
+### Day 1（2/19）
+
+| 時間 | トピック | 発表者 | 備考 |
+|------|---------|--------|------|
+| 10:00-10:20 | Welcome & Introductions | Hideo Yoshimi, Muruganandam, All | セッション目標、自己紹介 |
+| 10:20-10:40 | **Project Overview** | Panasonic | プロジェクト概要・ビジネス課題 |
+| 10:40-12:15 | **Current State, Challenges** | Panasonic | アーキテクチャ・ワークフロー・KPI含む技術的課題 |
+| 12:15-13:15 | Lunch Break | — | — |
+| 13:15-14:00 | Problem Statement / DoD / Out of scope | Muruganandam, All | 問題定義、成功基準、スコープ外 |
+| 14:00-14:30 | Dependency Discussions | Sean Ma (Prep: Ayaka Hara) | 学習データ、シミュレーション環境、既存アセット、モデルデプロイ |
+| 14:30-15:30 | **Non-functional Requirements & Prioritization** | Sean Ma (Prep: Ayaka Hara), Panasonic | コスト、性能、可用性、スケーラビリティ、可観測性、セキュリティ |
+| 15:30-16:00 | Data Review | Jun Kataoka (Prep: Kosuke Fujimoto) | ボリューム、フォーマット、クレンジング、合成データ生成 |
+| 16:00-16:15 | Short Break | — | — |
+| 16:15-16:45 | Development Tool Chain & Environment | Mike Lanzetta, Sean Ma | 開発ツールチェーン・環境要件 |
+| 16:45-17:15 | Simulation & Robotics Integration | Paige Liu, Oshani De Silva | シミュレーションツール、ロボティクスPF |
+| 17:15-17:30 | Day 1 Wrap Up | Muruganandam | — |
+| 18:00-20:00 | Dinner Party | — | — |
+
+### Day 2（2/20）
+
+| 時間 | トピック | 発表者 | 備考 |
+|------|---------|--------|------|
+| 10:00-10:10 | Recap of Day 1 & Objectives for Day 2 | Hideo Yoshimi, Muruganandam | Day 1振り返り、Day 2フォーカス設定 |
+| 10:10-11:00 | Technical Spike Review & Outcomes | Jun Kataoka, Sean Ma, Mike Lanzetta | 進捗レビュー、議論結果 |
+| 11:00-12:00 | **Proposed Architecture** | Sean Ma | アーキテクチャ提案 |
+| 12:00-13:00 | Lunch Break | — | — |
+| 13:00-13:30 | Engagement Schedule & CWAA/PD Status | Hideo Yoshimi, Muruganandam | 全体スケジュール |
+| 13:30-13:45 | **Team, Roles & Responsibilities** | Microsoft, Panasonic | チーム・役割・責任確認 |
+| 13:45-14:45 | Scrum Overview & Sprint Plan | Ayaka Hara, Jun Kataoka, Sean Ma, Mike Lanzetta | スクラム研修、リスク・緩和策特定（開始日TBD） |
+| 14:45-15:00 | Break | — | — |
+| 15:00-15:30 | Responsible AI | Jun Kataoka | RAI Workshop結果発表 |
+| 15:30-16:15 | **Robot Demo** | Panasonic | ロボット実機デモ |
+| 16:15-16:30 | Break | — | — |
+| 16:30-16:45 | Communication Tools & Working Agreement | Ayaka Hara | コミュニケーションツール・作業合意 |
+| 16:45-17:00 | **Production Roadmap & Gaps to Production** | Panasonic | 本番化ロードマップ、MSの支援ポイント |
+| 17:00-17:15 | Open Questions, Retrospective & Feedback | All | 未解決トピック、改善点 |
+| 17:15-17:30 | Closing Remarks & Next Steps | Hideo Yoshimi, Muruganandam, Shohji Ohtsubo | まとめ、フォローアップ確認 |
+
+---
+
+## 11. プラットフォーム要件定義（vla-platform-requirements.md）
+
+> ADS Day 2で整理された要件仕様。`vla-platform-requirements.md` のスクリーンショットから転記。
+
+### FR-1 Data Collection & Ingestion
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-1.1 | Panasonicロボットデータ（Teleoperation, Rule-based, Human Action等）をEdge→Azure Bronzeゾーンに自動インジェスト。**自動インジェストは現フェーズではスコープ外だが、異なるデータソースに対応するwell-definedなフォルダ/タグ構造のサポートが必要** | Mandatory（構造部分） |
+| FR-1.2 | Isaac Simからの合成データのBronzeゾーンへのインジェスト | **Out of scope** |
+| FR-1.3 | Vision-Language-onlyデータ（Human Video / On-site Documents / Web Data）のインジェストと差別化管理。VLAデータとは別管理 | See FR-1.1 |
+| FR-1.4 | 全BronzeデータにWhat/How/Whereメタデータ記録（データ型、収集方法、ソース場所/エンボディメント） | See FR-1.1 |
+| FR-1.5 | Azure上でのE2Eデータパイプライン（トリガー、コンピュート、ストレージ、ロギング）＋障害箇所特定 | **Mandatory** |
+| FR-1.6 | RoboSyncクローズドループ: RoboSync Logs → Data Conversion → Training → Evaluation → Redeployment（手動or半自動） | **Out of scope** |
+
+### FR-2 Bronze → Silver Data Processing
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-2.1 | Bronze生データ→構造化Silverデータ変換（Vision/Action/Language/Metadata明示分離） | **Mandatory** |
+| FR-2.2 | マルチソースデータ前処理＋時刻同期（同期品質メトリクス: フレームギャップ、ドリフト） | **Mandatory** |
+| FR-2.3 | Silverレイヤーのスキーマバリデーション。スキーマ・同期要件を満たさないデータはinvalid扱い、Gold進入をブロック | **Mandatory** |
+| FR-2.4 | Bronzeデータのタイプ宣言・分類（Teleoperation / Cross-Embodiment / Human Action / Rule-based / Simulation / VL-only）→正しい処理パスへルーティング | **Mandatory** |
+
+### FR-3 Silver → Gold Data Curation
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-3.1 | SilverデータのGold適格性ルールベース判定（スキーマ、同期品質、メタデータ完全性） | **Mandatory** |
+| FR-3.2 | Goldデータセットの目的宣言（IL Training / RL Seeding / Evaluation） | **Mandatory** |
+| FR-3.3 | GoldデータのRLDS / LeRobot学習互換形式への変換 | **Mandatory** |
+| FR-3.4 | Vision-Language-onlyデータはVLA Goldに入れてはならない。Bronze/Silverに留め、Agent/言語Fine-Tuning専用 | **Mandatory** |
+| FR-3.5 | Goldデータセットのバージョニング（マニフェスト生成＋フリーズ機能） | **Mandatory** |
+
+### FR-4 Model Training
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-4.1 | Azure ML上でGold-tierデータセットを使ったGPUベースImitation Learning (IL) 学習 | **Mandatory** |
+| FR-4.2 | 少なくとも1つの顧客指定VLAモデルのE2E学習完遂 | **Mandatory** |
+| FR-4.3 | パラメータ化された再現可能な学習パイプライン（同一データバージョン+設定で同一結果） | **Mandatory** |
+| FR-4.4 | ILモデルをシードとしたReinforcement Learning (RL) 学習（Isaac Sim経由、Azure ML上） | **Mandatory** |
+
+### FR-5 Model Management & Distribution
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-5.1 | モデルバージョン管理（モデル↔データバージョン紐付け＋学習設定トレーサビリティ） | **Mandatory** |
+| FR-5.2 | サイト別モデルパブリッシュ（サイト/生産ライン/ロボットタイプ別分離、監査可能なパブリッシュ記録） | **Mandatory** |
+| FR-5.3 | VLA Model Registryへのモデル登録 | **Mandatory** |
+| FR-5.4 | モデルコンテナイメージのビルド＆Azure Container Registry (ACR) へのプッシュ | **Mandatory** |
+| FR-5.5 | A/Bテスト＋ロールバック機構（最低限、プロセスレベルのマルチバージョン共存・切替） | **Stretch** |
+
+### FR-6 Evaluation & Simulation
+
+| ID | 要件 | 分類 |
+|----|------|------|
+| FR-6.1 | スケルトンレベル評価パイプライン（Sanity Check）— 評価結果/レポート出力 | **Mandatory** |
+| FR-6.2 | 安全制御評価手法（アクション境界チェック、故障モード記録） | **Mandatory** |
+| FR-6.3 | Human-in-the-Loop (HIL) インターフェースプレースホルダー（アノテーション、確認、リプレイノード） | **Stretch** |
+| FR-6.4 | シミュレーション環境での少なくとも1評価シナリオ実行（比較可能なメトリクス出力） | **Stretch** |
+| FR-6.5 | シミュレーションからのバリデーションテレメトリ・動画収集→データパイプラインへのフィードバック | **Mandatory** |
+
+### FR-7 Deployment
+
+> ※スクリーンショットでは見出しのみ確認。詳細はDay 2録画アクセス後に補完予定。
+
+---
+
+### NFR-1 Scalability
+
+| ID | 要件 |
+|----|------|
+| NFR-1.1 | **GPU Training Horizontal Scaling** — 並列学習ジョブ＋キューベーススケジューリング。GPUコンピュート追加にアーキ変更不要 |
+| NFR-1.2 | **Data Volume Scaling (Bronze/Silver/Gold)** — 階層型ストレージで増分データ成長対応。各レイヤー独立スケール。新データ到着時の全再計算回避、増分処理＋append-onlyパターン推奨 |
+| NFR-1.3 | **Multi-site Expansion** — namespace・パス規則・アクセスポリシーでサイト/生産ライン/ロボットタイプ別分離。新サイト追加は再現可能なオンボーディングプロセスで |
+
+### NFR-2 Performance
+
+| ID | 要件 |
+|----|------|
+| NFR-2.1 | **Training & Evaluation Cycle Performance** — E2Eサイクルタイム（インジェスト→変換→学習→評価）に注目。評価は並列化（データ分割、並行Sanity Check）対応。指標: 学習総時間（データ準備含む）、評価スループット（episodes/hour） |
+| NFR-2.2 | **Inference Performance** — コンテナ化デプロイ後のEdge PCでの推論レイテンシ・スループットの最低基準定義。指標: p95推論レイテンシ、FPS or actions/second。Flywheelイテレーションごとに段階改善 |
+
+### NFR-3〜5
+
+> ※スクリーンショットでは部分的に確認（NFR-4 Observability → NFR-4.1 Logging 見出しあり）。詳細はDay 2録画アクセス後に補完予定。
+
+### NFR-6 Data Governance
+
+| ID | 要件 |
+|----|------|
+| NFR-6.1 | **Data Schema Management** — データ構造・メタデータ辞書の定義＋バージョン管理。スキーマ変更の追跡・後方互換管理。Bronze/Silver/Gold各レイヤーにスキーマ期待値定義 |
+| NFR-6.2 | **Data Quality Gates** — Gold進入前の品質バリデーション: 時刻同期精度、モダリティ完全性、異常エピソード検出。品質ゲート結果はデータセットメタデータに記録 |
+| NFR-6.3 | **Dataset Lifecycle Management** — バージョニング、フリーズ（学習公開後のイミュータビリティ）、リタイアメント。公開データセットはマニフェスト＋検証レポート生成必須 |
+| NFR-6.4 | **Data Catalog** — Bronze/Silver/Gold全データセットを登録する集中検索可能カタログ。エントリ: データセット名、ティア、データ型（Teleoperation/Human Action/Rule-based/Simulation/VL-only）、スキーマバージョン、オーナー、作成日、サイズ、目的タグ。ストレージ直接検査なしでの発見可能性 |
+| NFR-6.5 | **Data Lineage** — 生インジェスト→全変換→最終学習アーティファクトまでのE2Eデータリネージ追跡。記録: ソース（Edge/Isaac Sim/RoboSync）、Bronze ID、適用変換、Silver ID、Gold ID、消費した学習ラン。任意のモデルバージョンから元の生データ・変換・品質ゲート判定まで遡及可能（再現性・トレーサビリティのギャップ直接対応） |
+
+### NFR-8 Operability & Maintainability
+
+| ID | 要件 |
+|----|------|
+| NFR-8.1 | **CI/CD Coverage** — データパイプライン、学習環境イメージ、モデルパブリッシュ、Edgeデプロイスクリプトすべて自動CI/CDで配信。手動デプロイ（現在のペインポイント）の最小化 |
+| NFR-8.2 | **Rollback Mechanisms** — モデルバージョンレベル＋コンテナデプロイレベルでのロールバック。手順の文書化・リハーサル必須 |
+| NFR-8.3 | **Modular Design & Documentation** — モジュール境界の明確化。ドキュメントセット: アーキテクチャ文書、運用Runbook、データ規約ガイド、トラブルシューティングPlaybook |
+
+---
+
+## 12. バックログ（初期）
+
+### Sprint 0前の準備タスク
+
+- Bronze zone データタイプ宣言・分類仕様
+- Silverデータスキーマ仕様＋バリデーションスパイク
+- データ規約プロセス仕様＋パイプラインドキュメント
+- シミュレーションスコープ・評価シナリオ明確化
+- データガバナンス戦略仕様（カタログ、スキーマ管理、オーナーシップ）
+
+### Sprint実装タスク
+
+- Azureサブスクリプション・リソースプロビジョニング、アクセス制御セットアップ
+- Cloud Defender スキャン（1st round）＋セキュリティプラン
+- DevOps戦略定義（CI/CD: Data pipeline, Training pipeline, Evaluation pipeline）
+- データパイプライン実装
+- π0 Fine-tuning モデル学習パイプライン
+- MLOpsパイプライン（オフライン評価含む）の実装＋π0モデルでのテスト
+- Edgeデプロイ実装
+- シミュレーションPF基盤セットアップ（Isaac Sim環境、Azure ML統合）
+- CI/CDパイプラインスパイク実装
+- データカタログ、バージョニング、オーナーシップ実装
+
+---
+
+*作成: 2026年2月24日 — ADS Day 1/2サマリー・RAI資料・最終TODO・vla-platform-requirements.mdスクリーンショットをもとに整理*  
+*※ Day 2録画アクセス後にFR-7 Deployment詳細、NFR-3〜5、NFR-7、DoD詳細セクション、Appendix A（FR/NFR→Epic Traceability）を補完予定*

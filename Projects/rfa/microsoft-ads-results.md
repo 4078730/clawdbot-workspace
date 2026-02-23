@@ -75,11 +75,29 @@
 
 ---
 
-## 4. スケジュール
+## 4. エンゲージメントスケジュール
 
-- **Sprint 0 開始:** 3月23日予定
-- **構成:** 4スプリント
-- スケジュールはリーダーシップのフィードバックで調整の可能性あり
+### 全体フェーズ（2026年）
+
+| 月 | フェーズ |
+|----|---------|
+| 1月-2月 | Explore |
+| 2月 | ADS |
+| 3月 | Game Plan |
+| 4月-8月 | Initial MVE / MVP |
+
+### 詳細スケジュール
+
+| 期間 | 内容 |
+|------|------|
+| **3/2-3/14** | Game Plan Doc & Tech Spike |
+| **3/12-3/13** | Customer Houston Visit |
+| **3/16-3/17** | Customer Redmond Visit |
+| **3/23-4/4** | MVP development（Sprint 0） |
+| **4/6-4/18** | MVP development（Sprint 1） |
+| **4/20-5/2** | MVP development（Sprint 2） |
+
+スケジュールはリーダーシップのフィードバックで調整の可能性あり
 
 ---
 
@@ -471,7 +489,82 @@
 
 ---
 
-## 12. バックログ（初期）
+## 12. Development Toolchain & Environment Readiness
+
+> MSからPanasonicへの確認事項。小栗さんが回答共有担当。
+
+### P0（最優先）
+
+| # | 項目 | 説明 | Panasonicへの確認事項 | 備考 |
+|---|------|------|---------------------|------|
+| 1 | Dev environment standard | IDE/エディタ、OS baseline、再現可能な開発環境（devcontainers等）for Python/ROS/Isaac/AML | 許可された開発ツール、エンドポイント、制限事項（plugins, WSL, Docker） | VSCode, C++, Python |
+| 2 | Source control & repo hosting | コード格納場所、ブランチ戦略、PR/レビュー要件、外部共有ルール | Azure DevOps vs GitHub（or 両方）、リポ可視性、アクセス承認者 | GitHub Enterprise |
+| 3 | Work tracking & backlog | ボード定義、epics/stories/bugsタクソノミー、リファインメント・サインオフのケイデンス | ボードシステム（ADO Boards）、オーナー、Panasonicの優先順位/受入れ方法 | — |
+| 4 | Container build & registry | 学習/変換ジョブのコンテナイメージ標準化、イメージオーナーシップ、保持、スキャン | コンテナレジストリ（ACR）、ネットワークアクセス、セキュリティスキャン/承認 | — |
+| 5 | Azure subscriptions, region & GPU quota | ターゲットサブスクリプション、リージョン、AML compute & BatchのGPU SKUクォータプロセス | クォータ申請者、典型的リードタイム、リージョン制約、コンピュート購入承認ワークフロー | — |
+| 6 | Azure ML workspace + experiment tracking | AML workspace設定、MLflow追跡、アーティファクト保存場所、命名規則、RBAC | AML/MLflowエンドポイント承認、ワークスペースオーナーシップ/アクセスモデル | — |
+| 7 | Secrets & identities | 資格情報管理（Key Vault）、サービスプリンシパル/マネージドID、ローテーション | Key Vault標準、IDプロバイダー、シークレット付与/ローテーション権限者 | — |
+| 8 | Data access & movement | ストレージアカウント/コンテナ定義、RBAC、Edge→クラウドインジェス、データセット保持/バージョニングポリシー | Blob構造/権限、データレジデンシー/保持要件 | — |
+
+### P1-2（次優先）
+
+| # | 項目 | 説明 | Panasonicへの確認事項 |
+|---|------|------|---------------------|
+| 9 | Dependency security & OSS policy | Pythonパッケージ、CUDAドライバー、ベースイメージのポリシー、SBOM、脆弱性スキャン、例外 | 承認済みパッケージソース、スキャンツール、重要依存関係の例外プロセス |
+| 10 | CI/CD & release gates | lint/test/build/イメージパブリッシュ/デプロイアーティファクトのパイプライン定義、必要承認 | CIシステム（ADO Pipelines/GitHub Actions）、必要ゲート、レビュアー |
+| 11 | Simulation toolchain | Isaac Sim利用、アセットフォーマット、sim-to-sim評価の統合アプローチ | ライセンス/アクセス、GPU要件、simアセット/モデルの格納場所 |
+| 12 | AI/HVE tools access | 許可されるcopilot/agent、使用可能データ、出力レビュー方法 | Panasonic環境で許可されるAIツール、データ取扱い制約、プロンプト/アーティファクト制約 |
+| 13 | Responsible AI / safety governance | 学習済みポリシー実行リスクのサインオフ者、RAIアーティファクト定義 | ガバナンスオーナー、必要文書、承認タイムライン |
+
+---
+
+## 13. リスク・オープンクエスチョン
+
+| # | リスク | 状態 |
+|---|--------|------|
+| 1 | ~~LeRobotデータが学習に利用不可~~ → UR5eテレオペ生データで代替可能か？ | 解決方向あり |
+| 2 | Robo Syncプラットフォームからのデータ形式が未確定 | 未解決 |
+| 3 | Snowflakeのデータガバナンスツールが不明 | 未解決 |
+| 4 | UR5eグリッパーUSDモデルが存在しない | 未解決 |
+| 5 | UR5e ↔ Isaac Simテレオペインターフェースの開発が必要（シミュレーション内データ生成に必須） | 未解決 |
+| 6 | セキュリティ要件が未定義 | 未解決 |
+| 7 | プロダクションロードマップが未策定 | 未解決 |
+
+---
+
+## 14. Next Steps
+
+### 予定されるセッション
+
+| セッション | 担当（MS） | 時期 |
+|-----------|-----------|------|
+| Simulation workstream discussions | Paige & Oshani | TBD |
+| Value Stream Mapping | Ayaka Hara | 3/4-6（3時間） |
+| Scrum learning session | Ayaka Hara | TBD |
+| Engineering fundamentals, HVE | Sean Ma | TBD |
+| Azure ML and Foundry session schedule | Mike Lanzetta | TBD |
+
+### Action Items — Panasonic
+
+- Azureサブスクリプションのプロビジョニング＋MSチームへの権限付与
+- "Development Toolchain & Environment Readiness" の回答共有
+- セキュリティ要件の共有
+- MSチームをJIRAにオンボード（Sprint 0向け）
+- MSチームをGitHub Enterpriseにオンボード（コード・ドキュメント管理）
+- 旧ROSBAG生データ＋データ変換スクリプトの共有
+- UR5e生データ＋データ変換スクリプトの共有
+- 学習スクリプトの共有
+
+### Action Items — Microsoft
+
+- 承認済みエンゲージメントスケジュールの共有
+- スパイクスプリント優先バックログの共有
+- PD（Project Description）のレビュー・更新
+- CWAAのフォローアップ
+
+---
+
+## 15. バックログ（初期）
 
 ### Sprint 0前の準備タスク
 
@@ -496,5 +589,5 @@
 
 ---
 
-*作成: 2026年2月24日 — ADS Day 1/2サマリー・RAI資料・最終TODO・vla-platform-requirements.mdスクリーンショットをもとに整理*  
+*作成: 2026年2月24日 — ADS Day 1/2サマリー・RAI資料・最終TODO・vla-platform-requirements.mdスクリーンショット・MS Day 2スライドをもとに整理*  
 *※ Day 2録画アクセス後にFR-7 Deployment詳細、NFR-3〜5、NFR-7、DoD詳細セクション、Appendix A（FR/NFR→Epic Traceability）を補完予定*

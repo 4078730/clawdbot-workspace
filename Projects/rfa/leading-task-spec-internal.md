@@ -34,7 +34,7 @@
 | **ロボットアーム** | **Dual UR5e** | 個装・段ボール開封に双腕が必須 |
 | **エンドエフェクタ** | 吸着 / 平行グリッパ（各腕に配置） | 片腕=吸着、片腕=グリッパの構成が有力 |
 | **EE切替方式** | 自動ツールチェンジャー検討 | Agentic制御でEE切替が必要になるため |
-| **カメラ** | α版の4台 + **ワゴン俯瞰カメラ × 1** = 計5台 | Hand-Eye各腕 + ビン俯瞰 + 作業台俯瞰 + 全体俯瞰 + ワゴン俯瞰 |
+| **カメラ** | α版の4台 + **ワゴン俯瞰 × 1** = 計5台（双腕対応でHand-Eye追加 → 最大6台の可能性あり） | ビン俯瞰・作業台俯瞰・全体俯瞰・ワゴン俯瞰 + Hand-Eye（腕数に依存） |
 | **移動機構** | **TBD**（AMR or 直動レール等を検討） | ワゴンへのリーチ拡大・複数ポート対応を想定。機種・方式は要選定 |
 | **指** | 使用しない | 指の制御は研究対象（福岡拠点）。GA以降 |
 
@@ -43,7 +43,6 @@
 
 #### 作業ステーションレイアウト
 
-```
 ![Workstation Layout — Saito Parts Center (α version)](assets/workstation-layout-saito-v2.png)
 
 *作業ステーションレイアウト（推定）。参考: [パナソニック コネクト 彩都パーツセンター紹介動画](https://www.youtube.com/watch?v=ZfPwhKd8QoE)*
@@ -204,28 +203,28 @@ S0        初期位置に移動                 ロボット関節角度        
           │
 S1        ビン到着を検知                 俯瞰カメラ画像          ビン到着フラグ               画像認識 or
           │                                                                                 オートストア連携
-S2        ビン内を撮影・認識             Hand-Eye RGB-D          パーツ候補リスト              VLM or 物体検出
-          │                             俯瞰カメラ RGB-D        ・位置、姿勢推定
+S2        ビン内を撮影・認識             Hand-Eye RGB          パーツ候補リスト              VLM or 物体検出
+          │                             俯瞰カメラ RGB        ・位置、姿勢推定
           │                                                     ・包装状態分類
           │
 S3        ピック対象を決定               S2の認識結果            対象パーツID                  α版: 1個ずつ処理
           │                             パーツ情報（PMS）         把持戦略（吸着 or グリッパ）
           │
-S4        アプローチ                     Hand-Eye RGB-D          Joint制御（アプローチ）         VLA Policy
+S4        アプローチ                     Hand-Eye RGB          Joint制御（アプローチ）         VLA Policy
           │                             ロボット状態             ・ビン上方からパーツ上方へ
           │
-S5        把持動作                       Hand-Eye RGB-D          Joint制御（把持）               VLA Policy
+S5        把持動作                       Hand-Eye RGB          Joint制御（把持）               VLA Policy
           │                             ロボット状態             ・パーツに接近
           │                                                     ・吸着ON or グリッパ閉
           │
-S6        持ち上げ                       Hand-Eye RGB-D          Joint制御（リフト）             VLA Policy
+S6        持ち上げ                       Hand-Eye RGB          Joint制御（リフト）             VLA Policy
           │                             ロボット状態             ・パーツをビンから持ち上げ
           │                             （力/吸着圧センサ）       ・把持成功を確認
           │
 S7        搬送                          ロボット状態             Joint制御（搬送）               VLA or ルールベース
           │                                                     ・ビン上方→作業台上方へ
           │
-S8        配置                          Hand-Eye RGB-D          Joint制御（配置）               VLA Policy
+S8        配置                          Hand-Eye RGB          Joint制御（配置）               VLA Policy
           │                             ロボット状態             ・作業台上に降ろす
           │                                                     ・吸着OFF or グリッパ開
           │

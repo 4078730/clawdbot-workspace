@@ -1,11 +1,13 @@
 ## NOW.md
-- 現在の目標: ADS結果整理・MS協業ネクストステップ実行、FY26ディスカッション成果のドキュメント反映
+- 現在の目標: 明日2/24 MTG準備（RFM開発相談会10:00・Idea Forge Crystal Ball 13:00）、メンバー評価（残5日）、フライト手配（残17日）
 - 完了: ADS Day 1/2(2/19-20)、FY26プロジェクトディスカッション(2/17-20)
-- 🔥 次のアクション1: フライト・ホテル手配（北米出張 3/12-3/18 Houston→Seattle、残17日）
+- 🔥 次のアクション1: 2/24 Idea Forgeデモ Crystal Ball 資料・スクリプト作成（外部向け・Blue Yondarドイツメンバー来訪）
 - 🔥 次のアクション2: 今年度メンバー評価（期限2/28、残5日）
-- 次のアクション3: MS協業後続（Azure権限付与・Confluence/Jira/GitHubセットアップ・UR5e立上げ）
-- 次のアクション4: PRDCA 2/18打合せの議事録整理とQA回答
+- 🔥 次のアクション3: フライト・ホテル手配（北米出張 3/12-3/18 Houston→Seattle、残17日）
+- 次のアクション4: 2/24 RFM開発相談会（10:00）IndexVLA論文アップデート方針・実験計画
+- 次のアクション5: MS協業後続（Azure権限付与・Confluence/Jira/GitHubセットアップ・UR5e立上げ）
 - ブロッカー: 2/17内部レビュー結果が未記録（konukiに確認要）
 - 進行中: TRLC-DK1-X ×2 Proforma Invoice待ち → 受領後に決裁回付
 - MS協業確定: データ形式LeRobot、Azure remote inference、DoD/Scope/チーム体制確定
 - 北米出張: 3/12 Houston入り / 3/13 MS Integration Hub / 3/16 MS HQ / 3/17 池内先生（希望者）/ 3/18帰国
+- 今週MTG: 2/24 RFM開発相談会(10:00)・Idea Forge(13:00) / 2/25 池内先生Weekly(9:00)・RFA Project Mtg(14:00) / 2/26 CXCデモ第9回(13:00)

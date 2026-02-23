@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leading Task — Internal Specification | Saito Parts Center</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/white.css">
+  <style>
+    :root {
+      --navy: #000E4E;
+      --cyan: #00B7F1;
+      --light-cyan: #E8F8FD;
+      --gray: #F5F5F5;
+      --text: #1a1a1a;
+    }
+    .reveal {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      color: var(--navy);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.02em;
+    }
+    .reveal h1 { font-size: 2.2em; }
+    .reveal h2 { font-size: 1.6em; border-bottom: 3px solid var(--cyan); padding-bottom: 8px; }
+    .reveal h3 { font-size: 1.1em; color: var(--cyan); }
+
+    /* Title slide */
+    .slide-title { background: var(--navy) !important; }
+    .slide-title h1 { color: #fff !important; font-size: 2em; }
+    .slide-title h2 { color: var(--cyan) !important; border: none; font-size: 1.1em; }
+    .slide-title p { color: rgba(255,255,255,0.7); font-size: 0.8em; }
+    .slide-title .tag { background: var(--cyan); color: var(--navy); padding: 4px 12px; border-radius: 20px; font-size: 0.7em; font-weight: 700; display: inline-block; margin: 4px; }
+
+    /* Section header */
+    .slide-section { background: var(--navy) !important; }
+    .slide-section h2 { color: #fff !important; border: none; font-size: 2em; }
+    .slide-section p { color: rgba(255,255,255,0.6); }
+
+    /* Tables */
+    .reveal table { width: 100%; font-size: 0.72em; border-collapse: collapse; }
+    .reveal table th { background: var(--navy); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+    .reveal table td { padding: 7px 10px; border-bottom: 1px solid #e0e0e0; }
+    .reveal table tr:nth-child(even) td { background: var(--gray); }
+    .reveal table tr:hover td { background: var(--light-cyan); }
+
+    /* Badges */
+    .badge-alpha { background: var(--cyan); color: var(--navy); padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8em; white-space: nowrap; }
+    .badge-beta  { background: var(--navy); color: #fff; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8em; white-space: nowrap; }
+    .badge-ga    { background: #888; color: #fff; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8em; white-space: nowrap; }
+    .badge-ok    { background: #27ae60; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; }
+    .badge-tbd   { background: #f39c12; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; }
+    .badge-out   { background: #e74c3c; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; }
+
+    /* Callout boxes */
+    .callout { background: var(--light-cyan); border-left: 4px solid var(--cyan); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 0.8em; }
+    .callout-navy { background: rgba(0,14,78,0.06); border-left: 4px solid var(--navy); padding: 10px 16px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 0.8em; }
+    .callout strong { color: var(--navy); }
+
+    /* Two-column */
+    .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* Phase card */
+    .phase-card { border: 2px solid var(--navy); border-radius: 8px; padding: 14px; text-align: center; }
+    .phase-card.alpha { border-color: var(--cyan); background: var(--light-cyan); }
+    .phase-card h3 { margin: 0 0 6px; font-size: 0.95em; }
+    .phase-card p { font-size: 0.72em; margin: 4px 0; color: #555; }
+    .phase-card .milestone { font-weight: 700; color: var(--navy); font-size: 0.85em; }
+
+    /* Spec list */
+    .spec-list { font-size: 0.78em; }
+    .spec-list li { margin: 5px 0; list-style: none; padding-left: 0; }
+    .spec-list li::before { content: "▸ "; color: var(--cyan); font-weight: bold; }
+
+    /* Metric */
+    .metric-big { font-size: 2.4em; font-weight: 800; color: var(--cyan); display: block; }
+    .metric-label { font-size: 0.75em; color: #666; }
+
+    /* Image fit */
+    .reveal img { max-height: 420px; object-fit: contain; }
+    .img-full img { max-height: 500px; width: 100%; object-fit: contain; }
+
+    /* Footer */
+    .reveal .footer { position: fixed; bottom: 12px; left: 20px; font-size: 0.5em; color: #aaa; }
+
+    /* Scope row highlight */
+    tr.scope-alpha td { background: var(--light-cyan) !important; }
+    tr.scope-beta td { background: rgba(0,14,78,0.04) !important; }
+
+    /* Step flow inline */
+    .step-flow { display: flex; align-items: center; gap: 6px; font-size: 0.72em; flex-wrap: wrap; }
+    .step-box { background: var(--navy); color: #fff; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+    .step-box.alpha { background: var(--cyan); color: var(--navy); }
+    .step-arrow { color: var(--navy); font-size: 1.2em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ======================================================= -->
+<!-- SLIDE 1: Title -->
+<!-- ======================================================= -->
+<section class="slide-title" data-background-color="#000E4E">
+  <h1>Leading Task<br>Internal Specification</h1>
+  <h2>Saito Parts Center — Automated Parts Picking</h2>
+  <br>
+  <span class="tag">α Version</span>
+  <span class="tag">β Version</span>
+  <span class="tag">DRAFT</span>
+  <br><br>
+  <p>RFA Project | Panasonic Connect | FY2026</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 2: Document Purpose -->
+<!-- ======================================================= -->
+<section>
+  <h2>Purpose of This Document</h2>
+  <div class="callout">
+    <strong>Goal:</strong> Ensure all team members share the same understanding of <em>what we are building</em> and <em>how we validate it</em>.
+  </div>
+  <br>
+  <div class="cols2">
+    <div>
+      <h3>Audience</h3>
+      <ul class="spec-list">
+        <li>Management &amp; Project Managers</li>
+        <li>Engineers (ready-to-implement granularity)</li>
+        <li>Internal reviewers</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Scope</h3>
+      <ul class="spec-list">
+        <li>Target operation &amp; site overview</li>
+        <li>Phase definitions (α / β / GA)</li>
+        <li>Hardware, control, task process</li>
+        <li>Validation plan &amp; success criteria</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 3: Section — Target Operation -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>1. Target Operation</h2>
+  <p>Site overview · Workflow · Scope of complexity</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 4: Site Overview -->
+<!-- ======================================================= -->
+<section>
+  <h2>Site Overview — Saito Parts Center</h2>
+  <table>
+    <tr><th>Item</th><th>Detail</th></tr>
+    <tr><td>Site</td><td>Saito Parts Center</td></tr>
+    <tr><td>Operation</td><td>AutoStore order picking &amp; outbound</td></tr>
+    <tr><td>Scale</td><td>~120,000 SKUs · ~30,000 units shipped/month</td></tr>
+    <tr><td>Equipment</td><td>AutoStore (20,000 bins · 14 AGVs)</td></tr>
+    <tr><td>Value-added work ratio</td><td><strong>30%</strong> — industry-leading</td></tr>
+  </table>
+  <br>
+  <div class="callout">
+    <strong>Business context:</strong> Parts include home appliance / housing equipment replacement parts with 120,000+ SKUs. High shape &amp; packaging diversity makes rule-based automation insufficient.
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 5: Workflow Diagram -->
+<!-- ======================================================= -->
+<section>
+  <h2>Outbound Picking Workflow</h2>
+  <div class="img-full">
+    <img src="assets/workflow-saito.png" alt="Picking Workflow">
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 6: α Version Scope of Complexity -->
+<!-- ======================================================= -->
+<section>
+  <h2>Complexity Handled by α Version</h2>
+  <div class="callout-navy">
+    α version targets the picking step where <strong>rule-based automation is insufficient</strong>, and validates VLA control policy effectiveness against shape &amp; packaging diversity.
+  </div>
+  <br>
+  <table>
+    <tr><th>Challenge</th><th>Examples</th></tr>
+    <tr><td><strong>Shape diversity</strong></td><td>Flat panels (no fixed grip point), irregular shapes, small parts</td></tr>
+    <tr><td><strong>Packaging diversity</strong></td><td>Bubble wrap inside cardboard, bagged items, partitioned bins</td></tr>
+    <tr><td><strong>Difficult retrieval</strong></td><td>Leaning against wall, buried under other parts, single-attempt failure</td></tr>
+  </table>
+  <br>
+  <div class="step-flow">
+    <div class="step-box alpha">α Scope</div>
+    <div class="step-arrow">→</div>
+    <span>Bin Arrival → Pick → Place on Work Table</span>
+    <div class="step-arrow" style="margin-left:16px">|</div>
+    <div class="step-box" style="border:2px dashed #000E4E;background:transparent;color:#000E4E;">β Scope: Scan · Packaging · Wagon placement</div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 7: Section — Phase Definition -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>2. Phase Definition</h2>
+  <p>α · β · GA — Three-axis complexity expansion</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 8: Three-Axis Strategy -->
+<!-- ======================================================= -->
+<section>
+  <h2>Design Principle — Three Axes of Complexity</h2>
+  <div class="callout">
+    <strong>Key principle:</strong> VLA <em>complements</em> rule-based control; it does not replace it. Address each complexity axis in separate phases.
+  </div>
+  <br>
+  <table>
+    <tr><th>Axis</th><th class="badge-alpha">α (CA)</th><th class="badge-beta">β</th><th class="badge-ga">GA (Reference)</th></tr>
+    <tr>
+      <td><strong>Hand</strong></td>
+      <td>2F-85 gripper + SQHW-01 suction (manual swap)</td>
+      <td>Same + auto tool changer (TBD)</td>
+      <td>Dexterous finger control (research integration)</td>
+    </tr>
+    <tr>
+      <td><strong>Arm</strong></td>
+      <td>Single arm · VLA policy</td>
+      <td>Dual arm · Agentic control · Packaging</td>
+      <td>Advanced dual-arm coordination</td>
+    </tr>
+    <tr>
+      <td><strong>Mobility</strong></td>
+      <td>None (fixed station)</td>
+      <td>TBD (wagon placement)</td>
+      <td>Mobile robot (inter-station)</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 9: Phase Overview -->
+<!-- ======================================================= -->
+<section>
+  <h2>Phase Roadmap</h2>
+  <div class="cols3">
+    <div class="phase-card alpha">
+      <span class="badge-alpha">α Version</span>
+      <h3 style="margin-top:10px">CA — Controlled Availability</h3>
+      <p class="milestone">Target: Q2 / September</p>
+      <hr style="border-color:#ccc">
+      <p>VLA pick policy operational on RoboSync</p>
+      <p>Complex shape &amp; packaging → pick → place on table</p>
+      <p>Human handles packaging &amp; paperwork</p>
+    </div>
+    <div class="phase-card">
+      <span class="badge-beta">β Version</span>
+      <h3 style="margin-top:10px">Full Cycle</h3>
+      <p class="milestone">Target: Q4 / March</p>
+      <hr style="border-color:#ccc">
+      <p>End-to-end outbound cycle</p>
+      <p>Dual arm · Packaging · Agentic [1]–[8]</p>
+      <p>"Just make it work" is the priority</p>
+    </div>
+    <div class="phase-card" style="opacity:0.7">
+      <span class="badge-ga">GA</span>
+      <h3 style="margin-top:10px">General Availability</h3>
+      <p class="milestone">Target: FY27+</p>
+      <hr style="border-color:#ccc">
+      <p>QMS-compliant product release</p>
+      <p>RoboSync option (commercial)</p>
+      <p>Fingers · Mobility · Advanced Agentic</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 10: α Version Detail -->
+<!-- ======================================================= -->
+<section>
+  <h2>α Version — Scope &amp; Success Criteria</h2>
+  <div class="cols2">
+    <div>
+      <h3>Scope</h3>
+      <table>
+        <tr><th>Item</th><th>Detail</th></tr>
+        <tr class="scope-alpha"><td><strong>IN</strong></td><td>Pick from bin → place on work table</td></tr>
+        <tr><td><strong>OUT</strong></td><td>Packaging, wagon, barcode scan, Agentic</td></tr>
+        <tr><td><strong>Parts</strong></td><td>Complex shape/packaging (selected with team)</td></tr>
+        <tr><td><strong>Human role</strong></td><td>Packaging, paperwork, manual recovery</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Success Criteria <span style="font-size:0.7em;color:#888">(provisional)</span></h3>
+      <br>
+      <div style="text-align:center">
+        <span class="metric-big">90%</span>
+        <span class="metric-label">Pick success rate (selected parts)</span>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="metric-big">95%</span>
+        <span class="metric-label">Success rate incl. 1 retry</span>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="metric-big">0</span>
+        <span class="metric-label">Safety incidents</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 11: Section — Hardware -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>3. Robot Hardware</h2>
+  <p>α version confirmed specs</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 12: α Hardware -->
+<!-- ======================================================= -->
+<section>
+  <h2>α Version Hardware Configuration</h2>
+  <table>
+    <tr><th>Component</th><th>Spec</th><th>Notes</th></tr>
+    <tr><td><strong>Robot arm</strong></td><td>UR5e (e-Series)</td><td>6-axis · Reach 850mm · Payload 5kg · TCP 4m/s · ±0.03mm · Force sensor built-in</td></tr>
+    <tr><td><strong>EE (Primary)</strong></td><td>Robotiq 2F-85</td><td>Electric parallel gripper · Stroke 85mm · Force 235N · Direct UR5e mount</td></tr>
+    <tr><td><strong>EE (Secondary)</strong></td><td>SQUARE Hand SQHW-01</td><td>4-layer suction pad · D435 camera built-in · 330mm deep reach · RoboSync integrated</td></tr>
+    <tr><td><strong>EE swap</strong></td><td>Manual (α)</td><td>Auto tool changer: β+</td></tr>
+    <tr><td><strong>Cameras</strong></td><td>Intel RealSense D405 × 4</td><td>Hand-Eye / Bin overhead / Table overhead / Wide overview</td></tr>
+    <tr><td><strong>GPU</strong></td><td>NVIDIA RTX 5070 Ti</td><td>VRAM 16GB GDDR7 (same as CXC demo unit)</td></tr>
+    <tr><td><strong>Mobility</strong></td><td>None</td><td>Fixed station</td></tr>
+  </table>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 13: Workstation Layout -->
+<!-- ======================================================= -->
+<section>
+  <h2>Workstation Layout — α Version</h2>
+  <div class="img-full">
+    <img src="assets/workstation-layout-saito-v2.png" alt="Workstation Layout">
+  </div>
+  <p style="font-size:0.55em;color:#888;text-align:center">U-shape: A = Work Table · B = AutoStore Bin · C = Output Wagon | Ref: <a href="https://www.youtube.com/watch?v=ZfPwhKd8QoE" style="color:#00B7F1">Panasonic Connect Saito Parts Center Video</a></p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 14: Section — Control -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>4. Control Architecture</h2>
+  <p>VLA Policy · RoboSync · Rule-based</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 15: Architecture Diagram -->
+<!-- ======================================================= -->
+<section>
+  <h2>RFA Control Stack — α / β Architecture</h2>
+  <div class="img-full">
+    <img src="assets/control-stack-architecture.png" alt="Control Stack">
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 16: VLA I/O Spec -->
+<!-- ======================================================= -->
+<section>
+  <h2>VLA Policy — Input / Output Specification (α)</h2>
+  <div class="cols2">
+    <div>
+      <h3>Inputs</h3>
+      <table>
+        <tr><th>Input</th><th>Spec</th></tr>
+        <tr><td>Camera image</td><td>RGB · 640×480 · 30fps<br><em>Depth not used</em></td></tr>
+        <tr><td>Robot state</td><td>Joint angles q1–q6 + gripper = 7-dim</td></tr>
+        <tr><td>Parts info (PMS)</td><td>Part name · Part number · Bin slot position (if partitioned)</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Output &amp; Control</h3>
+      <table>
+        <tr><th>Item</th><th>Spec</th></tr>
+        <tr><td>Action</td><td><strong>Joint angle control</strong><br>q1–q6 + gripper = 7-dim</td></tr>
+        <tr><td>Control cycle</td><td><strong>10 Hz</strong> (confirmed)</td></tr>
+        <tr><td>VLA model</td><td><strong>π0 / π0.5</strong><br>(Physical Intelligence)</td></tr>
+      </table>
+      <br>
+      <div class="callout">
+        <strong>Note:</strong> Input is structured parts spec from PMS — not free-form language instruction.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 17: Section — Task Process -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>5. Task Process Detail</h2>
+  <p>α Pick Cycle · β Full Workflow</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 18: Pick Cycle Diagram -->
+<!-- ======================================================= -->
+<section>
+  <h2>α Version Pick Cycle — S0 to S10</h2>
+  <div class="img-full">
+    <img src="assets/pick-cycle-alpha.png" alt="Pick Cycle">
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 19: Pick Cycle Timing -->
+<!-- ======================================================= -->
+<section>
+  <h2>Pick Cycle — Step Summary</h2>
+  <table>
+    <tr><th>Step</th><th>Action</th><th>Module</th><th>Target Time</th></tr>
+    <tr><td>S0</td><td>Move to home position</td><td>Rule-based</td><td>2s</td></tr>
+    <tr><td>S1</td><td>Detect bin arrival</td><td>Rule-based</td><td>1s</td></tr>
+    <tr class="scope-alpha"><td>S2</td><td>Recognize parts in bin</td><td>VLM</td><td>2s</td></tr>
+    <tr class="scope-alpha"><td>S3</td><td>Select pick target + grip strategy</td><td>PMS</td><td>1s</td></tr>
+    <tr class="scope-alpha"><td>S4–S6</td><td>Approach → Grasp → Lift</td><td><strong>VLA Policy</strong></td><td>10s</td></tr>
+    <tr class="scope-alpha"><td>S7</td><td>Transport (bin → table)</td><td>VLA / Rule</td><td>3s</td></tr>
+    <tr class="scope-alpha"><td>S8</td><td>Place on work table</td><td><strong>VLA Policy</strong></td><td>3s</td></tr>
+    <tr><td>S9</td><td>Verify placement</td><td>VLM</td><td>2s</td></tr>
+    <tr><td>S10</td><td>Return to home</td><td>Rule-based</td><td>2s</td></tr>
+    <tr style="background:var(--light-cyan);font-weight:700"><td colspan="3"><strong>Total — 1 Pick Cycle</strong></td><td><strong>~26s</strong></td></tr>
+  </table>
+  <p style="font-size:0.6em;color:#888">Human worker: ~1–3 min/order. α target: same order of magnitude, prioritizing reliability over speed.</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 20: β Version Workflow -->
+<!-- ======================================================= -->
+<section>
+  <h2>β Version — Full Outbound Cycle [1]–[8]</h2>
+  <div class="cols2">
+    <div>
+      <table style="font-size:0.68em">
+        <tr><th>[Step]</th><th>Action</th></tr>
+        <tr><td>[1]</td><td>Barcode scan (delivery slip)</td></tr>
+        <tr><td>[2]</td><td>Monitor operation (bin call)</td></tr>
+        <tr><td>[3]</td><td>Open cardboard in bin (if needed)</td></tr>
+        <tr><td>[4]</td><td>Pick parts (α extension)</td></tr>
+        <tr><td>[5]</td><td>Return remainder to bin</td></tr>
+        <tr><td>[6]</td><td>Individual packaging (bag + slip + seal)</td></tr>
+        <tr><td>[7]</td><td>Place on wagon</td></tr>
+        <tr><td>[8]</td><td>Next order → repeat</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="callout-navy">
+        <strong>Key addition vs α:</strong> Task Planning Hub (LLM Agent) orchestrates [1]–[8] via Behavior Tree skill switching.
+      </div>
+      <br>
+      <div class="callout">
+        <strong>Hardware upgrade:</strong> Dual UR5e (required for packaging tasks requiring bimanual coordination)
+      </div>
+      <br>
+      <div class="callout-navy">
+        <strong>Priority:</strong> "Make it work reliably" before optimizing cycle time.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 21: Section — Parts -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>6. Target Parts Definition</h2>
+  <p>Category classification · Selection criteria</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 22: Parts Categories -->
+<!-- ======================================================= -->
+<section>
+  <h2>Parts Category Classification <span style="font-size:0.6em;color:#f39c12">⚠ Provisional</span></h2>
+  <table>
+    <tr><th>Category</th><th>Examples</th><th>Packaging</th><th>VLA Difficulty</th><th>α Target</th></tr>
+    <tr><td><strong>A: Lamps / Optics</strong></td><td>Projector lamps (ET-LAV), lens units</td><td>Dedicated bag / box</td><td>Medium</td><td><span class="badge-ok">✓ Careful grip</span></td></tr>
+    <tr><td><strong>B: Flat panels</strong></td><td>Filters, panels, top plates, LCDs</td><td>Bare / bubble wrap</td><td>Medium</td><td><span class="badge-ok">✓</span></td></tr>
+    <tr><td><strong>C: Box units</strong></td><td>PSUs, PCB units, remotes</td><td>Cardboard / bag</td><td>Low</td><td><span class="badge-ok">✓</span></td></tr>
+    <tr><td><strong>D: Cables / Flex</strong></td><td>Cables, FFC, harnesses</td><td>Bagged</td><td>High</td><td><span class="badge-ok">✓ Bag-grip</span></td></tr>
+    <tr><td><strong>E: Small parts</strong></td><td>Screws, connectors, switches</td><td>Small bag</td><td>Medium</td><td><span class="badge-ok">✓ Bag-grip</span></td></tr>
+    <tr><td><strong>F: Rubber / Seals</strong></td><td>Gaskets, O-rings</td><td>Bagged</td><td>High</td><td><span class="badge-tbd">△ Shape-dependent</span></td></tr>
+    <tr><td><strong>G: Heavy items</strong></td><td>Motors, transformers</td><td>Box + bubble wrap</td><td>—</td><td><span class="badge-out">✗ Payload exceeded</span></td></tr>
+    <tr><td><strong>H: Oversized</strong></td><td>Outdoor unit panels</td><td>—</td><td>—</td><td><span class="badge-out">✗ Out of scope</span></td></tr>
+  </table>
+  <p style="font-size:0.55em;color:#888">⚠ To be confirmed with actual field video from Kazami-san</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 23: α Part Selection Criteria -->
+<!-- ======================================================= -->
+<section>
+  <h2>α Version — Part Selection Criteria</h2>
+  <div class="cols2">
+    <div>
+      <table>
+        <tr><th>Criterion</th><th>Condition</th></tr>
+        <tr><td>Weight</td><td>≤ 5 kg (UR5e payload limit)</td></tr>
+        <tr><td>Size</td><td>Fits in AutoStore 425 bin (603×403×404mm)</td></tr>
+        <tr><td>Graspability</td><td>Suction or parallel gripper compatible</td></tr>
+        <tr><td>VLA value</td><td>Rule-based insufficient → VLA validates value</td></tr>
+        <tr><td>Safety</td><td>No sharp edges, break-resistant</td></tr>
+      </table>
+      <br>
+      <div class="callout">
+        Target: <strong>10–30 SKUs</strong> (high-frequency A-rank parts meeting all criteria)
+      </div>
+    </div>
+    <div>
+      <h3>AutoStore 425 Bin — Confirmed Specs</h3>
+      <table>
+        <tr><th>Item</th><th>Spec</th></tr>
+        <tr><td>Internal dims</td><td>603L × 403W × 404H mm</td></tr>
+        <tr><td>Capacity</td><td>98L</td></tr>
+        <tr><td>Max load</td><td>30 kg</td></tr>
+        <tr><td>Color</td><td>Gray</td></tr>
+        <tr><td>Partitions</td><td>4-compartment divider (typical)</td></tr>
+        <tr><td>Lid</td><td>None at port (removed)</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 24: Section — Validation -->
+<!-- ======================================================= -->
+<section class="slide-section" data-background-color="#000E4E">
+  <h2>7. Validation Plan</h2>
+  <p>Success criteria · Stages · Metrics</p>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 25: α Validation -->
+<!-- ======================================================= -->
+<section>
+  <h2>α Version Validation</h2>
+  <div class="cols2">
+    <div>
+      <h3>Success / Failure Definition</h3>
+      <table>
+        <tr><th>Result</th><th>Definition</th></tr>
+        <tr><td><span class="badge-ok">Success</span></td><td>Target part picked from bin and placed on work table at correct position</td></tr>
+        <tr><td><span class="badge-tbd">Partial</span></td><td>Pick complete but placement position/orientation suboptimal (VLM flags)</td></tr>
+        <tr><td><span class="badge-out">Failure</span></td><td>Cannot grasp / dropped / timeout</td></tr>
+      </table>
+      <br>
+      <h3>Validation Stages</h3>
+      <table>
+        <tr><th>Stage</th><th>Location</th></tr>
+        <tr><td>Lab mock</td><td>Internal lab</td></tr>
+        <tr><td>Extended lab</td><td>Multi-category evaluation</td></tr>
+        <tr><td>Field</td><td>Saito Parts Center (real env.)</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Key Metrics</h3>
+      <br>
+      <div style="text-align:center;margin-bottom:20px">
+        <span class="metric-big">90%</span>
+        <span class="metric-label">Pick success rate<br>(target parts subset)</span>
+      </div>
+      <div style="text-align:center;margin-bottom:20px">
+        <span class="metric-big">95%</span>
+        <span class="metric-label">Success rate<br>including 1 retry</span>
+      </div>
+      <div style="text-align:center">
+        <span class="metric-big">0</span>
+        <span class="metric-label">Safety incidents<br>(absolute zero)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 26: GA Reference -->
+<!-- ======================================================= -->
+<section>
+  <h2>GA (General Availability) — FY27+ <span style="font-size:0.6em;color:#888">Reference</span></h2>
+  <div class="callout-navy">
+    Not yet confirmed. Listed as directional target toward commercial deployment.
+  </div>
+  <br>
+  <div class="cols2">
+    <div>
+      <h3>Core</h3>
+      <table>
+        <tr><th>Item</th><th>Detail</th></tr>
+        <tr><td>Scope</td><td>β version cycle stabilized + QMS compliant</td></tr>
+        <tr><td>Delivery</td><td>RoboSync option (commercial)</td></tr>
+        <tr><td>QMS</td><td>Quality mgmt system · Audit-ready</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Optional Add-ons</h3>
+      <table>
+        <tr><th>Option</th><th>Content</th></tr>
+        <tr><td>Finger control</td><td>Dexterous hand (research integration)</td></tr>
+        <tr><td>Advanced dual arm</td><td>High-difficulty bimanual tasks</td></tr>
+        <tr><td>Advanced Agentic</td><td>Learning-based replanning</td></tr>
+        <tr><td>Mobile robot</td><td>Inter-station mobility</td></tr>
+        <tr><td>Outbound packaging</td><td>Shipping box packing</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SLIDE 27: Closing -->
+<!-- ======================================================= -->
+<section class="slide-title" data-background-color="#000E4E">
+  <h2 style="color:#fff;border:none;font-size:1.4em">Key Open Items</h2>
+  <br>
+  <table style="font-size:0.72em;color:#fff">
+    <tr><th style="background:rgba(255,255,255,0.15)">Item</th><th style="background:rgba(255,255,255,0.15)">Status</th><th style="background:rgba(255,255,255,0.15)">Owner</th></tr>
+    <tr><td>Parts category finalization</td><td><span class="badge-tbd">Waiting for Kazami-san video</span></td><td>Team</td></tr>
+    <tr><td>π0 API / model weight access</td><td><span class="badge-tbd">TBD — Physical Intelligence</span></td><td>Oguri / Kurokawa</td></tr>
+    <tr><td>Packaging code (NW1 etc.) full list</td><td><span class="badge-tbd">TBD — Nakata / Ichiriki</span></td><td>Okumura</td></tr>
+    <tr><td>π0 inference on RTX 5070 Ti (VRAM 16GB)</td><td><span class="badge-tbd">Technical verification needed</span></td><td>Oguri</td></tr>
+    <tr><td>β version mobility hardware</td><td><span class="badge-tbd">TBD — AMR or linear rail</span></td><td>Team</td></tr>
+  </table>
+  <br>
+  <p style="color:rgba(255,255,255,0.5);font-size:0.65em">DRAFT — Internal use only · RFA Project · FY2026</p>
+</section>
+
+</div><!-- slides -->
+</div><!-- reveal -->
+
+<div class="footer">Leading Task Internal Spec · RFA Project · DRAFT</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+</body>
+</html>

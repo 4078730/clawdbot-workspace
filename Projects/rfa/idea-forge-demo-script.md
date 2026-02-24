@@ -1,9 +1,8 @@
-# RFA: Robotics Foundation Agent — Demo Presenter Script
-## Idea Forge Presentation for Blue Yonder (Germany)
+# RFA Demo Presentation Script (JP/EN)
 
-> **対象**: Blue Yondarドイツメンバー（外部）
-> **形式**: プレゼンター用スクリプト（各ページ1〜2分）
-> **前提**: 聴衆はEmbodied AI・VLAの基礎知識あり
+> **対象**: Blue Yonder ドイツメンバー向けデモ
+> **形式**: プレゼンター用スクリプト（各ページ1〜3分想定）
+> **作成日**: 2026-02-24
 
 ---
 
@@ -11,21 +10,21 @@
 
 ### 🇯🇵 日本語スクリプト
 
-皆さん、本日はお時間いただきありがとうございます。パナソニック コネクトR&D部門の発表を始めさせていただきます。
+みなさん、本日はお時間をいただきありがとうございます。パナソニック コネクトのR&D部門から、「Robotics Foundation Agent」——私たちが「RFA」と呼んでいるプロジェクトについてご紹介します。
 
-本日のテーマは「Robotics Foundation Agent」、略してRFAです。サブタイトルにある通り、Embodied AIによる自律的なタスク実行の実現を目指す、私たちの取り組みについてお話しします。
+RFAのビジョンは、Embodied AIを活用してロボットの自律的なタスク実行を実現することです。従来のロボットは「教えられたことしかできない」存在でしたが、私たちはそれを「自分で考えて動ける」存在に変えようとしています。
 
-ロボットが単にプログラムされた動作を繰り返すのではなく、現場の状況を理解し、自ら判断して作業を行う。そんな世界を実現するためのプラットフォームとAI戦略について、今日はご紹介します。
+今日はその全体像と、現在の進捗をお見せします。
 
 ### 🇩🇪🇬🇧 English Script
 
-Thank you all for joining us today. I'm delighted to present our work from Panasonic Connect's R&D Division.
+Thank you all for joining today. I'm from the R&D Division at Panasonic Connect, and I'd like to introduce our project called the "Robotics Foundation Agent" — or RFA for short.
 
-Our topic today is the "Robotics Foundation Agent" — or RFA. As the subtitle says, we're working toward autonomous task execution powered by Embodied AI.
+The vision behind RFA is to enable autonomous task execution through Embodied AI. Traditional industrial robots can only do what they've been explicitly programmed to do. We're working to change that — to create robots that can perceive, reason, and act on their own.
 
-The vision is straightforward: instead of robots that merely repeat pre-programmed motions, we want robots that understand the situation on the factory floor, make decisions, and execute tasks autonomously. Today, I'll walk you through our platform, our AI strategy, and live demonstrations that show where we are on this journey.
+Today, I'll walk you through the full picture and show you where we are right now.
 
-**Key Message**: RFAはEmbodied AIで産業ロボティクスを「プログラム実行」から「自律作業」へ変革するプロジェクトです。
+**Key Message**: RFAはEmbodied AIによるロボット自律化の統合プロジェクトである。
 
 ---
 
@@ -33,59 +32,51 @@ The vision is straightforward: instead of robots that merely repeat pre-programm
 
 ### 🇯🇵 日本語スクリプト
 
-まず、直近のマイルストーンからお伝えします。
+まず直近のマイルストーンです。2025年6月30日に「Robot Field Implementation Service」の新製品発表会を予定しています。
 
-2025年6月30日に「Robot Field Implementation Service」の新製品発表会を行いました。これは大きく2つのサービスで構成されています。
+大きく2つのサービスがあります。1つ目は「System Integration Service」で、6月30日からサービスを開始します。これはロボット導入のSI——つまりシステムインテグレーションを支援するサービスです。
 
-1つ目が「System Integration Service」。こちらは6月30日からサービスを開始しています。ロボット導入のためのシステムインテグレーションを、私たちがワンストップで提供するサービスです。
-
-2つ目が「Robot Control Platform」、これは後ほど詳しくご説明しますが、10月にサービス開始を予定しています。
-
-つまり、私たちは研究開発だけでなく、実際の製品・サービスとして市場に投入するフェーズに入っているということです。
+2つ目が今日の主題に関わる「Robot Control Platform」で、こちらは10月にサービス開始を予定しています。私たちはこれを「Robo Sync」と呼んでいます。この2つを軸に、ロボティクス事業を本格展開していきます。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me start with our recent milestones.
+Let me start with our near-term milestones. On June 30, 2025, we'll be holding a new product announcement for our "Robot Field Implementation Service."
 
-On June 30, 2025, we held the launch event for our "Robot Field Implementation Service." This comprises two major offerings.
+There are two key offerings. First, the System Integration Service, launching on June 30th — this supports customers in deploying and integrating robotic systems at their sites.
 
-First, the System Integration Service, which went live on June 30. This is a one-stop service where we handle the full system integration for robot deployment at customer sites.
+Second — and this is central to today's discussion — is our Robot Control Platform, launching in October. We call it "Robo Sync." These two services together form the foundation of our robotics business going forward.
 
-Second, our Robot Control Platform — which I'll explain in detail shortly — is scheduled for launch in October.
-
-The key takeaway here is that we've moved beyond R&D. These are real products and services going to market.
-
-**Key Message**: RFAは研究段階を超え、2025年に商用サービスとして市場投入されています。
+**Key Message**: 2025年下半期にRobo Syncを含むロボティクスサービスを本格ローンチする。
 
 ---
 
-## P3: Robot Control Platform（Robo Sync）
+## P3: Robot Control Platform（Robo Sync）とは
 
 ### 🇯🇵 日本語スクリプト
 
-それでは、Robot Control Platform、私たちが「Robo Sync」と呼んでいるプラットフォームについてご説明します。
+では、Robo Syncとは何か。3つの特徴をご紹介します。
 
-Robo Syncには3つの大きな特徴があります。
+1つ目は「マルチロボット・マルチメーカー対応」です。製造現場では異なるメーカーのロボットが混在しているのが普通です。Robo Syncは複数メーカーのロボットを統一的なインターフェースで制御できます。
 
-1つ目が「Multi-Robot Manufacturer Support」。これは非常に重要なポイントです。現場では複数メーカーのロボットが混在していることがほとんどですが、Robo Syncはメーカーを問わず統合的に制御できます。ファナック、安川、UR……どのメーカーのロボットでも、1つのプラットフォームから動かせるわけです。
+2つ目は「ビジュアルプログラミング」。ブロックを組み合わせるだけでロボットの動作シーケンスを作成できます。専門的なロボットプログラミングの知識がなくても使えるのがポイントです。
 
-2つ目が「Visual Programming」。従来のロボットプログラミングは専門知識が必要でしたが、Robo Syncではブロックを組み合わせるように直感的に動作を作成できます。
+3つ目は「標準構成テンプレート」。よくあるユースケースをテンプレート化しており、ゼロから設計する必要がありません。
 
-3つ目が「Standard Configuration Templates」。よくある工程パターンをテンプレート化しているので、ゼロから設計する必要がなく、導入期間を大幅に短縮できます。
+つまり、Robo Syncは「誰でも簡単に、複数メーカーのロボットを動かせるプラットフォーム」です。
 
 ### 🇩🇪🇬🇧 English Script
 
-Now, let me introduce our Robot Control Platform, which we call "Robo Sync."
+So, what exactly is Robo Sync? Let me highlight three key features.
 
-Robo Sync has three key features.
+First: Multi-Robot, Multi-Manufacturer Support. In real-world production environments, you typically have robots from different vendors on the same floor. Robo Sync provides a unified control interface across manufacturers.
 
-Feature one: Multi-Robot Manufacturer Support. In real factory environments, you typically find robots from multiple vendors — FANUC, Yaskawa, Universal Robots, and so on. Robo Sync provides a unified control layer across all of them. One platform, many robots.
+Second: Visual Programming. You can build robot task sequences by combining blocks — no deep expertise in robot programming languages required. This dramatically lowers the barrier to entry.
 
-Feature two: Visual Programming. Instead of writing low-level robot code, operators can build task sequences by combining visual blocks. This dramatically lowers the barrier to entry for robot programming.
+Third: Standard Configuration Templates. We've pre-built templates for common use cases, so you don't have to design everything from scratch.
 
-Feature three: Standard Configuration Templates. We've pre-built templates for common process patterns, so deployment doesn't start from scratch. This significantly reduces time-to-production.
+In short, Robo Sync is a platform that lets anyone orchestrate multi-vendor robots with ease.
 
-**Key Message**: Robo Syncはメーカー非依存の統合ロボット制御プラットフォームであり、ビジュアルプログラミングとテンプレートで導入を加速します。
+**Key Message**: Robo Syncはマルチメーカー対応・ノーコードのロボット制御プラットフォーム。
 
 ---
 
@@ -93,29 +84,21 @@ Feature three: Standard Configuration Templates. We've pre-built templates for c
 
 ### 🇯🇵 日本語スクリプト
 
-Robo Syncは既に社内6サイトで実際に導入・運用されています。いくつか具体例をご紹介します。
+Robo Syncは社内でもすでに導入実績があります。現在、6つのサイトで稼働中です。
 
-まず、神戸工場のLet's note製造ラインでの「ラベル貼付工程」。ノートPCに各種ラベルを正確に貼り付ける作業を自動化しています。
+具体例をいくつかご紹介しますと——神戸工場のLet's noteの生産ラインでは、ラベル貼り付け工程にロボットを導入しています。また、タッチパネルの精密検査工程、さらには消費者製品の部品梱包工程にも展開しています。
 
-次に「タッチパネル精密検査工程」。タッチパネルの品質検査をロボットで自動化し、検査精度と速度を両立しています。
-
-そして「部品梱包工程」。消費者製品の部品を箱詰めする工程ですが、これは後ほどお話しするVLA技術との接点にもなってきます。
-
-重要なのは、これらが実験室ではなく実際の製造現場で稼働しているという点です。実フィールドでの運用実績が、私たちの技術の信頼性を裏付けています。
+いずれも、Robo Syncによる統合制御で運用されています。社内で実際に使い込むことで、フィールドでの課題を吸い上げ、プロダクトを改善するサイクルを回しています。これは後ほどお話しするデータ戦略にも直結します。
 
 ### 🇩🇪🇬🇧 English Script
 
-Robo Sync is not just a concept — it's already deployed across six internal sites within Panasonic. Let me highlight a few examples.
+Robo Sync is already deployed internally across six sites within Panasonic.
 
-First, the Label Application Process at our Kobe factory, on the Let's note laptop production line. Robots precisely apply various labels to notebook PCs.
+Let me give you a few examples. At our Kobe factory, it's used in the label application process on the Let's Note laptop production line. We also have it running in touch panel precision inspection, and in parts packaging for consumer products.
 
-Second, Touch Panel Precision Inspection. Automated quality inspection of touch panels, achieving both high accuracy and throughput.
+All of these are managed through Robo Sync's unified control layer. By using it internally first, we can identify real-world challenges, iterate on the product, and — importantly — collect field data. That data aspect will become very relevant later in this presentation.
 
-Third, Parts Packaging Process for consumer products. Robots pack components into boxes — and this use case becomes particularly relevant when we later discuss VLA technology.
-
-The critical point is: these are not lab demos. They're running in actual production environments. This real-world operational track record validates the maturity of our platform.
-
-**Key Message**: Robo Syncは社内6サイトで実稼働中。実フィールドでの運用実績が技術の成熟度を証明しています。
+**Key Message**: 社内6サイトで実稼働中。自社導入で製品を磨き、フィールドデータを蓄積している。
 
 ---
 
@@ -123,59 +106,51 @@ The critical point is: these are not lab demos. They're running in actual produc
 
 ### 🇯🇵 日本語スクリプト
 
-ここから、私たちの新しいチャレンジについてお話しします。
+次に、私たちが新たに取り組んでいる領域です。
 
-これまでのロボット自動化は、主にStorage（保管）やPicking（ピッキング）といった限定的な工程が中心でした。しかし、私たちはこの領域をサプライチェーン全体に拡大しようとしています。
+これまではStorage（保管）やPicking（ピッキング）が中心でしたが、今後はSCM（サプライチェーンマネジメント）全体に適用範囲を拡大していきます。
 
-具体的には、Inbound（入荷・受入）からStorage（保管）、そしてOutbound（出荷）まで。Receiving、Picking、Packaging、Shippingという一連のフロー全体をロボットでカバーする。
+具体的には、Inbound（入荷・入庫）からStorage（保管）、そしてOutbound（出荷）まで——Receiving、Picking、Packaging、Shippingという一連のフローをカバーします。
 
-これはBlue Yonderさんにとっても馴染み深い領域だと思います。サプライチェーンマネジメントの中で、物理的なオペレーションをいかに自動化するか。まさにここが私たちのターゲットです。
+これは単に「ロボットを置く場所を増やす」という話ではなく、倉庫・物流のオペレーション全体をロボティクスで変革するという挑戦です。
 
 ### 🇩🇪🇬🇧 English Script
 
 Now, let me talk about where we're heading next.
 
-Historically, robot automation in logistics has focused on specific, isolated processes — storage and picking being the most common. We're now expanding our scope to cover the entire supply chain operation.
+Until now, our primary focus has been on storage and picking operations. Going forward, we're expanding our scope to cover the entire supply chain management flow.
 
-This means end-to-end automation: from Inbound — receiving goods — through Storage, and all the way to Outbound — picking, packaging, and shipping.
+That means end-to-end coverage: from Inbound — receiving and storing goods — through to Outbound — picking, packaging, and shipping.
 
-I imagine this resonates well with the Blue Yonder team, given your deep expertise in supply chain management. The question is: how do we automate the physical operations within SCM? That's exactly our target.
+This isn't just about putting more robots in more places. It's about transforming the entire warehouse and logistics operation through robotics. And as you'll see, this expansion is exactly where Embodied AI becomes essential.
 
-**Key Message**: 限定工程の自動化から、入荷→保管→出荷のSCM全体をカバーする自動化へ領域拡大しています。
+**Key Message**: ピッキング単体からSCM全体（入荷→保管→出荷）へ適用領域を拡大。
 
 ---
 
-## P6: SCMサイトでの自動化課題とEmbodied AI
+## P6: SCMサイトでの自動化課題（Embodied AI）
 
 ### 🇯🇵 日本語スクリプト
 
-ただし、SCMサイト全体の自動化は、従来のロボティクスでは非常に難しい。なぜか。4つの課題があります。
+なぜEmbodied AIが必要なのか——ここが核心です。
 
-1つ目、「Diverse Shapes and Materials」。物流現場では形状も素材も全く異なる多種多様な商品を扱います。
+SCMサイトの現場には4つの大きな課題があります。1つ目は「多様な形状・素材」。扱う物体は毎回違います。2つ目は「日々変わる商品構成」。昨日と今日で扱う商品が違うのが当たり前です。3つ目は「人の暗黙知への依存」。ベテラン作業者の感覚に頼っている部分が多い。4つ目は「プログラミングやティーチングが必要」。新しい商品が来るたびに、専門家がロボットに動きを教えなければなりません。
 
-2つ目、「Daily Changing Product Composition」。毎日取り扱う商品の構成が変わります。昨日と今日で全く違う商品が流れてくる。
+従来のルールベースのロボットでは、この変動の大きい環境に対応しきれないんです。
 
-3つ目、「Dependency on Human Tacit Knowledge」。熟練作業者の暗黙知に依存している。「この形の商品はこう持つ」「この素材は力加減に注意」といった知識です。
-
-4つ目、「Programming and Teaching Required」。新しい商品が来るたびにロボットのプログラミングやティーチングが必要になる。
-
-これらの課題に対する答えが、Embodied AIです。Language（言語理解）、Vision（視覚認識）、Action（動作生成）を統合することで、ロボットが自律的に状況を判断し作業できるようになります。
+ここで解になるのがEmbodied AI——Language（言語理解）、Vision（視覚認識）、Action（行動生成）を統合したAIです。見て、理解して、動く。これがこの先のキーワードになります。
 
 ### 🇩🇪🇬🇧 English Script
 
-However, automating the entire SCM site is extremely challenging with conventional robotics. Let me explain why, through four key challenges.
+So why do we need Embodied AI? This is really the core of the problem.
 
-First, Diverse Shapes and Materials. In logistics, you handle an enormous variety of products — different sizes, shapes, weights, and materials.
+At SCM sites, we face four major automation challenges. First: diverse shapes and materials — the objects being handled vary enormously. Second: daily-changing product composition — what you're handling today is different from yesterday. Third: dependency on human tacit knowledge — experienced workers rely on intuition that's hard to codify. Fourth: the constant need for programming and teaching — every new product requires expert intervention to retrain the robot.
 
-Second, Daily Changing Product Composition. The mix of products changes every single day. What flows through the line today is completely different from yesterday.
+Traditional rule-based robotics simply cannot keep up with this level of variability.
 
-Third, Dependency on Human Tacit Knowledge. Much of the skill lives in experienced workers' heads — how to grip this shape, how much force for that material. This knowledge is implicit and hard to codify.
+The answer is Embodied AI — integrating Language understanding, Vision perception, and Action generation into a unified system. See, understand, act. That's the paradigm shift we're pursuing.
 
-Fourth, Programming and Teaching Required. Every time a new product appears, someone needs to reprogram or re-teach the robot. This doesn't scale.
-
-Our answer to these challenges is Embodied AI — integrating Language understanding, Vision perception, and Action generation so that robots can autonomously assess situations and perform tasks.
-
-**Key Message**: SCM現場の多様性・変動性・暗黙知依存という課題を、Embodied AI（Language + Vision + Action）で解決します。
+**Key Message**: SCM現場の多様性・変動性に対応するにはEmbodied AI（Language＋Vision＋Action）が不可欠。
 
 ---
 
@@ -183,29 +158,25 @@ Our answer to these challenges is Embodied AI — integrating Language understan
 
 ### 🇯🇵 日本語スクリプト
 
-ここで、Embodied AIの大きな潮流を整理させてください。
+Embodied AIの潮流を少し俯瞰します。
 
-2022年にChatGPTが登場し、言語AIが一気に進化しました。2023年にはGPT-4Vが出て、視覚と言語の統合が実現。そして2024年、VLA — Vision-Language-Action Modelが登場し、いよいよAIがロボットの「体」を持つ時代に入りました。
+2022年にChatGPTが登場し、2023年にGPT-4Vでマルチモーダル化が進み、2024年にはVLA——Vision-Language-Actionモデルが登場しました。NVIDIAのGR00TやPhysical IntelligenceのPi-zeroが代表例です。
 
-NVIDIAのGR00T、Physical IntelligenceのΠ0（パイゼロ）など、世界中のトッププレイヤーがこの領域に参入しています。
+ここで私たちが注目しているのは——AIモデルそのものは急速にコモディティ化していく、という点です。つまり、差別化の源泉はモデルではなく「フィールドデータ」に移ってきている。
 
-ここで重要なメッセージがあります。AIモデル自体はコモディティ化が進んでいます。誰でもオープンソースのVLAモデルを使える時代が来る。では、差別化の源泉は何か？それは「Field Data」です。実際の現場で収集した実データ。これこそが競争優位の鍵になります。
-
-この認識が、私たちの戦略の根幹にあります。
+実際の現場でロボットを動かし、リアルなデータを大量に集められる企業が、次の競争で勝つ。私たちがRobo Syncを先行展開しているのは、まさにこの文脈です。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me put Embodied AI in the broader context of the AI evolution timeline.
+Let me give you a quick overview of the Embodied AI landscape.
 
-In 2022, ChatGPT marked the breakthrough in language AI. In 2023, GPT-4V brought the fusion of vision and language. And in 2024, we entered the era of VLA — Vision-Language-Action Models — where AI finally gets a physical body.
+In 2022, ChatGPT brought large language models into the mainstream. In 2023, GPT-4V introduced multimodal capabilities. And in 2024, we saw the emergence of VLA models — Vision-Language-Action. Notable examples include NVIDIA's GR00T and Physical Intelligence's π0.
 
-Major players are converging on this space: NVIDIA with GR00T, Physical Intelligence with π0, and many others.
+Here's the key insight we're focused on: AI models are rapidly becoming commoditized. The real differentiator is shifting to field data.
 
-But here's the critical insight: AI models themselves are commoditizing. Open-source VLA models are becoming accessible to everyone. So where does competitive differentiation come from? The answer is Field Data — real-world data collected from actual operational environments. That is the true source of advantage.
+The companies that can deploy robots in real environments and collect massive amounts of real-world data — they're the ones who will win in this next wave. And that's precisely why we've been investing in Robo Sync as an early deployment platform.
 
-This conviction is the foundation of our entire strategy, as you'll see in the next slides.
-
-**Key Message**: AIモデルはコモディティ化する。差別化の源泉は「現場のField Data」にシフトしています。
+**Key Message**: AIモデルはコモディティ化。差別化の源泉は「フィールドデータ」に移行している。
 
 ---
 
@@ -213,33 +184,25 @@ This conviction is the foundation of our entire strategy, as you'll see in the n
 
 ### 🇯🇵 日本語スクリプト
 
-VLAモデルについてもう少し詳しくご説明します。
+VLAモデルについてもう少し詳しくお話しします。
 
-VLAは、大量のテキストデータ、画像・動画データ、そしてロボットの動作データという3種類のデータから学習します。テキストで「何をすべきか」を理解し、画像・動画で「何が見えているか」を認識し、動作データで「どう動くべきか」を学ぶ。この3つの統合が、VLAの核心です。
+VLAは、大量のテキストデータ、画像・動画データ、そしてロボットの行動データを組み合わせて学習します。言語でタスクを理解し、視覚で状況を把握し、具体的なロボットの動作を生成する——これが一つのモデルで行われます。
 
-ただし、大きな課題が2つあります。
+ただし、課題もあります。1つ目は「ドメイン固有データの不足」。汎用的なデータは世の中にたくさんありますが、特定の産業・特定の作業に特化したデータは圧倒的に足りません。2つ目は「ロボット行動データの不足」。テキストや画像と比べて、ロボットの実動作データは桁違いに少ない。
 
-1つ目が「Domain-Specific Dataの不足」。汎用的なデータは大量にありますが、特定の産業ドメイン — たとえば物流現場や製造ラインに特化したデータは圧倒的に不足しています。
-
-2つ目が「Robot Action Dataの不足」。テキストや画像のデータは膨大にありますが、実際のロボット動作データは桁違いに少ない。これがVLA発展のボトルネックになっています。
-
-つまり、この2つのデータギャップを埋められる者が、Embodied AIの勝者になるということです。
+この2つの課題をどう解決するか——それが次のスライドのテーマです。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me dive a bit deeper into how VLA models work.
+Let me go a bit deeper into VLA models.
 
-A VLA model learns from three types of data: large-scale text data to understand "what to do," image and video data to perceive "what is happening," and robot action data to learn "how to move." The integration of all three is what makes VLA powerful.
+A VLA model is trained on a combination of large-scale text data, image and video data, and robot action data. It understands tasks through language, perceives the environment through vision, and generates concrete robot actions — all within a single unified model.
 
-However, there are two critical bottlenecks.
+However, there are two significant challenges. First: the scarcity of domain-specific data. While there's plenty of generic data available, data tailored to specific industrial tasks is extremely limited. Second: the shortage of robot action data. Compared to text and images, real robot telemetry data is orders of magnitude scarcer.
 
-First, the shortage of Domain-Specific Data. While general-purpose data is abundant, data specific to industrial domains — logistics floors, manufacturing lines — is extremely scarce.
+How do we address these two gaps? That's what I'll cover next.
 
-Second, the shortage of Robot Action Data. Compared to the vast ocean of text and images available on the internet, actual robot manipulation data is orders of magnitude smaller. This is the key bottleneck for advancing VLA.
-
-The implication is clear: whoever can close these data gaps will lead the Embodied AI race.
-
-**Key Message**: VLAの発展ボトルネックは「ドメイン特化データ」と「ロボット動作データ」の不足。このギャップを埋めることが鍵です。
+**Key Message**: VLAは言語＋視覚＋行動を統合学習するが、ドメイン特化データとロボット行動データの不足が課題。
 
 ---
 
@@ -247,85 +210,81 @@ The implication is clear: whoever can close these data gaps will lead the Embodi
 
 ### 🇯🇵 日本語スクリプト
 
-ここで、私たちの戦略が明確につながります。
+ここが私たちの戦略の中核です。
 
-先ほどご紹介したRobo Sync。あれは単なるロボット制御プラットフォームではありません。私たちはRobo Syncを「学習データ収集基盤」として位置づけています。
+私たちは、Robo Syncそのものをデータ収集基盤として活用します。現場で稼働しているRobo Sync接続ロボットから、継続的にフィールドデータを収集し、それをVLA学習に使う。
 
-Robo Syncが現場に入れば入るほど、実際の作業データが継続的に蓄積されていく。そのデータを使ってEmbodied AIを進化させ、進化したAIをまた現場に還元する。このサイクルが回り続けることが、私たちの戦略の核心です。
+Before——つまり従来は、事前に登録されたオブジェクトしか認識・操作できませんでした。After——Embodied AIを搭載した後は、ロボットが自ら状況を理解し、未知のオブジェクトにも対応し、自律的に作業を遂行できるようになります。
 
-具体的な変化をお見せします。Before — 従来は、事前に登録済みのオブジェクトしか検出できませんでした。未知の物体が来たら対応できない。After — Embodied AIを適用すると、状況全体を理解し、未知の物体でも自律的に作業できるようになります。
+しかも、現場で動けば動くほどデータが貯まり、モデルがさらに賢くなる。好循環を作れるんです。
 
 ### 🇩🇪🇬🇧 English Script
 
-Now, this is where our strategy comes together.
+This is the core of our strategy.
 
-Remember Robo Sync? It's not just a robot control platform. We've strategically positioned it as our learning data collection infrastructure.
+We're leveraging Robo Sync itself as a data collection infrastructure. Robots connected through Robo Sync continuously generate field data during their normal operations, and we feed that data back into VLA training.
 
-The more sites Robo Sync is deployed to, the more real-world operational data we continuously accumulate. We use that data to improve our Embodied AI models, and deploy the improved AI back to the field. This creates a virtuous cycle — a data flywheel — that is the core of our strategy.
+The before-and-after is striking. Before: robots could only detect and handle pre-registered objects. After: with Embodied AI, they can understand the situation, handle novel objects, and perform tasks autonomously.
 
-Let me illustrate the transformation. Before: the system could only detect pre-registered objects. If an unknown item appeared, the robot couldn't handle it. After: with Embodied AI, the robot understands the overall situation and can work autonomously — even with objects it has never seen before.
+And here's the flywheel effect — the more the robots operate in the field, the more data we collect, and the smarter the models become. It's a self-reinforcing cycle.
 
-**Key Message**: Robo Syncは制御プラットフォームであると同時にデータ収集基盤。現場データの蓄積→AI進化→現場還元のサイクルが競争力の源泉です。
+**Key Message**: Robo Syncをデータ基盤化し、「稼働→データ収集→AI学習→さらに賢く」の好循環を構築する。
 
 ---
 
-## P10: Our Data Strategy — 3層アプローチ
+## P10: Our Data Strategy
 
 ### 🇯🇵 日本語スクリプト
 
-データ戦略をもう少し具体的にお話しします。私たちは3つの層でデータを収集・活用しています。
+データ戦略をもう少し具体的にお見せします。3つのデータソースを組み合わせています。
 
-第1層が「Human Teleoperation」。人間のオペレーターがロボットを遠隔操作して、高品質な教示データを収集します。コストは高いですが、データ品質は最高。これを使ってVLAモデルをFine-Tuneします。
+1つ目は「Human Teleoperation」——人間がロボットを遠隔操作してデータを収集します。コストは最も高いですが、データ品質は最高です。これは主にモデルのFine-Tuneに使います。
 
-第2層が「Robo Sync Field Data」。既に導入されているRobo Syncの現場から、日々の運用データを継続的に収集します。これでデータ量をAugment — 増強します。
+2つ目は「Robo Sync Field Data」——先ほどお話しした、現場で継続的に集まるデータです。これはデータのAugmentation（増強）に使います。量の面でこれが一番のボリュームゾーンになります。
 
-第3層が「Simulation / Human Videos」。シミュレーション環境や、人間の作業動画からロボット動作データに変換します。
+3つ目は「Simulation / Human Videos」——シミュレーション環境で生成したデータや、人間の作業動画をロボット動作に変換して使います。
 
-この3層構造により、高品質なデータから大量データまでをカバーし、VLAモデルを効率的に育てていく。これが私たちのデータ戦略です。
+高品質だが高コストなデータと、継続的に大量に集まるデータと、合成データ。この三層構造で、データ不足の課題を突破します。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me break down our data strategy more concretely. We operate on three layers.
+Let me break down our data strategy more concretely. We combine three data sources.
 
-Layer one: Human Teleoperation. Human operators remotely control robots to collect high-quality demonstration data. It's expensive, but the data quality is the highest. We use this to fine-tune our VLA models.
+First: Human Teleoperation. Human operators remotely control robots to generate training data. It's the most expensive approach, but produces the highest quality data. We use this primarily for fine-tuning our models.
 
-Layer two: Robo Sync Field Data. From all the Robo Sync deployments already in the field, we continuously collect operational data. This augments our dataset with ongoing, real-world variety.
+Second: Robo Sync Field Data. This is the continuous stream of data from robots operating in the field, as I just described. This is used for data augmentation and represents our largest data volume.
 
-Layer three: Simulation and Human Videos. We convert data from simulation environments and human task videos into robot action data.
+Third: Simulation and Human Videos. We generate data in simulation environments and convert human work videos into robot action data.
 
-This three-layer approach gives us the full spectrum — from high-quality, expensive data for fine-tuning, through continuous field data for augmentation, to scalable synthetic data for breadth. That's how we systematically grow our VLA models.
+High-quality but costly data, plus continuously collected field data, plus synthetic data — this three-tier approach is how we overcome the data scarcity challenge.
 
-**Key Message**: テレオペ（高品質）× Robo Syncフィールドデータ（継続収集）× シミュレーション（スケール）の3層でデータ戦略を構築しています。
+**Key Message**: テレオペ（高品質）× フィールドデータ（大量）× シミュレーション（合成）の三層でデータ課題を突破。
 
 ---
 
-## P11: テレオペレーションによるVLA学習
+## P11: テレオペによるVLA学習
 
 ### 🇯🇵 日本語スクリプト
 
-データ戦略の第1層、テレオペレーションについて、もう少し詳しくお見せします。
+テレオペレーションの具体例をお見せします。
 
-ここでは、人間のオペレーターが双腕ロボットを遠隔操作しています。オペレーターが操作するマスターアームの動きが、そのまま作業用ロボットに反映される仕組みです。
+ここでは、人間のオペレーターが双腕ロボットを遠隔操作しています。オペレーターが実際にタスクをやってみせることで、ロボットが「こうやって動けばいい」という教示データを収集します。
 
-具体的なタスクとして「Dual-arm Box Packing」を行っています。両腕を使って、さまざまな物体を箱に詰める作業です。
+具体的なタスクは「Dual-arm Box Packing」——2本の腕を使って物を箱に詰める作業です。テレオペで集めたデータをVLAモデルに学習させると、最終的にロボットが自律的に同じ作業をこなせるようになります。
 
-このテレオペデータを大量に収集し、VLAモデルに学習させることで、最終的にはテレオペなしで — つまり完全自律で同じ作業ができるようになります。
-
-人間が「お手本」を見せて、ロボットがそこから学ぶ。非常にシンプルですが、強力なアプローチです。
+テレオペデータは量は限られますが、非常にリッチな情報を含んでいて——力の入れ具合、アプローチの角度、リカバリー動作など——これがモデルの質を大きく左右します。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me show you our first data layer in action — human teleoperation.
+Let me show you a concrete example of teleoperation.
 
-Here, a human operator is remotely controlling a dual-arm robot. The operator manipulates master arms, and their movements are mirrored in real time by the task robot.
+Here, a human operator is remotely controlling a dual-arm robot. By physically demonstrating the task, the operator generates teaching data — showing the robot "this is how you should move."
 
-The specific task is Dual-arm Box Packing — using both arms to pack various objects into a box.
+The specific task is dual-arm box packing — using both arms to place items into a box. When we train a VLA model on this teleoperation data, the robot eventually learns to perform the same task autonomously.
 
-We collect large volumes of this teleoperation data and use it to train our VLA model. The goal: once the model has learned enough from human demonstrations, the robot can perform the same task fully autonomously — no teleoperation needed.
+While teleoperation data is limited in volume, it's extremely rich in information — force profiles, approach angles, recovery behaviors — and this richness is what drives model quality.
 
-The concept is beautifully simple: humans show the robot how it's done, and the robot learns from those demonstrations. Simple, but remarkably effective.
-
-**Key Message**: 人間のテレオペ操作を教師データとしてVLAに学習させ、最終的に完全自律動作を実現します。
+**Key Message**: テレオペで高品質な教示データを収集し、VLAに学習させることで自律動作を実現する。
 
 ---
 
@@ -333,45 +292,29 @@ The concept is beautifully simple: humans show the robot how it's done, and the 
 
 ### 🇯🇵 日本語スクリプト
 
-それでは、デモンストレーションをご覧いただきます。これは浜離宮のCXC（Customer Experience Center）で行った技術展示の内容です。
+ここからデモをお見せします。これはCXC——浜離宮の技術展示で実演したものです。
 
-2つのレベルがあります。
+Level 1は「Target Robot Control」——VLAによるロボット制御の基本デモです。Level 2は動画でご覧いただきます。
 
-Level 1は「Target Robot Control」。これは実際にライブでお見せできるデモです。
+タスクは「さまざまな形状の物体を箱に入れる」というものです。注目していただきたいのは2つのポイントです。
 
-Level 2は動画でのデモンストレーションになります。
+1つ目は「Adaptation to Various States」——置かれ方や向きが変わっても適応的に対応できること。2つ目は「Autonomous Failure Recovery」——掴み損ねたり落としたりしても、自分でリカバリーして作業を継続できること。
 
-タスクは「Put Various Shaped Objects into a Box」— さまざまな形状の物体を箱に入れる作業です。
-
-ここで注目していただきたいポイントが2つあります。
-
-1つ目、「Adaptation to Various States」。物体の位置や向きが毎回変わっても、ロボットが適応的に対応します。事前にプログラムした動きではなく、その場の状況を見て判断しています。
-
-2つ目、「Autonomous Failure Recovery」。もし掴み損ねたり、置く位置がずれたりしても、ロボットが自分で失敗を認識し、リカバリー動作を行います。人間の介入なしに、です。
-
-では、デモをご覧ください。
+従来のロボットなら失敗した時点でラインが止まります。でも、VLAベースのロボットは「あ、失敗したな」と認識して、自分でやり直す。これが大きな違いです。
 
 ### 🇩🇪🇬🇧 English Script
 
-Now, let me show you our demonstrations. These were presented at our CXC — Customer Experience Center — in Hamarikyu, Tokyo.
+Now let me show you a demonstration. This was presented at CXC — our technology exhibition at Hamarikyu.
 
-We have two levels.
+Level 1 demonstrates Target Robot Control — the basic VLA-driven control. Level 2 is shown as video.
 
-Level 1 is Target Robot Control — this can be shown as a live demo.
+The task is straightforward: put various-shaped objects into a box. But please pay attention to two key capabilities.
 
-Level 2 is available as a video demonstration.
+First: Adaptation to Various States. The robot handles objects regardless of their orientation or placement. Second: Autonomous Failure Recovery. If the robot drops something or fails to grasp it, it recognizes the failure and retries on its own.
 
-The task is: "Put Various Shaped Objects into a Box."
+With conventional robots, a failure means the line stops and a human has to intervene. With VLA-based control, the robot recognizes "that didn't work" and autonomously recovers. That's a fundamental difference.
 
-I'd like you to pay attention to two key capabilities.
-
-First, Adaptation to Various States. The objects are placed in different positions and orientations each time, and the robot adapts accordingly. It's not following a fixed trajectory — it's making decisions based on what it sees.
-
-Second, Autonomous Failure Recovery. If the robot misses a grasp or places something incorrectly, it recognizes the failure on its own and attempts recovery — without any human intervention.
-
-Let's watch the demonstration.
-
-**Key Message**: VLAによるロボットは、物体の状態変化への適応と失敗の自律リカバリーを実現しています。
+**Key Message**: VLAロボットは多様な状態に適応し、失敗時も自律的にリカバリーできる。
 
 ---
 
@@ -379,51 +322,47 @@ Let's watch the demonstration.
 
 ### 🇯🇵 日本語スクリプト
 
-こちらは、国際ロボット展 iRex で出展したデモです。
+こちらはiRex（国際ロボット展）で出展したデモです。シェーバーの梱包作業をVLAで自律制御しています。
 
-タスクは「Shaver Packing」— シェーバーの箱詰め作業を、VLAモデルによる完全自律制御で行っています。「x2」と表記しているのは、2回連続で自律実行している様子です。
+映像はx2の速度再生ですが、実際にはロボットが自分で判断しながら、シェーバーという比較的複雑な形状の製品を箱に詰めています。
 
-シェーバーは複雑な形状をしていますが、ロボットは視覚情報から適切な把持方法を判断し、正確に箱に収めています。
-
-このデモは業界関係者から非常に高い評価をいただきました。従来のピック&プレースとは次元の異なる、状況適応型の作業を実現しているからです。
+このデモは、先ほどのCXCデモからさらに一歩進んで、より実際の製品に近いものを扱っています。形が複雑で、向きによって梱包の仕方を変える必要がある——まさにEmbodied AIが力を発揮する領域です。
 
 ### 🇩🇪🇬🇧 English Script
 
-This is the demonstration we showcased at iRex — the International Robot Exhibition.
+This is a demo we presented at iRex — the International Robot Exhibition. It shows a VLA-controlled robot autonomously packing electric shavers.
 
-The task is Shaver Packing — packing electric shavers into boxes, entirely controlled by our VLA model. The "x2" indicates two consecutive autonomous executions.
+The video is played at 2x speed, but in reality the robot is making its own decisions throughout — handling shavers, which have a fairly complex geometry, and packing them into boxes.
 
-Shavers have a complex, irregular shape, but the robot determines the appropriate grasp strategy from visual input and accurately places them into the packaging.
+This builds on the earlier CXC demo, but with a more realistic product. Shavers have irregular shapes and require different handling depending on orientation — exactly the kind of task where Embodied AI shines.
 
-This demo received very positive feedback from industry professionals. It demonstrates a fundamentally different capability from traditional pick-and-place — this is situation-adaptive manipulation.
-
-**Key Message**: 複雑形状のシェーバー箱詰めをVLAで完全自律化。iRexで業界から高評価を獲得しました。
+**Key Message**: 実製品（シェーバー）の梱包をVLAで自律実行。より現実的なタスクでの実証。
 
 ---
 
-## P14: Next-Generation Robot Control with VLA — Before/After
+## P14: Next-Generation Robot Control with VLA（Before/After比較）
 
 ### 🇯🇵 日本語スクリプト
 
-ここで、VLAがもたらす変化をBefore/Afterで整理させてください。
+ここで、従来型とVLAベースのロボット制御を明確に比較します。
 
-Before — ルールベースの制御。ロボットは事前に決められた座標に移動するだけです。環境が少しでも変わると動けなくなる。失敗したら停止して、人間の介入を待つしかない。
+Before——ルールベースの制御。決められた座標への移動しかできません。環境が少し変わるとすぐ対応できなくなる。失敗したら停止して人の介入が必要。
 
-After — VLAによる制御。ロボットは状況を見て適応的に動作します。複雑な形状の物体でも柔軟に操作できる。そして何より、失敗を自分で認識し、自律的にリカバリーできる。
+After——VLAベースの制御。カメラで状況を見て、適応的に動作を生成します。複雑な形状の物体も柔軟に操作できる。そして、失敗を自分で認識して自律的にリカバリーする。
 
-これらを実現する全体像が、Robo SyncとVLAの統合です。Robo Syncが現場でデータを収集し、そのデータでVLAモデルを学習させ、学習済みモデルで推論・制御を行う。このサイクルが回り続けることで、ロボットは使えば使うほど賢くなっていきます。
+さらに重要なのが、Robo SyncとVLAを統合することで——現場でのデータ収集、VLAモデルの学習、そして推論・制御——この3つが循環するエコシステムを構築できるという点です。使えば使うほど賢くなる仕組みを、プラットフォームレベルで実現します。
 
 ### 🇩🇪🇬🇧 English Script
 
-Let me crystallize the transformation that VLA brings, with a clear Before and After comparison.
+Let me draw a clear comparison between conventional and VLA-based robot control.
 
-Before — with rule-based control: The robot can only move to predefined coordinates. Any change in the environment causes failure. When something goes wrong, the robot stops and waits for human intervention.
+Before — rule-based control: the robot moves to predetermined coordinates. It struggles with even minor environmental changes. When it fails, it stops and waits for human intervention.
 
-After — with VLA: The robot observes the situation and adapts its behavior. It can manipulate objects with complex shapes flexibly. And most importantly, it recognizes failures and recovers autonomously.
+After — VLA-based control: the robot perceives the situation through its cameras and generates adaptive actions. It handles complex geometries flexibly. And it recognizes failures and recovers autonomously.
 
-The enabling architecture is the integration of Robo Sync and VLA. Robo Sync collects data in the field, that data trains the VLA model, and the trained model handles inference and control. This cycle runs continuously — meaning the robot gets smarter the more it operates.
+But here's what's truly powerful: by integrating Robo Sync with VLA, we create a closed-loop ecosystem — field data collection feeds into VLA training, which improves inference and control, which generates better data. The more you use it, the smarter it gets — and this is built at the platform level.
 
-**Key Message**: ルールベース（固定動作・停止）からVLA（状況適応・自律リカバリー）へ。Robo Sync × VLAの統合サイクルでロボットは進化し続けます。
+**Key Message**: Robo Sync × VLAの統合で「データ収集→学習→推論」の循環エコシステムを実現する。
 
 ---
 
@@ -431,39 +370,38 @@ The enabling architecture is the integration of Robo Sync and VLA. Robo Sync col
 
 ### 🇯🇵 日本語スクリプト
 
-最後に、RFAの目指すアーキテクチャ全体像をお見せします。4つの層で構成されています。
+最後に、RFAの全体アーキテクチャをお見せします。4つのHubから構成されています。
 
-第1層、「Task Planning Hub」。ここにはLLM Agentが位置します。自然言語でタスクの指示を理解し、計画を立て、推論を行い、問題が起きた場合のリカバリー戦略も決定します。
+まず最上位に「Task Planning Hub」。ここにはLLM Agentがいて、自然言語でのタスク理解、作業計画の策定、推論、そしてエラー時のリカバリー判断を担当します。人間が「この箱にこれを詰めて」と言うだけで、具体的な作業手順に分解してくれます。
 
-第2層、「Symbol Hub」。言語世界と物理世界をつなぐ「記号接地」の層です。VLM（Vision Language Model）を使って現場の状態を認識し、抽象的なタスク指示を具体的な物理操作に翻訳します。
+次に「Symbol Hub」。言語の世界と物理の世界をつなぐ記号接地の層です。VLM（Vision-Language Model）を使って、ロボットの目で見た状況を言語的な意味に変換します。
 
-第3層、「Sensorimotor Hub」。ここがVLAの領域です。カメラからの視覚情報をもとに、リアルタイムでロボットの動作を生成します。
+3つ目が「Sensorimotor Hub」——ここがVLAです。視覚情報から直接、ロボットの行動を生成します。
 
-第4層、「Robo Sync + Data Platform」。物理的なロボットの実行基盤であり、安全制御を担い、同時にデータ収集プラットフォームとして機能します。
+そして土台になるのが「Robo Sync + Data Platform」。物理ロボットの実行基盤であり、安全制御を担い、かつデータ収集基盤でもある。
 
-この4層構造により、「言語で指示→状況理解→動作生成→実行・データ収集」という、完全なループが実現します。これがRFA — Robotics Foundation Agentの全体像です。
+この4層が連携することで——言語で指示を受け、状況を理解し、自律的に動作し、安全に実行する——RFAの目指す自律ロボティクスが実現します。
 
-本日はご清聴ありがとうございました。質問をお受けいたします。
+以上がRFAの全体像です。ご質問があればぜひお願いします。
 
 ### 🇩🇪🇬🇧 English Script
 
-Finally, let me show you the target architecture of RFA as a whole. It consists of four layers.
+Finally, let me show you the overall RFA architecture. It consists of four interconnected hubs.
 
-Layer one: the Task Planning Hub, powered by an LLM Agent. It understands task instructions in natural language, formulates plans, performs reasoning, and determines recovery strategies when problems arise.
+At the top is the Task Planning Hub, powered by an LLM Agent. It handles natural language task understanding, work planning, reasoning, and recovery decisions. You can simply say "pack these items into that box," and it decomposes the instruction into concrete steps.
 
-Layer two: the Symbol Hub. This is the grounding layer that bridges the linguistic world and the physical world. Using a VLM — Vision Language Model — it perceives the state of the environment and translates abstract task instructions into concrete physical operations.
+Next is the Symbol Hub — the grounding layer that bridges language and the physical world. Using a VLM — a Vision-Language Model — it converts what the robot sees into semantic understanding.
 
-Layer three: the Sensorimotor Hub. This is where VLA operates. It takes visual input from cameras and generates robot actions in real time.
+Third is the Sensorimotor Hub — this is where VLA lives. It generates robot actions directly from visual input.
 
-Layer four: Robo Sync plus the Data Platform. This is the physical execution layer — handling safety control, robot actuation, and simultaneously serving as the data collection infrastructure.
+And the foundation is Robo Sync plus the Data Platform. It's the physical execution layer, handling safety control and serving as the data collection infrastructure.
 
-These four layers together create a complete loop: language instruction → situation understanding → action generation → execution and data collection. This is RFA — the Robotics Foundation Agent.
+These four layers work together to deliver the full RFA vision: receive instructions in natural language, understand the situation, act autonomously, and execute safely.
 
-Thank you for your attention. I'm happy to take any questions.
+That's the complete picture of RFA. I'd be happy to take any questions.
 
-**Key Message**: RFAは「Task Planning（LLM）→ Symbol Grounding（VLM）→ Sensorimotor（VLA）→ Robo Sync（実行・データ収集）」の4層アーキテクチャで自律ロボットを実現します。
+**Key Message**: RFAは4層（LLM Agent → Symbol Grounding → VLA → Robo Sync）で構成される自律ロボティクスアーキテクチャ。
 
 ---
 
-> *Script prepared for Idea Forge demo presentation to Blue Yonder Germany team.*
-> *Last updated: 2026-02-24*
+> **総プレゼン時間目安**: 15〜25分（質疑応答除く）

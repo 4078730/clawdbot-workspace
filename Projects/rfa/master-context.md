@@ -1,6 +1,6 @@
 # RFA Master Context
 
-*Last updated: 2026-02-24 (nightly maintenance)*
+*Last updated: 2026-02-25 (nightly maintenance)*
 
 このファイルはRFAの「マスターコンテキスト」です。議論や作業で参照する前提の背景・用語・構造をまとめます。
 

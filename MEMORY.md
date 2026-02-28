@@ -22,7 +22,7 @@ MAIN SESSIONでのみ参照。整理された重要情報の集約。
 - **彩都パーツセンターPoC** — オートストア出庫作業
 - **Microsoft協業** — ADS Day 1/2完了(2/19-20)、協業スコープ・DoD・チーム体制確定、LeRobot+Azure推論
 - **神戸工場キッティング工程** — VLA適用候補、動画データ解析中
-- **TRLC-DK1-X × 2セット購入** — $13,998(~¥216万)、Proforma Invoice依頼済み → 受領後に決裁回付
+- **TRLC-DK1-X × 2セット購入** — ⚠️ 状況矛盾（2026-02-28 nightly検出）: TODO.md「キャンセル済み ✅」vs MEMORY.md「Proforma Invoice待ち」→ konukiに要確認
 
 ### YouTube
 - チャンネル: AnimeLiveAction / 呪術廻戦シリーズ / 動画ストック作成

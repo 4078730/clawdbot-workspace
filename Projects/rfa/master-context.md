@@ -1,6 +1,6 @@
 # RFA Master Context
 
-*Last updated: 2026-03-01 (nightly maintenance)*
+*Last updated: 2026-03-02 (nightly maintenance)*
 
 > ⚠️ **用語変更ペンディング（2026-02-26 FY26体制MTG決定）**
 > 「α版」→「β版」へ呼称変更が決定（RoboSync定義に合わせる）。本ドキュメント内の α/β 定義（1.1節・5.4節等）はkonukiのレビュー後に機能単位マトリックス形式へ書き直し予定。3/10提出ドキュメント整備と合わせて更新する。

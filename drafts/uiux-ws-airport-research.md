@@ -12,6 +12,10 @@
 - 国土交通省の**内部部局**（Civil Aviation Bureau）
 - 日本の航空行政全般を所管
 
+> 📎 [航空局 組織と主な業務 — 国土交通省](https://www.mlit.go.jp/about/soshiki_koku.html)
+> 📎 [航空局の役割 — 国土交通省](https://www.mlit.go.jp/koku/15_bf_000715.html)
+> 📎 [航空局 — Wikipedia](https://ja.wikipedia.org/wiki/%E8%88%AA%E7%A9%BA%E5%B1%80)
+
 ### 航空局の4部門
 
 | 部門 | 主な役割 |
@@ -27,6 +31,8 @@
 - **首都圏空港課**: 羽田・成田の設置管理
 - **近畿圏・中部圏空港課**: 関空・中部の設置管理
 - **空港計画課**: 空港の整備計画、改善のための調査・研究
+
+> 📎 [航空局 組織図（PDF）— 国土交通省](https://www.mlit.go.jp/koku/15_bf_000291.html)
 
 ### 航空局のミッション（公式）
 1. **国際交流の拡大・観光立国の推進** — インバウンド倍増
@@ -50,6 +56,10 @@
 | **中部（NGO）** | 中部国際空港株式会社 | 特殊会社（官民共同出資） | セントレア |
 | **福岡（FUK）** | 福岡国際空港株式会社 | コンセッション | 2019年から民間運営 |
 | **新千歳（CTS）** | 北海道エアポート株式会社 | コンセッション | 道内7空港の一括運営 |
+
+> 📎 [成田国際空港株式会社（NAA）](https://www.naa.jp/)
+> 📎 [関西国際空港 — Wikipedia](https://ja.wikipedia.org/wiki/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF)（コンセッション詳細）
+> 📎 [空港一覧 — 国土交通省](https://www.mlit.go.jp/koku/15_bf_000310.html)
 
 ### 空港の分類（航空法）
 
@@ -90,6 +100,9 @@
 ### CIQとは
 **C**ustoms（税関）+ **I**mmigration（出入国管理）+ **Q**uarantine（検疫）の総称。国際線旅客が必ず通過する3つの手続き。
 
+> 📎 [CIQとは — 訪日ラボ](https://honichi.com/news/2017/01/23/imbaundoniokeruciqtai/)
+> 📎 [CIQ PRルーム — 関西国際空港](https://www.kansai-airport.or.jp/service/other/02.html)
+
 ### 出国の流れ（日本人が海外へ出る場合）
 
 ```
@@ -109,6 +122,8 @@
 - 検疫・入国審査・税関申告を事前にスマホで入力
 - QRコードで手続き簡略化
 - ただし完全自動化にはまだ遠い（有人窓口も残存）
+
+> 📎 [Visit Japan Web](https://www.vjw.digital.go.jp/)
 
 ---
 
@@ -146,6 +161,8 @@
 | **乗り継ぎの不安** | MCT（最低乗り継ぎ時間）内に移動できるか不安 |
 | **時間の無駄** | 「2-3時間前に来てください」→ 手続き15分で終わり、残り暇 |
 
+> 📎 [国際線を利用する時は何時間前に到着すべき？ — JALカード](https://jalcard.jal.co.jp/column/overseas/checkin2009/)
+
 ---
 
 ## 5. 業界トレンド: IATA One ID & Face Express
@@ -156,10 +173,18 @@
 - **デジタルIDウォレット**: パスポート等をスマホに格納し、生体認証で共有に同意
 - チェックイン → 手荷物預け → 保安検査 → 入国審査 → 搭乗を**すべて顔パス**に
 
+> 📎 [IATA One ID（公式）](https://www.iata.org/en/programs/passenger/one-id/)
+> 📎 [Fact Sheet — One ID — IATA](https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-one-id/)
+> 📎 [Digital Identity Program — IATA](https://www.iata.org/en/programs/innovation/digital-identity/)
+> 📎 [Fully Digital Travel Experience Closer to Reality — IATA（2024年10月）](https://www.iata.org/en/pressroom/2024-releases/2024-10-30-03/)
+
 ### Face Express（日本版One ID）
 - 成田空港が先行導入（NEC製システム）
 - 顔認証で搭乗手続きをシームレス化
 - 国交省航空局と連携して保安対策基準を見直し
+
+> 📎 [顔認証を活用した新しい搭乗手続き「Face Express」— NEC技報](https://jpn.nec.com/techrep/journal/g21/n01/210109.html)
+> 📎 [日本におけるデジタルIDウォレットの活用ケース：空港での顔認識とOne IDの継続利用 — IISE/NEC](https://note.com/nec_iise/n/ne08d90841011)
 
 ### 世界の先進事例
 - **シンガポール・チャンギ空港**: 自動入国ゲート＋顔認証搭乗
@@ -177,10 +202,17 @@
 - **世界最高水準の認証精度**（NIST評価）
 - 家電で培ったユーザビリティ設計（ミルク色、丸み、鏡を見ている間に認証完了）
 
+> 📎 [パナソニックの顔認証ゲート — パナソニック コネクト](https://connect.panasonic.com/jp-ja/products-services/facial-recognition/airport)
+> 📎 [パナソニック、空港向け「顔認証ゲート」提供を拡大、7空港・200式導入へ — トラベルボイス](https://www.travelvoice.jp/20190902-137097)
+
 ### デジタルサイネージ「AcroSign」
 - JAL羽田空港出発ロビーに導入
 - 多言語対応、リアルタイム切り替え
 - 福岡空港ターミナルにも導入
+
+> 📎 [JAL様 導入事例 — パナソニック コネクト](https://connect.panasonic.com/jp-ja/case-studies/jal-2)
+> 📎 [福岡国際空港 導入事例 — パナソニック コネクト](https://connect.panasonic.com/jp-ja/case-studies/fuk-ab)
+> 📎 [インバウンド対応 デジタルサイネージ活用 — パナソニック コネクト](https://connect.panasonic.com/jp-ja/products-services/digitalsignage/column/clm19)
 
 ### 統合オペレーションハブ
 - AIがターミナル/滑走路の異常を検知
@@ -191,6 +223,9 @@
 - 受付・案内・接客のDX化
 - AI対話 + リモート対話のハイブリッド
 
+> 📎 [交通・空港ソリューション — パナソニック コネクト](https://connect.panasonic.com/jp-ja/solutions/airport)
+> 📎 [顔認証による新しい旅客体験 — パナソニック コネクト](https://connect.panasonic.com/jp-ja/solutions/airport/passenger)
+
 ### 監視カメラ / セキュリティ
 - AI搭載ネットワークカメラ（Sシリーズ）
 - 顔・人・車両・二輪車の自動識別
@@ -199,6 +234,8 @@
 ### KPAS（顔認証プラットフォーム）
 - 空港以外（オフィス、商業施設）にも展開
 - クラウド型顔認証サービス「KPASクラウド」
+
+> 📎 [多様な現場で活躍するパナソニック コネクトの顔認証技術 — ZDNET Japan](https://japan.zdnet.com/article/35206075/)
 
 > 💡 **WSでの活用**: パナソニックは「顔認証 × サイネージ × AI監視 × 統合モニタリング」の組み合わせで空港UXを端から端まで改善できるポジションにいる。これは他社にない強み。
 
@@ -235,3 +272,35 @@
 3. **旅客のペインポイント** = 待ち時間、情報の分断、言語バリア、デジタルデバイド
 4. **業界トレンド** = IATA One ID、Face Express、デジタルIDウォレット
 5. **パナソニックの武器** = 顔認証（実績No.1）+ サイネージ + AI統合モニタリング + UXデザイン力
+
+---
+
+## ソース一覧
+
+| # | ソース | URL |
+|---|--------|-----|
+| 1 | 航空局の役割 — 国土交通省 | https://www.mlit.go.jp/koku/15_bf_000715.html |
+| 2 | 航空局 組織と主な業務 — 国土交通省 | https://www.mlit.go.jp/about/soshiki_koku.html |
+| 3 | 航空局 組織図 — 国土交通省 | https://www.mlit.go.jp/koku/15_bf_000291.html |
+| 4 | 航空局 — Wikipedia | https://ja.wikipedia.org/wiki/航空局 |
+| 5 | 空港一覧 — 国土交通省 | https://www.mlit.go.jp/koku/15_bf_000310.html |
+| 6 | 成田国際空港株式会社（NAA） | https://www.naa.jp/ |
+| 7 | 関西国際空港 — Wikipedia | https://ja.wikipedia.org/wiki/関西国際空港 |
+| 8 | CIQとは — 訪日ラボ | https://honichi.com/news/2017/01/23/imbaundoniokeruciqtai/ |
+| 9 | CIQ PRルーム — 関西国際空港 | https://www.kansai-airport.or.jp/service/other/02.html |
+| 10 | Visit Japan Web | https://www.vjw.digital.go.jp/ |
+| 11 | IATA One ID（公式） | https://www.iata.org/en/programs/passenger/one-id/ |
+| 12 | Fact Sheet — One ID — IATA | https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-one-id/ |
+| 13 | Digital Identity Program — IATA | https://www.iata.org/en/programs/innovation/digital-identity/ |
+| 14 | Fully Digital Travel Experience — IATA (2024/10) | https://www.iata.org/en/pressroom/2024-releases/2024-10-30-03/ |
+| 15 | Face Express（NEC技報） | https://jpn.nec.com/techrep/journal/g21/n01/210109.html |
+| 16 | デジタルIDウォレット活用ケース — IISE/NEC | https://note.com/nec_iise/n/ne08d90841011 |
+| 17 | パナソニック 顔認証ゲート — パナソニック コネクト | https://connect.panasonic.com/jp-ja/products-services/facial-recognition/airport |
+| 18 | 空港向け顔認証ゲート拡大 — トラベルボイス | https://www.travelvoice.jp/20190902-137097 |
+| 19 | 交通・空港ソリューション — パナソニック コネクト | https://connect.panasonic.com/jp-ja/solutions/airport |
+| 20 | 顔認証による新しい旅客体験 — パナソニック コネクト | https://connect.panasonic.com/jp-ja/solutions/airport/passenger |
+| 21 | JAL様 導入事例 — パナソニック コネクト | https://connect.panasonic.com/jp-ja/case-studies/jal-2 |
+| 22 | 福岡空港 導入事例 — パナソニック コネクト | https://connect.panasonic.com/jp-ja/case-studies/fuk-ab |
+| 23 | インバウンド対応サイネージ — パナソニック コネクト | https://connect.panasonic.com/jp-ja/products-services/digitalsignage/column/clm19 |
+| 24 | パナソニック顔認証技術 — ZDNET Japan | https://japan.zdnet.com/article/35206075/ |
+| 25 | 国際線到着時間ガイド — JALカード | https://jalcard.jal.co.jp/column/overseas/checkin2009/ |

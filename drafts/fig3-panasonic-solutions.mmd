@@ -1,0 +1,60 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#000E4E"
+    primaryTextColor: "#FFFFFF"
+    primaryBorderColor: "#000E4E"
+    secondaryColor: "#00B7F1"
+    secondaryTextColor: "#FFFFFF"
+    lineColor: "#00B7F1"
+    fontSize: "14px"
+---
+graph TB
+    subgraph TOUCH["旅客タッチポイント Passenger Touchpoints"]
+        T1["チェックイン<br/>Check-in"]
+        T2["保安検査<br/>Security"]
+        T3["出入国審査<br/>Immigration"]
+        T4["免税エリア<br/>Duty Free"]
+        T5["搭乗ゲート<br/>Gate"]
+    end
+
+    subgraph PANA["パナソニック技術 Panasonic Technology"]
+        P1["顔認証ゲート<br/>Face Recognition<br/>全国7空港 203式"]
+        P2["サイネージ<br/>AcroSign<br/>多言語対応"]
+        P3["統合モニタリング<br/>Operations Hub<br/>AI異常検知"]
+        P4["AI対話受付<br/>TAZUNE<br/>ハイブリッド接客"]
+    end
+
+    subgraph BACK["バックエンド Backend"]
+        B1["KPASクラウド<br/>Cloud Platform"]
+        B2["AI映像解析<br/>Video Analytics"]
+        B3["データ統合<br/>Data Integration"]
+    end
+
+    T1 -.-> P1
+    T2 -.-> P3
+    T3 -.-> P1
+    T4 -.-> P2
+    T5 -.-> P1
+
+    P1 --> B1
+    P2 --> B3
+    P3 --> B2
+    P4 --> B3
+
+    style TOUCH fill:#F0F4FF,stroke:#000E4E,color:#000E4E,stroke-width:2px
+    style PANA fill:#E0F7FF,stroke:#00B7F1,color:#000E4E,stroke-width:2px
+    style BACK fill:#F0F4FF,stroke:#000E4E,color:#000E4E,stroke-width:2px
+    style T1 fill:#FFFFFF,stroke:#000E4E,color:#000E4E
+    style T2 fill:#FFFFFF,stroke:#000E4E,color:#000E4E
+    style T3 fill:#FFFFFF,stroke:#000E4E,color:#000E4E
+    style T4 fill:#FFFFFF,stroke:#000E4E,color:#000E4E
+    style T5 fill:#FFFFFF,stroke:#000E4E,color:#000E4E
+    style P1 fill:#00B7F1,stroke:#00B7F1,color:#FFFFFF
+    style P2 fill:#00B7F1,stroke:#00B7F1,color:#FFFFFF
+    style P3 fill:#00B7F1,stroke:#00B7F1,color:#FFFFFF
+    style P4 fill:#00B7F1,stroke:#00B7F1,color:#FFFFFF
+    style B1 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style B2 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style B3 fill:#000E4E,stroke:#000E4E,color:#FFFFFF

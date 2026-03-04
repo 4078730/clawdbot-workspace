@@ -1,0 +1,43 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#000E4E"
+    primaryTextColor: "#FFFFFF"
+    primaryBorderColor: "#000E4E"
+    secondaryColor: "#00B7F1"
+    secondaryTextColor: "#FFFFFF"
+    lineColor: "#00B7F1"
+    fontSize: "14px"
+---
+graph LR
+    subgraph DEP["出国 Departure"]
+        direction LR
+        D1["空港到着<br/>Airport Arrival"] --> D2["チェックイン<br/>Check-in &<br/>Bag Drop"]
+        D2 --> D3["保安検査<br/>Security<br/>Screening"]
+        D3 --> D4["税関申告<br/>Customs<br/>Declaration"]
+        D4 --> D5["出国審査<br/>Immigration<br/>顔認証対応"]
+        D5 --> D6["搭乗<br/>Boarding"]
+    end
+
+    subgraph ARR["入国 Arrival"]
+        direction LR
+        A1["到着<br/>Arrival"] --> A2["検疫 Q<br/>Quarantine"]
+        A2 --> A3["入国審査 I<br/>Immigration"]
+        A3 --> A4["手荷物受取<br/>Baggage<br/>Claim"]
+        A4 --> A5["税関検査 C<br/>Customs"]
+    end
+
+    style DEP fill:#F0F4FF,stroke:#000E4E,color:#000E4E
+    style ARR fill:#F0F4FF,stroke:#000E4E,color:#000E4E
+    style D1 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style D2 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style D3 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style D4 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style D5 fill:#00B7F1,stroke:#00B7F1,color:#FFFFFF
+    style D6 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style A1 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style A2 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style A3 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style A4 fill:#000E4E,stroke:#000E4E,color:#FFFFFF
+    style A5 fill:#000E4E,stroke:#000E4E,color:#FFFFFF

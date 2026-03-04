@@ -1,0 +1,53 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#000E4E"
+    primaryTextColor: "#FFFFFF"
+    primaryBorderColor: "#000E4E"
+    secondaryColor: "#00B7F1"
+    secondaryTextColor: "#FFFFFF"
+    secondaryBorderColor: "#00B7F1"
+    tertiaryColor: "#F5F5F5"
+    tertiaryTextColor: "#000E4E"
+    lineColor: "#00B7F1"
+    fontSize: "16px"
+---
+graph TB
+    CENTER["国際空港<br/>International Airport"]
+
+    subgraph GOV["政府機関 Government"]
+        G1["国交省 航空局<br/>MLIT Aviation Bureau"]
+        G2["出入国在留管理庁<br/>Immigration Services"]
+        G3["税関 Customs<br/>検疫 Quarantine"]
+    end
+
+    subgraph OPS["空港運営 Airport Operators"]
+        O1["成田 NAA"]
+        O2["羽田 TIAT"]
+        O3["関西エアポート<br/>中部 / 福岡"]
+    end
+
+    subgraph AIR["航空会社 Airlines"]
+        A1["ANA / JAL"]
+        A2["LCC各社"]
+        A3["グランドハンドリング<br/>Ground Handling"]
+    end
+
+    subgraph SVC["サービス Services"]
+        S1["免税店 Duty Free"]
+        S2["ラウンジ Lounge"]
+        S3["交通 Transport"]
+        S4["両替 Exchange"]
+    end
+
+    GOV --- CENTER
+    OPS --- CENTER
+    AIR --- CENTER
+    SVC --- CENTER
+
+    style CENTER fill:#000E4E,stroke:#000E4E,color:#FFFFFF,stroke-width:3px
+    style GOV fill:#E8F4FD,stroke:#00B7F1,color:#000E4E
+    style OPS fill:#E8F4FD,stroke:#00B7F1,color:#000E4E
+    style AIR fill:#E8F4FD,stroke:#00B7F1,color:#000E4E
+    style SVC fill:#E8F4FD,stroke:#00B7F1,color:#000E4E

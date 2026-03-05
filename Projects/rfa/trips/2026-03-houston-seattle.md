@@ -8,40 +8,42 @@
 
 ## フライト一覧
 
-| # | 便名 | 出発 | 到着 | 座席 | 予約番号 |
-|---|------|------|------|------|---------|
-| 1 | **NH108** | 羽田 3/11 22:55 | SFO 3/11 16:20 | 34D（通路側） | FIDLBA |
-| 2 | **UA1672** | SFO 3/12 14:47 | Houston 3/12 20:39 | 39A（窓側） | PYTRP7 |
-| 3 | **UA366** | Houston 3/14 10:02 | Seattle 3/14 13:07 | 未指定（チェックイン時） | PYTRP7 |
-| 4 | **NH117** | Seattle 3/19 16:45 | 羽田 3/20 19:15 | 26D（通路側） | FIDLBA |
+| # | 便名 | 航空会社 | 出発 | 到着 | 座席 | 予約番号 |
+|---|------|---------|------|------|------|---------|
+| 1 | **NH108** | ANA（全日空） | 東京・羽田空港 3/11 22:55 | サンフランシスコ国際空港 3/11 16:20（現地時間） | 34D（通路側） | FIDLBA |
+| 2 | **UA1672** | ユナイテッド航空 | サンフランシスコ国際空港 3/12 14:47 | ヒューストン・ブッシュ空港 3/12 20:39 | 39A（窓側） | PYTRP7 |
+| 3 | **UA366** | ユナイテッド航空 | ヒューストン・ブッシュ空港 3/14 10:02 | シアトル・タコマ国際空港 3/14 13:07 | 未指定（チェックイン時に指定） | PYTRP7 |
+| 4 | **NH117** | ANA（全日空） | シアトル・タコマ国際空港 3/19 16:45 | 東京・羽田空港 3/20 19:15 | 26D（通路側） | FIDLBA |
 
 ---
 
 ## 日程表
 
-### 3/11（水）
-- **22:55** NH108 羽田発 → SFO 16:20着（現地時間）
+### 3/11（水）日本時間
+- **22:55** NH108 東京・羽田空港 出発
 - ⚠️ 日本時間深夜発・現地同日昼着（時差16時間）
 
-### 3/11（水）現地
-- **16:20** SFO着、Mountain Viewへ移動
-- PRDCA MTG @205 Ravendale Dr, Mountain View, CA 94043
-- 🏨 **ホテル：Mountain View（未予約）**
+### 3/11（水）現地時間
+- **16:20** サンフランシスコ国際空港 着
+- マウンテンビュー（シリコンバレー）へ移動（車約30分）
+- PRDCA（パナソニックR&Dカンパニーアメリカ）でMTG
+  - 📍 205 Ravendale Dr, Mountain View, CA（グーグル本社の近く）
+- 🏨 **ホテル：マウンテンビュー（未予約）**
   - 候補：Hilton Garden Inn Mountain View
 
-### 3/12（木）
-- 午前：自由時間（Googleplex周辺 / コンピュータ歴史博物館等）
-- **14:47** UA1672 SFO発 → Houston 20:39着
+### 3/12（木）現地時間
+- 午前：自由時間（グーグルプレックス周辺 / コンピュータ歴史博物館等）
+- **14:47** UA1672 サンフランシスコ国際空港 出発 → ヒューストン・ブッシュ空港 20:39着
 - 🏨 **ホテル：Courtyard by Marriott Houston The Woodlands（未予約）**
 
 ### 3/13（金）
-- **終日** MS Houston Integration Hub 訪問
+- **終日** マイクロソフト ヒューストン統合ハブ 訪問
   - 📍 19426 Oil Center Blvd, Houston, TX 77073
-- 🏨 Courtyard Houston The Woodlands（連泊）
+- 🏨 Courtyard by Marriott Houston The Woodlands（連泊）
 
 ### 3/14（土）
-- **10:02** UA366 Houston発 → Seattle 13:07着
-- 午後：自由時間（シアトル市内）
+- **10:02** UA366 ヒューストン・ブッシュ空港 出発 → シアトル・タコマ国際空港 13:07着
+- 午後：自由時間（シアトル市内観光）
 - 🏨 **ホテル：Courtyard Seattle Bellevue Downtown（未予約）**
 
 ### 3/15（日）
@@ -50,25 +52,26 @@
 - 🏨 Courtyard Seattle Bellevue Downtown（連泊）
 
 ### 3/16（月）
-- **午前〜午後** MS HQ Redmond 訪問
-  - 📍 Microsoft Campus, Redmond, WA
+- **午前〜午後** マイクロソフト本社（レドモンド）訪問
+  - 📍 Microsoft Campus, Redmond, WA（シアトル近郊）
 - **夜** 池内先生MTG（予定）
 - 🏨 Courtyard Seattle Bellevue Downtown（連泊）
 
 ### 3/17（火）
 - 午前：池内先生MTG予備
 - チーム帰国（大坪さん・上野さん等）
-- 🏨 **Seattle 個人ホテル（未予約・自費）**
+- 🏨 **シアトル 個人ホテル（未予約・自費）**
 
 ### 3/18（水）
-- キャリア育成・視察（候補：Boeing Future of Flight / AI2 / UW等）
-- 🏨 Seattle 個人ホテル（連泊・自費）
+- キャリア育成・視察
+  - 候補：ボーイング工場見学（エバレット） / アレンAI研究所 / ワシントン大学等
+- 🏨 シアトル 個人ホテル（連泊・自費）
 
 ### 3/19（木）
-- **16:45** NH117 Seattle発 → 羽田（翌3/20 19:15着）
+- **16:45** NH117 シアトル・タコマ国際空港 出発 → 東京・羽田（翌3/20 19:15着）
 
 ### 3/20（金）
-- **19:15** 羽田着
+- **19:15** 東京・羽田空港 着
 
 ---
 
@@ -76,10 +79,10 @@
 
 | 場所 | ホテル候補 | チェックイン | チェックアウト | 泊数 | 費用区分 | 状況 |
 |------|-----------|------------|--------------|------|---------|------|
-| Mountain View | Hilton Garden Inn Mountain View | 3/11 | 3/12 | 1泊 | 業務（HRS） | ❌ 未予約 |
-| Houston | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（HRS） | ❌ 未予約 |
-| Seattle/Bellevue | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（HRS） | ❌ 未予約 |
-| Seattle | 未定 | 3/17 | 3/19 | 2泊 | 個人 | ❌ 未予約 |
+| マウンテンビュー（シリコンバレー） | Hilton Garden Inn Mountain View | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
+| ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（HRS経由） | ❌ 未予約 |
+| シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（HRS経由） | ❌ 未予約 |
+| シアトル（個人延泊） | 未定 | 3/17 | 3/19 | 2泊 | 個人（自費） | ❌ 未予約 |
 
 ---
 
@@ -108,8 +111,8 @@
 | エムハート予約番号（UA） | PYTRP7 |
 | エムハートオーダーNo. | AA418377 |
 | エムハート橋本さん | mht-yoko@nta.co.jp / 03-6380-6004 |
-| MS Houston | 19426 Oil Center Blvd, Houston, TX 77073 |
-| MS Redmond | Microsoft Campus, Redmond, WA |
-| PRDCA | 205 Ravendale Dr, Mountain View, CA 94043 |
-| I-94取得URL | https://i94.cbp.dhs.gov/home |
-| ESTA申請URL | https://esta.cbp.dhs.gov/ |
+| マイクロソフト ヒューストン統合ハブ | 19426 Oil Center Blvd, Houston, TX 77073 |
+| マイクロソフト本社（レドモンド） | Microsoft Campus, Redmond, WA |
+| PRDCA（パナソニックR&Dカンパニーアメリカ） | 205 Ravendale Dr, Mountain View, CA 94043 |
+| I-94取得（入国後に必要） | https://i94.cbp.dhs.gov/home |
+| ESTA申請 | https://esta.cbp.dhs.gov/ |

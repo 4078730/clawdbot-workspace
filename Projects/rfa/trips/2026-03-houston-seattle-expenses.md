@@ -13,7 +13,7 @@
 | 1 | 航空券（NH108/UA1672/UA366/NH117） | ¥688,680 | 会社カード（エムハート） | FIDLBA / AA418377 | ✅ 発券済み |
 | 2 | ヒューストンホテル（3/12-14 2泊）Courtyard Houston The Woodlands | $344.49 | 個人カード→精算 | 88353073 / [📄 PDF](receipts/hotel_houston-courtyard_88353073_2026-03-12-14.pdf) | ✅ 予約済み |
 | 3 | マウンテンビューホテル（3/11 1泊） | TBD | 個人カード→精算 | - | ❌ 未予約 |
-| 4 | シアトル/ベルビューホテル（3/14-17 3泊） | TBD | 個人カード→精算 | - | ❌ 未予約 |
+| 4 | シアトルホテル（3/14-17 3泊）Courtyard Seattle Bellevue Downtown | $750.62 | 個人カード→精算 | 88386806 / [📄 PDF](receipts/hotel_seattle-bellevue-courtyard_88386806_2026-03-14-17.pdf) | ✅ 予約済み |
 | 5 | 海外Wi-Fi（MERON経由） | TBD | - | - | ❌ 未申込 |
 | 6 | 海外旅行保険（MERON経由） | TBD | - | - | ❌ 未申込 |
 | 7 | 現地交通費（空港〜ホテル等） | TBD | - | - | 出張後精算 |

@@ -44,7 +44,7 @@
 ### 3/14（土）
 - **10:02** UA366 ヒューストン・ブッシュ空港 出発 → シアトル・タコマ国際空港 13:07着
 - 午後：自由時間
-- 🏨 **ホテル：Courtyard Seattle Bellevue Downtown（未予約）**
+- 🏨 **ホテル：Courtyard Seattle Bellevue Downtown（✅ 予約済 / 確認番号：88386806）**
 
 ### 3/15（日）
 - 終日：自由時間
@@ -79,7 +79,7 @@
 |------|-----------|------------|--------------|------|---------|------|
 | マウンテンビュー（シリコンバレー） | Hyatt Centric Mountain View または Courtyard by Marriott Sunnyvale Silicon Valley | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
 | ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88353073）|
-| シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（HRS経由） | ❌ 未予約 |
+| シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88386806）|
 | シアトル（個人延泊） | 未定 | 3/17 | 3/19 | 2泊 | 個人（自費） | ❌ 未予約 |
 
 ---

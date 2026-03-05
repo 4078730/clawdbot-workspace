@@ -29,7 +29,7 @@
 - PRDCA（パナソニックR&Dカンパニーアメリカ）でMTG
   - 📍 205 Ravendale Dr, Mountain View, CA（グーグル本社の近く）
 - 🏨 **ホテル：マウンテンビュー（未予約）**
-  - 候補：Hilton Garden Inn Mountain View
+  - 候補：Hyatt Centric Mountain View / Courtyard by Marriott Sunnyvale Silicon Valley
 
 ### 3/12（木）現地時間
 - 午前：自由時間
@@ -77,7 +77,7 @@
 
 | 場所 | ホテル候補 | チェックイン | チェックアウト | 泊数 | 費用区分 | 状況 |
 |------|-----------|------------|--------------|------|---------|------|
-| マウンテンビュー（シリコンバレー） | Hilton Garden Inn Mountain View | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
+| マウンテンビュー（シリコンバレー） | Hyatt Centric Mountain View または Courtyard by Marriott Sunnyvale Silicon Valley | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
 | ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（HRS経由） | ❌ 未予約 |
 | シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（HRS経由） | ❌ 未予約 |
 | シアトル（個人延泊） | 未定 | 3/17 | 3/19 | 2泊 | 個人（自費） | ❌ 未予約 |

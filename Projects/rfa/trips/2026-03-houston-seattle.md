@@ -59,11 +59,11 @@
 ### 3/17（火）
 - 午前：池内先生MTG予備
 - チーム帰国（大坪さん・上野さん等）
-- 🏨 **シアトル 個人ホテル（未予約・自費）**
+- 🏨 **The Moore Hotel（✅ 予約済 / 予約番号：34213912X）**（自費）
 
 ### 3/18（水）
 - 自由時間（キャリア育成・延泊）
-- 🏨 シアトル 個人ホテル（連泊・自費）
+- 🏨 The Moore Hotel（連泊・自費）
 
 ### 3/19（木）
 - **16:45** NH117 シアトル・タコマ国際空港 出発 → 東京・羽田（翌3/20 19:15着）
@@ -80,7 +80,7 @@
 | マウンテンビュー（シリコンバレー） | Hyatt Centric Mountain View または Courtyard by Marriott Sunnyvale Silicon Valley | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
 | ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88353073）|
 | シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88386806）|
-| シアトル（個人延泊） | 未定 | 3/17 | 3/19 | 2泊 | 個人（自費） | ❌ 未予約 |
+| シアトル（個人延泊） | The Moore Hotel（1926 2nd Ave, Seattle） | 3/17 | 3/19 | 2泊 | 個人（自費） | ✅ 予約済（予約番号：34213912X）|
 
 ---
 

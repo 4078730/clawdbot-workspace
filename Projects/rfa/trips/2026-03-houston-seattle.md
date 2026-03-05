@@ -28,8 +28,9 @@
 - マウンテンビュー（シリコンバレー）へ移動（車約30分）
 - PRDCA（パナソニックR&Dカンパニーアメリカ）でMTG
   - 📍 205 Ravendale Dr, Mountain View, CA（グーグル本社の近く）
-- 🏨 **ホテル：マウンテンビュー（未予約）**
-  - 候補：Hyatt Centric Mountain View / Courtyard by Marriott Sunnyvale Silicon Valley
+- 🏨 **Fairfield by Marriott Inn & Suites San Francisco Airport/Millbrae（✅ 予約済 / 確認番号：88608749）**
+  - 📍 250 El Camino Real, Millbrae, California 94030
+  - $310.81（室料$264 + 税$46.31）/ Member Rate Flexible / キャンセル期限：3/10 23:59（現地時間）
 
 ### 3/12（木）現地時間
 - 午前：自由時間
@@ -77,7 +78,7 @@
 
 | 場所 | ホテル候補 | チェックイン | チェックアウト | 泊数 | 費用区分 | 状況 |
 |------|-----------|------------|--------------|------|---------|------|
-| マウンテンビュー（シリコンバレー） | Hyatt Centric Mountain View または Courtyard by Marriott Sunnyvale Silicon Valley | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
+| SFO近く（ミルブレー） | Fairfield by Marriott Inn & Suites San Francisco Airport/Millbrae | 3/11 | 3/12 | 1泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88608749）|
 | ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88353073）|
 | シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88386806）|
 | シアトル（個人延泊） | The Moore Hotel（1926 2nd Ave, Seattle） | 3/17 | 3/19 | 2泊 | 個人（自費） | ✅ 予約済（予約番号：34213912X）|
@@ -89,10 +90,10 @@
 | タスク | 期限 | 状況 |
 |--------|------|------|
 | ESTA申請番号をエムハートに連絡 | 出発72時間前（3/8）まで | ⏳ 申請中 |
-| ホテル予約（Mountain View 1泊） | 早めに | ❌ 未着手 |
-| ホテル予約（Houston 2泊） | 早めに | ❌ 未着手 |
-| ホテル予約（Seattle/Bellevue 3泊） | 早めに | ❌ 未着手 |
-| ホテル予約（Seattle 個人 2泊） | 早めに | ❌ 未着手 |
+| ホテル予約（SFO/Millbrae 1泊） | 完了 | ✅ 88608749（要キャンセル確認：大坪・上野さんに宿泊先確認後）|
+| ホテル予約（Houston 2泊） | 完了 | ✅ 88353073 |
+| ホテル予約（Seattle/Bellevue 3泊） | 完了 | ✅ 88386806 |
+| ホテル予約（Seattle 個人 2泊） | 完了 | ✅ 34213912X |
 | EPOCH渡航申請（期間を3/19まで延長） | 出発前 | ❌ 未着手 |
 | Wi-Fi手配（MERON） | 出発前 | ❌ 未着手 |
 | 海外旅行保険（MERON） | 出発前 | ❌ 未着手 |

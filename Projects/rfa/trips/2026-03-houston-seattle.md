@@ -34,7 +34,7 @@
 ### 3/12（木）現地時間
 - 午前：自由時間
 - **14:47** UA1672 サンフランシスコ国際空港 出発 → ヒューストン・ブッシュ空港 20:39着
-- 🏨 **ホテル：Courtyard by Marriott Houston The Woodlands（未予約）**
+- 🏨 **ホテル：Courtyard by Marriott Houston The Woodlands（✅ 予約済 / 確認番号：88353073）**
 
 ### 3/13（金）
 - **終日** マイクロソフト ヒューストン統合ハブ 訪問
@@ -78,7 +78,7 @@
 | 場所 | ホテル候補 | チェックイン | チェックアウト | 泊数 | 費用区分 | 状況 |
 |------|-----------|------------|--------------|------|---------|------|
 | マウンテンビュー（シリコンバレー） | Hyatt Centric Mountain View または Courtyard by Marriott Sunnyvale Silicon Valley | 3/11 | 3/12 | 1泊 | 業務（HRS経由） | ❌ 未予約 |
-| ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（HRS経由） | ❌ 未予約 |
+| ヒューストン | Courtyard by Marriott Houston The Woodlands | 3/12 | 3/14 | 2泊 | 業務（Marriott直） | ✅ 予約済（確認番号：88353073）|
 | シアトル（ベルビュー） | Courtyard Seattle Bellevue Downtown | 3/14 | 3/17 | 3泊 | 業務（HRS経由） | ❌ 未予約 |
 | シアトル（個人延泊） | 未定 | 3/17 | 3/19 | 2泊 | 個人（自費） | ❌ 未予約 |
 
